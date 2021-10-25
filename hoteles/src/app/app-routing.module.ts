@@ -9,15 +9,16 @@ import { CheckClientGuard } from './shared/guards/guardClient/check-client.guard
 
 
 const routes: Routes = [
-  { path: '',
+  { path: 'client',
   loadChildren: () =>
-  import('./general-pages/general-pages.module').then((m) => m.GeneralPagesModule),canActivate:[CheckLoginGuard]},
+  import('./client-pages/client-pages.module').then((m) => m.ClientPagesModule),canActivate:[CheckClientGuard]
+  },
   { path: 'admin',
   loadChildren: () =>
   import('./admin-pages/admin-pages.module').then((m) => m.AdminPagesModule),canActivate:[CheckAdminGuard]},
-  { path: 'client',
+  { path: '',
   loadChildren: () =>
-  import('./client-pages/client-pages.module').then((m) => m.ClientPagesModule),canActivate:[CheckClientGuard]}
+  import('./general-pages/general-pages.module').then((m) => m.GeneralPagesModule)}
 
 
 

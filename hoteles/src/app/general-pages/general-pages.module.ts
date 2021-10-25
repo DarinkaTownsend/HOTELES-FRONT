@@ -16,9 +16,10 @@ import { SharedModule } from '../shared/shared.module';
 
 
 import {ReactiveFormsModule} from '@angular/forms';
+import { InicioComponent } from './inicio/inicio.component';
 
 @NgModule({
-  declarations: [GeneralPagesComponent,],
+  declarations: [GeneralPagesComponent, InicioComponent,],
   imports: [
     CommonModule,
     FormsModule,
