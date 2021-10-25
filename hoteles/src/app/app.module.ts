@@ -1,27 +1,56 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+//import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AdminPagesComponent } from './admin-pages/admin-pages.component';
-import { ClientPagesComponent } from './client-pages/client-pages.component';
-import { GeneralPagesComponent } from './general-pages/general-pages.component';
 import { SharedModule } from './shared/shared.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+//import { MatDialogModule } from '@angular/material/dialog';
+//import { FilterPipe } from './pipes/filter.pipe';
+
+//import { CheckLoginGuard } from './shared/guards/check-login.guard';
+
+
+//import { UsuariosService } from './services/usuarios.service';
+//GRAFICOS
+//import { ChartsModule } from 'ng2-charts';
+//import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//import { GeneralPagesComponent } from './general-pages/general-pages.component';
+//import { AdminPagesComponent } from './admin-pages/admin-pages.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    AdminPagesComponent,
-    ClientPagesComponent,
-    GeneralPagesComponent,
-
+    AppComponent
+    //FilterPipe,
+    //GeneralPagesComponent,
+    //AdminPagesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    NgbModule,
+    HttpClientModule,
+    //MatDialogModule,
+
+    //FormsModule,
+    //ChartsModule,
+    //ServiceWorkerModule.register('ngsw-worker.js', {
+      //enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      //registrationStrategy: 'registerWhenStable:30000'
+    //}),
+
+
+    BrowserAnimationsModule
   ],
-  providers: [],
+
+  //providers: [//UsuariosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

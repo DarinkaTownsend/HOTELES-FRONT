@@ -8,7 +8,6 @@ import { CheckClientGuard } from './shared/guards/guardClient/check-client.guard
 
 
 
-
 const routes: Routes = [
   { path: '',
   loadChildren: () =>
@@ -32,4 +31,10 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
+
+
+
 export class AppRoutingModule { }
+
+

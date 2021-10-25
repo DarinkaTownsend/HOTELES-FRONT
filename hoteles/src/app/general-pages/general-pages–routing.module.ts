@@ -8,9 +8,7 @@ import { GeneralPagesComponent } from './general-pages.component';
 
 const routes: Routes = [
   {path:"", component:GeneralPagesComponent,
-  children:[
-
-]
+  children:[ ]
   }
 ];
 

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { ClientPagesComponent } from './client-pages.component';
 
 
@@ -7,7 +8,6 @@ import { ClientPagesComponent } from './client-pages.component';
 const routes: Routes = [
   {path:"", component:ClientPagesComponent,
   children:[
-
 
   ]
   }
