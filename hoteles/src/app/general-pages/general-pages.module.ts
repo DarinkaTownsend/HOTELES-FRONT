@@ -9,12 +9,7 @@ import { GeneralPagesComponent } from './general-pages.component';
 import { SharedModule } from '../shared/shared.module';
 
 
-
-
-
-
-
-
+import {IvyCarouselModule} from 'angular-responsive-carousel';
 import {ReactiveFormsModule} from '@angular/forms';
 import { InicioComponent } from './inicio/inicio.component';
 
@@ -25,7 +20,8 @@ import { InicioComponent } from './inicio/inicio.component';
     FormsModule,
     GeneralPagesRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    IvyCarouselModule
   ]
 })
 export class GeneralPagesModule { }
