@@ -10,8 +10,11 @@ import { SharedModule } from '../shared/shared.module';
 
 
 import {IvyCarouselModule} from 'angular-responsive-carousel';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import {ReactiveFormsModule} from '@angular/forms';
 import { InicioComponent } from './inicio/inicio.component';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [GeneralPagesComponent, InicioComponent,],
@@ -21,7 +24,9 @@ import { InicioComponent } from './inicio/inicio.component';
     GeneralPagesRoutingModule,
     SharedModule,
     ReactiveFormsModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    NgbCarouselConfig,
+    NgbModule
   ]
 })
 export class GeneralPagesModule { }
