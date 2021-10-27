@@ -14,9 +14,10 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { InicioComponent } from './inicio/inicio.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { IngresoComponent } from './ingreso/ingreso.component';
 
 @NgModule({
-  declarations: [GeneralPagesComponent, InicioComponent,],
+  declarations: [GeneralPagesComponent, InicioComponent, IngresoComponent,],
   imports: [
     CommonModule,
     FormsModule,

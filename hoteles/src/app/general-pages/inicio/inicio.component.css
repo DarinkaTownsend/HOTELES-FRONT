@@ -45,7 +45,7 @@ carousel .carousel-cells .carousel-cell{
 }
 
 #subtitulos{
-  color:  #022130;
+  color:  #3c4146;
   font-size: 20px;
   font-weight: bold;
   padding-right: 5%;
@@ -73,13 +73,23 @@ select:focus{ outline: none;}
   width: 100%;
 }
 
+#fondoG {
+  height: 500px;
+  background-image: url("../../../assets/h5.jpeg");
+  background-repeat:no-repeat;
+  background-position-x:center;
+  background-position-y:center;
+  background-size: 100%;
+}
+
 #check{
-  background-color: rgb(250, 225, 193);
+  background-color:#ff6e42;
+  margin-top: 25%;
   padding: 1% 1% 1% 1%;
 }
 .boton {
   font-size: 16px;
-  background-color: #022130;
+  background-color: #262728;
   color: #fff;
   padding: 5px 0px;
   width: 100%;
