@@ -10,7 +10,6 @@ import { SharedModule } from '../shared/shared.module';
 
 
 import {IvyCarouselModule} from 'angular-responsive-carousel';
-import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import {ReactiveFormsModule} from '@angular/forms';
 import { InicioComponent } from './inicio/inicio.component';
 
@@ -25,7 +24,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SharedModule,
     ReactiveFormsModule,
     IvyCarouselModule,
-    NgbCarouselConfig,
+
     NgbModule
   ]
 })

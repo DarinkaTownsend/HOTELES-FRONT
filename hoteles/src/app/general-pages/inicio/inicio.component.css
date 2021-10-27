@@ -1,0 +1,99 @@
+carousel .carousel-cells .carousel-cell{
+  object-fit: cover;
+}
+
+#availability{
+ display: grid;
+ grid-template-columns: auto auto auto;
+ padding-bottom: 1px;
+}
+
+#boton_check{
+  display: grid;
+  grid-template-columns: auto;
+  align-content: center;
+
+}
+
+.caja::after{
+	content:"\025be";
+	display:table-cell;
+	padding-top:7px;
+	text-align:center;
+	width:30px;
+	height:30px;
+	background-color:#d9d9d9;
+	position:absolute;
+	top:0;
+	right:0px;
+	pointer-events: none;
+}
+
+#calendario{
+  padding-left: 4%;
+  padding-right:4%;
+  text-align: center;
+}
+
+.caja {
+  margin:0px auto 0px auto;
+  border:1px solid #d9d9d9;
+  height:30px;
+  overflow: hidden;
+  width: 100%;
+
+}
+
+#subtitulos{
+  color:  #022130;
+  font-size: 20px;
+  font-weight: bold;
+  padding-right: 5%;
+
+}
+
+#fechas{
+  display: grid;
+  align-content: center;
+  text-align: center;
+}
+.alternate{
+  padding-right: 2%;
+  padding-left: 2%;
+}
+select:focus{ outline: none;}
+#seleccion{
+  display: grid;
+  align-content: center;
+  text-align: center;
+  border: none;
+  font-size: 14px;
+  height: 30px;
+  padding: 5px;
+  width: 100%;
+}
+
+#check{
+  background-color: rgb(250, 225, 193);
+  padding: 1% 1% 1% 1%;
+}
+.boton {
+  font-size: 16px;
+  background-color: #022130;
+  color: #fff;
+  padding: 5px 0px;
+  width: 100%;
+  max-width: 190px;
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  }
+
+  .boton:hover{
+    background: #fdd430;
+    color: #fff;
+  }
