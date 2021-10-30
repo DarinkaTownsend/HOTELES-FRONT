@@ -10,7 +10,7 @@
 
 
       <div class="sign-in-htm">
-        <form>
+        <form [formGroup]="miFormulario" (ngSubmit)="miSubmit()" novalidate="">
 
           <div class="group">
             <label for="user" class="label">Username</label>
@@ -41,7 +41,7 @@
 
 
       <div class="sign-up-htm">
-        <form>
+        <form [formGroup]="miFormulario2" (ngSubmit)="miSubmit2()" novalidate="">
           <div class="group">
             <label for="name" class="label">Nombres</label>
             <input id="name" type="text" class="input" name="name" formControlName="name">
@@ -67,7 +67,7 @@
             <input id="pass" type="text" class="input" name="correo" formControlName="correo">
           </div>
           <div class="group">
-            <input type="submit" class="button" value="Sign Up">
+            <input type="submit" class="button" value="Sign Up" routerLink="../admin/panel">
           </div>
 
         </form>

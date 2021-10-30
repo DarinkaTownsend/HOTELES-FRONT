@@ -1,7 +1,7 @@
 body{
 	margin:0;
-	color:#6a6f8c;
-	background:#0d0f38;
+	color:#fff;
+	background:antiquewhite;
 	font:600 16px/18px 'Open Sans',sans-serif;
   padding-top: 10%;
   padding-bottom: 10%;
@@ -25,7 +25,7 @@ a{color: #ddd;;text-decoration:none}
 	height:900px;
 	position:absolute;
 	padding:10% 30% 10% 30%;
-	background:rgba(40,57,101,.9);
+	background:#104c97;
 }
 .login-html .sign-in-htm,
 .login-html .sign-up-htm{
@@ -90,11 +90,16 @@ a{color: #ddd;;text-decoration:none}
 	-webkit-text-security:circle;
 }
 .login-form .group .label{
-	color:#aaa;
+	color: #fff;;
 	font-size:12px;
 }
 .login-form .group .button{
-	background:#5a078b;
+	background:#262728;
+}
+
+.login-form .group .button:hover{
+  background: #019cdd;
+  color: #fff;
 }
 .login-form .group label .icon{
 	width:15px;
@@ -102,7 +107,7 @@ a{color: #ddd;;text-decoration:none}
 	border-radius:2px;
 	position:relative;
 	display:inline-block;
-	background:rgba(255,255,255,.1);
+	background:#fff;
 }
 .login-form .group label .icon:before,
 .login-form .group label .icon:after{
@@ -146,7 +151,7 @@ a{color: #ddd;;text-decoration:none}
 .hr{
 	height:2px;
 	margin:60px 0 50px 0;
-	background:rgba(255,255,255,.2);
+	background:#fff;
 }
 .foot-lnk{
 	text-align:center;

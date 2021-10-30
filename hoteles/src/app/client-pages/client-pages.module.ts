@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { ClientPagesRoutingModule } from './client-pages–routing.module';
 import { ClientPagesComponent } from './client-pages.component';
 import { SharedModule } from '../shared/shared.module';
+import { ClienteInicioComponent } from './cliente-inicio/cliente-inicio.component';
 //import { HeaderdosComponent } from '../shared/components/headerdos/headerdos.component'
 
 
@@ -13,7 +14,7 @@ import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
-  declarations: [ClientPagesComponent,
+  declarations: [ClientPagesComponent, ClienteInicioComponent,
 
   ],
   imports: [

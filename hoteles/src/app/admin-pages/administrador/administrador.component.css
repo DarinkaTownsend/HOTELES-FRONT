@@ -1,0 +1,159 @@
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #1f1f1f;
+  text-decoration: none !important;
+  outline: none !important;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: 0;
+  font-weight: normal;
+  position: relative;
+  padding: 0 0 10px 0;
+  font-weight: normal;
+  line-height: normal;
+  color: #111111;
+  margin: 0
+}
+
+h1 {
+  font-size: xx-large;
+  color: white;
+  font-weight: 900;
+}
+
+h2 {
+  padding-top: 3%;
+  padding-bottom: 1%;
+  font-size: 40px;
+  color: #0d0f38;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+h3 {
+  font-size: 25px;
+  padding-top: 3%;
+  padding-bottom: 1%;
+  color: #0d0f38;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  color: #222222;
+  text-decoration: none;
+  outline: none !important;
+}
+
+a {
+  text-decoration: none !important;
+  outline: none !important;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+:focus {
+  outline: 0;
+}
+
+
+
+/** Services section **/
+
+.Services {
+  margin-top: 0px;
+  padding: 60px 0;
+  background: #fff;
+  font-family: Poppins;
+}
+
+.Services .titlepage {
+  text-align: center;
+}
+
+.Services .titlepage h2 {
+  color: #0d0f38;
+  font-weight: bold;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  margin-bottom: 1%;
+}
+
+
+
+.Services .Services-box i {
+  background: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  display: inline-block;
+  padding-top: 19px;
+}
+
+.Services .Services-box i:hover {
+  background: #ddd;
+}
+
+.Services .Services-box h3 {
+  padding: 20px 10px 20px 10px;
+  margin-top: 5%;
+  font-size: 23px;
+  line-height: 25px;
+  color: #0d0f38;
+  display: block;
+  font-weight: bold;
+}
+
+.Services .Services-box {
+  text-align: center;
+  background-color: transparent;
+  border-radius: 20px;
+  border: #cecfd7 solid 2px;
+  padding: 40px;
+  transition: ease-in all 0.5s;
+  margin-bottom: 30px;
+}
+
+.Services .Services-box:hover {
+  background: #fdf364;
+  color: #fff;
+  transition: ease-in all 0.1s;
+  transform: scale(1.1);
+  cursor: pointer;
+  border-color: #fff;
+}
+
+.Services .Services-box p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+}
+

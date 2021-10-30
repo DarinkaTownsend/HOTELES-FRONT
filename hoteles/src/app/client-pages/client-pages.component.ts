@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-client-pages',
   templateUrl: './client-pages.component.html',

@@ -45,7 +45,7 @@ carousel .carousel-cells .carousel-cell{
 }
 
 #subtitulos{
-  color:  #3c4146;
+  color:  white;
   font-size: 20px;
   font-weight: bold;
   padding-right: 5%;
@@ -74,17 +74,27 @@ select:focus{ outline: none;}
 }
 
 #fondoG {
-  height: 500px;
-  background-image: url("../../../assets/h5.jpeg");
+  height: 300px;
+  width: 100%;
+  background-image: url("../../../assets/h2.jpg");
   background-repeat:no-repeat;
   background-position-x:center;
   background-position-y:center;
   background-size: 100%;
 }
 
+.cabecera{
+  color: #fff;
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  vertical-align: middle;
+  text-shadow: #111 0px 0px 10px;
+}
+
 #check{
-  background-color:#ff6e42;
-  margin-top: 25%;
+  background-color:#104c97;
+  margin-top: 3%;
   padding: 1% 1% 1% 1%;
 }
 .boton {
@@ -104,6 +114,6 @@ select:focus{ outline: none;}
   }
 
   .boton:hover{
-    background: #fdd430;
+    background: #019cdd;
     color: #fff;
   }

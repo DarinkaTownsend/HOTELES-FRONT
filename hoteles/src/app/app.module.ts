@@ -6,13 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 //import { MatDialogModule } from '@angular/material/dialog';
 //import { FilterPipe } from './pipes/filter.pipe';
 
 //import { CheckLoginGuard } from './shared/guards/check-login.guard';
 
 
-//import { UsuariosService } from './services/usuarios.service';
+import { UsuariosService } from './service/usuarios.service';
 //GRAFICOS
 //import { ChartsModule } from 'ng2-charts';
 //import { ServiceWorkerModule } from '@angular/service-worker';
@@ -24,7 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
     //FilterPipe,
     //GeneralPagesComponent,
     //AdminPagesComponent
@@ -51,6 +53,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
 
   //providers: [//UsuariosService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers:[UsuariosService]
 })
 export class AppModule { }
