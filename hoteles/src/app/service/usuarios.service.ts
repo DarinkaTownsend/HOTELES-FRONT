@@ -30,7 +30,7 @@ export class UsuariosService {
     return this.http.post(`${this.API_URI}/api/registration`,usuario)
   }
   login(usuario: any){
-    return this.http.post(`${this.API_URI}api/authentication/login/`,usuario)
+    return this.http.post(`${this.API_URI}/api/authentication/login/`,usuario)
   }
   logout(){
     localStorage.removeItem('username');

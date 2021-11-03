@@ -69,12 +69,12 @@ export class IngresoComponent implements OnInit {
       },
       err  => {
         console.log(err)
-        /*Swal.fire({
+        Swal.fire({
           title: 'Error!',
           text: err.error.message,
           icon: 'error',
           confirmButtonText: 'Aceptar'
-        })*/
+        })
       }
 
 
@@ -86,8 +86,8 @@ export class IngresoComponent implements OnInit {
 
 
   miSubmit() {
-    //console.log(this.miFormulario.value);
-    //console.log(this.miFormulario );
+    console.log(this.miFormulario.value);
+    console.log(this.miFormulario );
     const elUser = {"usuario": this.miFormulario.value.usuario,
                     "contrasena": this.miFormulario.value.contrasena
     }

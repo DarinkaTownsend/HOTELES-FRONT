@@ -35,6 +35,12 @@ carousel .carousel-cells .carousel-cell{
   text-align: center;
 }
 
+#calendario1{
+  padding-left: 4%;
+  padding-right:4%;
+  text-align: center;
+}
+
 .caja {
   margin:0px auto 0px auto;
   border:1px solid #d9d9d9;

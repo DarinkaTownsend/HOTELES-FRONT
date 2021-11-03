@@ -1,3 +1,4 @@
+import { HtmlParser } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,5 +12,15 @@ export class InicioComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  reservation(){
+    //console.log(document.getElementById("calendario1"));
+    console.log(document.querySelector("input[type=date]"));
+
+
+
+  }
+
+
 
 }
