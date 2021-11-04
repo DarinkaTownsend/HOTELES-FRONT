@@ -1,0 +1,36 @@
+.container{
+  display: grid;
+  align-content: center;
+}
+.todo{
+  padding-bottom: 40%;
+}
+
+.imagenPrin{
+  display: grid;
+  align-content: center;
+}
+
+.btn{
+
+  font-size: 16px;
+  background-color: #262728;
+  color: #fff;
+  padding: 5px 0px;
+
+  max-width: 190px;
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 50%;
+
+}
+
+
+.btn:hover {
+  background: #ff5722;
+  color: #fff;
+}

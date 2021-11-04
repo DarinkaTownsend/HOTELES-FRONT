@@ -1,0 +1,80 @@
+
+
+  <div id="layoutSidenav">
+    <div id="layoutSidenav_content">
+      <router-outlet></router-outlet>
+    </div>
+    <app-toolbar></app-toolbar>
+
+
+  </div>
+
+  <div class="container">
+    <main class="todo">
+      <div class="py-5 text-center">
+        <h1>Perfil</h1>
+        <h2 class="lead">¡Esta es la información de tu perfil {{nombresC}}!</h2>
+      </div>
+
+      <div class="row g-5">
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <i class="imagenPrin"><img src="../../../assets/usuario.png" width="150px" height = "150px" alt="#" /></i>
+
+        </div>
+
+        <div class="col-md-7 col-lg-8">
+
+          <form>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="firstName" class="form-label">Nombres</label>
+                <input type="text" class="form-control" id="lastName" placeholder="{{nombresC}}" disabled>
+
+              </div>
+
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">Apellidos </label>
+                <input type="text" class="form-control" id="lastName" placeholder="{{apellidosC}}" disabled>
+
+              </div>
+
+              <div class="col-12">
+                <label for="username" class="form-label">Nombre Usuario</label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text">@</span>
+                  <input type="text" class="form-control" id="username" placeholder="{{usuarioC}}" disabled>
+
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="email" class="form-label">Email </label>
+                <input type="email" class="form-control" placeholder="{{correoC}}" id="email" disabled>
+
+              </div>
+
+              <div class="col-12">
+                <label for="email" class="form-label">Contraseña </label>
+                <input type="email" class="form-control" placeholder="*********" id="email" disabled>
+
+              </div>
+
+            </div>
+            <hr class="my-4">
+          </form>
+
+
+
+        </div>
+      </div>
+
+      <button type="button" class="btn  btn-outline-secondary" routerLink='/client/inscri-form'>Cambiar contraseña</button>
+    </main>
+
+
+  </div>
+
+
+
+
+

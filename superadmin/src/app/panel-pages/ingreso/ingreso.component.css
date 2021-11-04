@@ -26,6 +26,10 @@ a{color: #ddd;;text-decoration:none}
 	position:absolute;
 	padding:10% 30% 10% 30%;
 	background:#104c97;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 .login-html .sign-in-htm,
 .login-html .sign-up-htm{
