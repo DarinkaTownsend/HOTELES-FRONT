@@ -11,50 +11,48 @@
 
   <div class="container">
     <main class="todo">
-      <div class="py-5 text-center">
+      <div class="prin">
         <h1>Perfil</h1>
         <h2 class="lead">¡Esta es la información de tu perfil {{nombresC}}!</h2>
       </div>
 
-      <div class="row g-5">
-        <div class="col-md-5 col-lg-4 order-md-last">
+      <div class="inf">
+        <div class="prin">
           <i class="imagenPrin"><img src="../../../assets/usuario.png" width="150px" height = "150px" alt="#" /></i>
 
         </div>
 
-        <div class="col-md-7 col-lg-8">
+        <div>
 
           <form>
-            <div class="row g-3">
-              <div class="col-sm-6">
-                <label for="firstName" class="form-label">Nombres</label>
+            <div class="formT">
+              <div class="fil">
+                <label for="firstName" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="lastName" placeholder="{{nombresC}}" disabled>
 
               </div>
 
-              <div class="col-sm-6">
-                <label for="lastName" class="form-label">Apellidos </label>
+              <div class="fil">
+                <label for="lastName" class="form-label">Apellido</label>
                 <input type="text" class="form-control" id="lastName" placeholder="{{apellidosC}}" disabled>
 
               </div>
 
-              <div class="col-12">
-                <label for="username" class="form-label">Nombre Usuario</label>
-                <div class="input-group has-validation">
-                  <span class="input-group-text">@</span>
-                  <input type="text" class="form-control" id="username" placeholder="{{usuarioC}}" disabled>
+              <div class="fil">
+                <label for="username" class="form-label">Usuario</label>
+                <input type="text" class="form-control" id="username" placeholder="{{usuarioC}}" disabled>
 
-                </div>
+
               </div>
 
-              <div class="col-12">
-                <label for="email" class="form-label">Email </label>
+              <div class="fil">
+                <label for="email" class="form-label">Correo  </label>
                 <input type="email" class="form-control" placeholder="{{correoC}}" id="email" disabled>
 
               </div>
 
-              <div class="col-12">
-                <label for="email" class="form-label">Contraseña </label>
+              <div class="fil">
+                <label for="email" class="form-label">Contraseña</label>
                 <input type="email" class="form-control" placeholder="*********" id="email" disabled>
 
               </div>

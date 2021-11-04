@@ -6,8 +6,30 @@
   padding-bottom: 40%;
 }
 
-.imagenPrin{
+.formT{
   display: grid;
+  grid-template-rows: auto auto auto auto auto;
+}
+.inf{
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.fil{
+  display: grid;
+  grid-template-columns: auto auto;
+  text-align: justify;
+  padding-top: 2%;
+  padding-right: 1%;
+  margin-left: 1%;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.prin{
+  text-align: center;
+  align-items: center;
   align-content: center;
 }
 
@@ -17,6 +39,8 @@
   background-color: #262728;
   color: #fff;
   padding: 5px 0px;
+  border-radius: 20px;
+
 
   max-width: 190px;
   display: flex;
