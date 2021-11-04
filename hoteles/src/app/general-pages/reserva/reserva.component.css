@@ -1,0 +1,84 @@
+#todo{
+  display: grid;
+  grid-template-columns: auto auto;
+  padding-top: 5%;
+  padding-right: 2%;
+  padding-left: 5%;
+}
+
+#info{
+  display: grid;
+  grid-template-rows: auto auto auto;
+}
+.boton:hover{
+  background: #ff5722;
+  color: #fff;
+}
+
+.boton {
+  font-size: 16px;
+  background-color: #262728;
+  color: #fff;
+  padding: 5px 0px;
+  width: 100%;
+  max-width: 190px;
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  }
+
+  #reser{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-top: 2%;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+  }
+.card-block {
+  font-size: 1em;
+  position: relative;
+  margin: 0;
+  padding: 1em;
+  border: none;
+  border-top: 1px solid rgba(34, 36, 38, .1);
+  box-shadow: none;
+  text-align: center;
+
+}
+h2{
+  text-align: center;
+}
+.fila1{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+.sec{
+  display: grid;
+  grid-template-rows: auto auto;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+.card {
+  font-size: 1em;
+  overflow: hidden;
+  padding: 5;
+  border: none;
+  border-radius: .28571429rem;
+  box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+  margin-top:20px;
+  margin-right: 40px;
+  margin-left: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 40px;
+}

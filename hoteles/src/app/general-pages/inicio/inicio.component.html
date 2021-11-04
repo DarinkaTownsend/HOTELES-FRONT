@@ -11,7 +11,7 @@
             <div id="availability">
               <div class="a-col alternate">
                 <div class="input-field" id="fechas">
-                  <label for="date-start" id="subtitulos">Location</label>
+                  <label for="date-start" id="subtitulos">Lugar</label>
                   <div class="caja" >
                     <select class="cs-select cs-skin-border" id="seleccion">
                       <option value="email" disabled selected>Luxe Hotel</option>
@@ -24,13 +24,13 @@
 
               <div class="a-col alternate">
                 <div class="input-field" id="fechas">
-                  <label for="date-start" id="subtitulos">Check In</label>
+                  <label for="date-start" id="subtitulos">Fecha de entrada</label>
                   <input type="date" class="caja" id="calendario" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31">
                 </div>
               </div>
               <div class="a-col alternate">
                 <div class="input-field" id="fechas">
-                  <label for="date-end" id="subtitulos">Check Out</label>
+                  <label for="date-end" id="subtitulos">Fecha de salida</label>
                   <input type="date" id="calendario1" class="caja" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31">
 
                 </div>
@@ -38,7 +38,8 @@
             </div>
 
 						<div class="a-col action" >
-							<a href="#" class="boton" type= "submit" (ngSubmit)="reservation()"> Reservar </a>
+							<a href="#" class="boton" type= "submit"
+              (ngSubmit)="reservation()" routerLink="../consultar"> Consultar </a>
 						</div>
 					</form>
         </div>

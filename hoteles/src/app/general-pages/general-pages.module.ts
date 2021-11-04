@@ -15,9 +15,12 @@ import { InicioComponent } from './inicio/inicio.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { IngresoComponent } from './ingreso/ingreso.component';
+import { ConsultaComponent } from './consulta/consulta.component';
+import { ReservaComponent } from './reserva/reserva.component';
+import { ConfirmacionComponent } from './confirmacion/confirmacion.component';
 
 @NgModule({
-  declarations: [GeneralPagesComponent, InicioComponent, IngresoComponent,],
+  declarations: [GeneralPagesComponent, InicioComponent, IngresoComponent, ConsultaComponent, ReservaComponent, ConfirmacionComponent,],
   imports: [
     CommonModule,
     FormsModule,

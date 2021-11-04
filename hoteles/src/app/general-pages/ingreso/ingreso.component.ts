@@ -46,10 +46,9 @@ export class IngresoComponent implements OnInit {
     console.log(this.miFormulario2.value);
 
     const elUser = {"username": this.miFormulario2.value.usuario,
-                    "first_name": this.miFormulario2.value.name,
-                    "last_name": this.miFormulario2.value.apellido,
-                    "password": this.miFormulario2.value.contrasena,
-                    "email" : this.miFormulario2.value.correo
+                    "email" : this.miFormulario2.value.correo,
+                    "password1": this.miFormulario2.value.contrasena,
+                    "password2": this.miFormulario2.value.contrasena2,
     }
     this.usuariosService.addUsuarios(elUser).subscribe(
       res  => {
@@ -88,22 +87,15 @@ export class IngresoComponent implements OnInit {
   miSubmit() {
     console.log(this.miFormulario.value);
     console.log(this.miFormulario );
-    const elUser = {"usuario": this.miFormulario.value.usuario,
-                    "contrasena": this.miFormulario.value.contrasena
+    const elUser = {"username": this.miFormulario.value.usuario,
+                    "email": "",
+                    "password": this.miFormulario.value.contrasena
     }
 
     this.usuariosService.login(elUser).subscribe(
       res  => {
-        localStorage.setItem('user',JSON.stringify(res));
-        //console.log(res);
-        var stringa = localStorage.getItem('username') || '{}'
-        var json = JSON.parse(stringa)
-        if(json.role='Usuario'){
-          this.router.navigate(['/client']);
-        }
-        else{
-          this.router.navigate(['/admin']);
-        }
+
+        this.router.navigate(['./admin']);
       },
       err  => {
         //console.log(err.error.message)

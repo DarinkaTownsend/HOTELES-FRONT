@@ -27,7 +27,7 @@ export class UsuariosService {
     return this.http.get(`${this.API_URI}/api/hotels/1/${userC}`)
   }
   addUsuarios(usuario: any){
-    return this.http.post(`${this.API_URI}/api/registration`,usuario)
+    return this.http.post(`${this.API_URI}/api/registration/`,usuario)
   }
   login(usuario: any){
     return this.http.post(`${this.API_URI}/api/authentication/login/`,usuario)
