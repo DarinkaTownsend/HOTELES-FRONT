@@ -88,4 +88,24 @@ img {
 :focus {
   outline: 0;
 }
+#cabecera{
+  font-family:sans-serif;
+  color:#fff;
+  font-size: 20px;
+  background-color: cornflowerblue;
+  margin-bottom: 3%;
+  padding-top: 2%;
+  padding-bottom: 5%;
+}
 
+#tablaT{
+  display:grid;
+  grid-template-columns: auto;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+
+
+}

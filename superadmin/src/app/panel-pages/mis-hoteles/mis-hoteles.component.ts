@@ -14,9 +14,10 @@ export class MisHotelesComponent implements OnInit {
             fetch("http://127.0.0.1:8000/api/hotels/")
             .then(data => data.json())
             .then(data => {
-              console.log(this.hoteles)
+
               this.hoteles=data
-              /*
+              console.log(this.hoteles)
+
               let tbody = document.getElementById("ordenes_tablas")
 
               if (tbody) {
@@ -35,7 +36,7 @@ export class MisHotelesComponent implements OnInit {
                 }
 
               }
-               */
+
             });
 
 
