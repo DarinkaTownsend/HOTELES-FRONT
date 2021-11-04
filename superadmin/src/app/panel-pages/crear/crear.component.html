@@ -1,1 +1,67 @@
-<p>crear works!</p>
+<div id="layoutSidenav">
+  <div id="layoutSidenav_content">
+    <router-outlet></router-outlet>
+  </div>
+  <app-toolbar></app-toolbar>
+
+
+</div>
+
+<h2>Configuración de Administrador</h2>
+<hr>
+
+<div id="cuerpo">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Hotel</label>
+  </div>
+  <select class="custom-select" id="inputGroupSelect01">
+     <option selected>Seleccione el Hotel</option>
+  </select>
+</div>
+
+
+<div class="login-wrap">
+  <div class="login-html">
+    <input id="tab-2" type="radio" name="tab" class="sign-up" checked><label for="tab-2" class="tab">CREAR ADMINISTRADOR</label>
+    <div class="login-form">
+
+      <div class="sign-up-htm">
+        <form [formGroup]="miFormulario6" (ngSubmit)="miSubmit()" novalidate="">
+          <div class="group">
+            <label for="name" class="label">Nombres</label>
+            <input id="name" type="text" class="input" name="name" formControlName="name">
+          </div>
+          <div class="group">
+            <label for="apellido" class="label">Apellidos</label>
+            <input id="apellido" type="text" class="input" name="apellido" formControlName="apellido">
+          </div>
+          <div class="group">
+            <label for="user" class="label">Username</label>
+            <input id="user" type="text" class="input" name="usuario" formControlName="usuario">
+          </div>
+          <div class="group">
+            <label for="pass" class="label">Password</label>
+            <input id="pass" type="password" class="input" data-type="password" name="contrasena" formControlName="contrasena">
+          </div>
+          <div class="group">
+            <label for="pass" class="label">Repeat Password</label>
+            <input id="pass" type="password" class="input" data-type="password" name="contrasena2" formControlName="contrasena2">
+          </div>
+          <div class="group">
+            <label for="pass" class="label">Email Address</label>
+            <input id="pass" type="text" class="input" name="correo" formControlName="correo">
+          </div>
+          <div class="group">
+            <input type="submit" class="button" value="Sign Up" >
+          </div>
+
+        </form>
+
+      </div>
+
+
+
+
+    </div>
+  </div>
+</div>
