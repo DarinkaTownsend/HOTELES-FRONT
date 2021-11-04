@@ -4,7 +4,6 @@ import { GeneralPagesComponent } from './general-pages.component';
 
 import { InicioComponent } from './inicio/inicio.component';
 import { IngresoComponent } from './ingreso/ingreso.component';
-
 import { ConsultaComponent } from './consulta/consulta.component';
 import { ReservaComponent } from './reserva/reserva.component';
 import { ConfirmacionComponent } from './confirmacion/confirmacion.component';
