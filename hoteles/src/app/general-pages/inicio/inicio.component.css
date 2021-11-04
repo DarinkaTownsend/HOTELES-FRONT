@@ -4,7 +4,7 @@ carousel .carousel-cells .carousel-cell{
 
 #availability{
  display: grid;
- grid-template-columns: auto auto auto;
+ grid-template-columns: auto auto auto auto;
  padding-bottom: 1px;
 }
 
