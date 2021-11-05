@@ -14,6 +14,7 @@ import Swal from 'sweetalert2';
 })
 export class CrearComponent implements OnInit {
   miFormulario6: FormGroup;
+  hoteles:any =[];
 
   constructor(private usuariosService : UsuariosService,private router: Router) {
     this.miFormulario6 = new FormGroup({
@@ -29,44 +30,31 @@ export class CrearComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    fetch("http://127.0.0.1:8000/api/hotels/")
+            .then(data => data.json())
+            .then(data => {
+
+              this.hoteles=data
+              console.log(this.hoteles)
+
+              let tbody = document.getElementById("inputGroupSelect01")
+
+              if (tbody) {
+                tbody.innerHTML = "";
+
+                for(let hotel of this.hoteles){
+                  let row =
+                    `<option selected>${hotel["name"]}</option>`
+                  tbody.innerHTML += row;
+                }
+
+              }
+
+            });
   }
 
   miSubmit() {
-    console.log(this.miFormulario6.value);
 
-    const elUser = {"username": this.miFormulario6.value.usuario,
-                    "email" : this.miFormulario6.value.correo,
-                    "password1": this.miFormulario6.value.contrasena,
-                    "password2": this.miFormulario6.value.contrasena2,
-    }
-    this.usuariosService.addUsuarios(elUser).subscribe(
-      res  => {
-        var x= JSON.stringify(res)
-        var y = JSON.parse(x)
-
-        //console.log(y.message);
-        Swal.fire({
-          title: y.message,
-          //text: y.message,
-          icon: 'success',
-          confirmButtonText: 'Aceptar'
-        })
-
-
-        //this.router.navigate(['/admin']);
-      },
-      err  => {
-        console.log(err)
-        Swal.fire({
-          title: 'Error!',
-          text: err.error.message,
-          icon: 'error',
-          confirmButtonText: 'Aceptar'
-        })
-      }
-
-
-    )
 
   }
 
