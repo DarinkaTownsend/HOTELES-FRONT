@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-confirmacion',
@@ -23,5 +24,12 @@ export class ConfirmacionComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  Reservar(){}
+  Reservar(){
+    Swal.fire({
+      title: 'Se ha realizado su reservación',
+      //text: y.message,
+      icon: 'success',
+      confirmButtonText: 'Aceptar'
+    })
+  }
 }

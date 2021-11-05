@@ -36,4 +36,7 @@ export class UsuariosService {
     localStorage.removeItem('username');
     //localStorage.removeItem('idCursoE')
   }
+  getRoomType(){
+    return this.http.get(`${this.API_URI}/api/room_types/1`)
+  }
 }
