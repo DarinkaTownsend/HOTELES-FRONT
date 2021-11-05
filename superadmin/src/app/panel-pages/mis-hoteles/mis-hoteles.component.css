@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box !important;
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+#inputGroupSelect01{
+  margin-right: 30%;
+}
+#cuerpo{
+  display: grid;
+  grid-template-columns: auto auto;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+body {
+  color: #666666;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.80857;
+  font-weight: normal;
+}
+
+
+h1,
+h2 {
+  letter-spacing: 0;
+  font-weight: normal;
+  padding: 0 0 10px 0;
+  font-weight: normal;
+  line-height: normal;
+  color: #111111;
+  margin: 0
+}
+
+h1 {
+  font-size: xx-large;
+  color: white;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 22px
+}
+
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#cuer{
+
+}
+#tabla{
+  display: grid;
+  align-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+#tab{
+  align-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+h2 {
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-size: 40px;
+  color: #0d0f38;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+:focus {
+  outline: 0;
+}
+#cabecera{
+  font-family:sans-serif;
+  color:#fff;
+  font-size: 20px;
+  background-color: cornflowerblue;
+  margin-bottom: 3%;
+  padding-top: 2%;
+  padding-bottom: 5%;
+}
+
+#tablaT{
+  display:grid;
+  grid-template-columns: auto;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+
+
+}

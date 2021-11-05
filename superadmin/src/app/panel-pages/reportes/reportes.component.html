@@ -1,1 +1,45 @@
-<p>reportes works!</p>
+
+  <div id="layoutSidenav">
+    <div id="layoutSidenav_content">
+      <router-outlet></router-outlet>
+    </div>
+    <app-toolbar></app-toolbar>
+
+
+  </div>
+
+<h2>Reporte por Hotel</h2>
+<hr>
+<div class="container">
+
+        <div id="cuerpo">
+          <div class="input-group-prepend">
+            <label>Seleccione el hotel:</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01">
+             <option selected>Seleccione el Hotel</option>
+          </select>
+       </div>
+
+       <div >
+        <div id="tablaT" >
+            <table id="reporte">
+                <thead id="cabecera">
+                    <tr>
+                      <th>#</th>
+                      <th>Hotel</th>
+                      <th>Lugar</th>
+                      <th>Creado</th>
+                      <th>Actualizado</th>
+                    </tr>
+                </thead>
+
+                <tbody id="ordenes_tablas">
+
+                </tbody>
+            </table>
+
+        </div>
+
+</div>
+
