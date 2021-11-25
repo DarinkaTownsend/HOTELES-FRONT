@@ -18,6 +18,10 @@
       "prefix": "app",
       "architect": {
         "build": {
+          "aot": true,
+          "outputPath": "../../Hoteles_api/hoteles_back_app/frontcliente/static/frontcliente",
+          "deployUrl":"static/frontcliente/",
+          "baseHref": "/frontcliente/",
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/hoteles",
@@ -69,6 +73,10 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+            "deployUrl":"/",
+            "baseHref": "/"
+          },
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
