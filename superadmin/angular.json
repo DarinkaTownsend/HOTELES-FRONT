@@ -20,7 +20,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/superadmin",
+            "aot": true,
+            "outputPath": "../../Hoteles_api/hoteles_back_app/frontsuperadmin",
+            "deployUrl":"static/frontsuperadmin/",
+            "baseHref": "/frontsuperadmin/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -69,6 +72,10 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+            "deployUrl":"/",
+            "baseHref": "/"
+          },
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
