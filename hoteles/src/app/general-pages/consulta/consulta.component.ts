@@ -22,14 +22,14 @@ export class ConsultaComponent implements OnInit {
                   let titulo = document.getElementsByClassName('card-text te');
                   titulo[0].textContent  = "Personas: "+room["personas"]+" ";
                   titulo[1].textContent  = "Camas: "+room["cama"]+" ";
-                  
+
                   if(room["desayuno"]){
                     titulo[2].textContent  = "Desayuno: Sí";
                   }else{
                     titulo[2].textContent  = "Desayuno: No";
                   }
                   titulo[3].textContent  = "Cocina: "+room["cocina"]+" ";
-                  
+
                   if(room["wifi"]){
                     titulo[4].textContent  = "Wifi: Sí";
                   }else{
@@ -40,11 +40,19 @@ export class ConsultaComponent implements OnInit {
                   }else{
                     titulo[5].textContent  = "Lavanderia: No";
                   }
-                  
+
                 }
-              
+
 
             });
+  }
+
+  reservation(){
+    //console.log(document.getElementById("calendario1"));
+    console.log(document.querySelector("input[type=date]"));
+
+
+
   }
 
 }
