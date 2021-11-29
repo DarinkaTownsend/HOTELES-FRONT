@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./ingreso.component.css']
 })
 export class IngresoComponent implements OnInit {
-
+  usuario_viejos:any =[];
   miFormulario5: FormGroup;
 
   constructor(private usuariosService : UsuariosService,private router: Router) {
@@ -29,18 +29,40 @@ export class IngresoComponent implements OnInit {
 
 
 
-  miSubmit() {
+  miSubmit2() {
     console.log(this.miFormulario5.value);
     console.log(this.miFormulario5 );
-    const elUser = {"username": this.miFormulario5.value.usuario,
+    const elUser = {"usuario": this.miFormulario5.value.usuario,
                     "email": "",
-                    "password": this.miFormulario5.value.contrasena
+                    "password": this.miFormulario5.value.contrasena,
+                    "is_client": false,
     }
+
+    if(elUser.usuario!="darinka2000"){
+      Swal.fire({
+        title: 'Error!',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      })
+    }else{
+
+
+
+    fetch("http://127.0.0.1:8000/api/user_type/"+elUser.usuario)
+    .then(data=>data.json())
+      .then(data=>{
+        this.usuario_viejos=data;
+        console.log(elUser.usuario);
+      })
 
     this.usuariosService.login(elUser).subscribe(
       res  => {
+        if(this.usuario_viejos.is_client==false){
 
-        this.router.navigate(['./admin']);
+          this.router.navigate(['./admin']);
+        }
+
+
       },
       err  => {
         //console.log(err.error.message)
@@ -53,7 +75,7 @@ export class IngresoComponent implements OnInit {
       }
 
     )
-
+  }
   }
 
 }
