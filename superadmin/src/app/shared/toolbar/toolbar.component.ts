@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuariosService } from '../../service/usuarios.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private usuariosService : UsuariosService) { }
 
   ngOnInit(): void {
     let arrow = document.querySelectorAll(".arrow")
@@ -38,8 +39,10 @@ export class ToolbarComponent implements OnInit {
     })
   }
 
-  //outSesion2(){
-    //this.usuariosService.logout();
-  //}
+  logout(){
+    this.usuariosService.logout();
+  }
+
+
 
 }

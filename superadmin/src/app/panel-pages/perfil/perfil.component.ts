@@ -13,33 +13,21 @@ export class PerfilComponent implements OnInit {
   public correoC: string = '';
   public usuarioC: string = '';
 
+
   constructor(private usuariosService : UsuariosService) { }
 
   ngOnInit(): void {
+    var dat = localStorage.getItem("datosF2")||"{}"
+    var json2= JSON.parse(dat)
+    console.log("aqui")
+    console.log(json2.user)
 
-    var stringa = localStorage.getItem('user') || '{}'
-    var json = JSON.parse(stringa)
-    //Imprime el username que esta guardado en el localStorage
-    //console.log(json.username)
-    var user =json.username;
-    this.usuariosService.getUserClient(user).subscribe(
-      res  => {
-
-        var str = JSON.stringify(res)
-        var json2= JSON.parse(str)
-
-        this.nombresC = json2.nombres;
-        this.apellidosC = json2.apellidos;
-        this.correoC = json2.correo;
-        this.usuarioC= json2.usuario
-      },
-      err  => {
-        console.log(err)
-      }
-    )
-
-
-
+    this.nombresC = json2.user.first_name;
+    this.apellidosC = json2.user.last_name;
+    this.correoC = json2.user.email;
+    this.usuarioC= json2.user.username
   }
+
+
 
 }

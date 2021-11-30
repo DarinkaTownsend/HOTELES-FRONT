@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http'
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+
 
 
 @Injectable({
@@ -7,7 +10,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http'
 })
 export class UsuariosService {
 
-  API_URI = 'http://127.0.0.1:8000'
+  API_URI = 'https://sadminhoteles.pythonanywhere.com/api/'
 
   constructor(private http: HttpClient) { }
 
@@ -30,10 +33,16 @@ export class UsuariosService {
     return this.http.post(`${this.API_URI}/api/registration/`,usuario)
   }
   login(usuario: any){
-    return this.http.post(`${this.API_URI}/api/authentication/login/`,usuario)
+    return this.http.post(`${this.API_URI}authentication/login/`,usuario)
+
   }
+
+  cambiarContra(usuario: any){
+    return this.http.post(`${this.API_URI}authentication/password/change/`,usuario)
+
+  }
+
   logout(){
     localStorage.removeItem('username');
-    //localStorage.removeItem('idCursoE')
   }
 }
