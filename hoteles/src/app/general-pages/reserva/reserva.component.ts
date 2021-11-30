@@ -39,7 +39,8 @@ export class ReservaComponent implements OnInit {
                   }else{
                     titulo[5].textContent  = "Lavanderia: No";
                   }
-                  
+                  let titulo2 = document.getElementsByClassName('card-text');
+                  titulo[0].textContent  = room["description"];
                 }
               
 
