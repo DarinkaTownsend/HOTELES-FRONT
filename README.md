@@ -4,4 +4,5 @@
 # npm i angular-responsive-carousel
 # npm install sweetalert2  (en la carpeta superadmin y en hoteles)
 
-OTRO GITHUB PARA EL SUPERADMIN
+
+
