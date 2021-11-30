@@ -9,7 +9,7 @@ const routes: Routes = [
   loadChildren: () =>
   import('./panel-pages/panel-pages.module').then((m) => m.PanelPagesModule)}
 ];
-
+//cambio :v
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
