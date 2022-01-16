@@ -43,8 +43,14 @@ export class IngresoComponent implements OnInit {
 
 
   ngOnInit(): void {
+
   }
 
+
+  mostrar(){
+    var pass=document.getElementById("passwordF")
+
+  }
 
 
   enviar(values: any) {
@@ -72,8 +78,8 @@ export class IngresoComponent implements OnInit {
       console.log(this.data)
       this.usuariosService.login(elUser).subscribe(
         res  => {
-
           localStorage.setItem('datosF2',JSON.stringify(res));
+
           this.router.navigate(['/inicio']);
         },
         err  => {
@@ -88,65 +94,11 @@ export class IngresoComponent implements OnInit {
 
       )
 
+
+
     }
-/*
-      this.router.navigate(['/inicio']);
-      fetch("https://sadminhoteles.pythonanywhere.com/api/authentication/login/"+elUser)
-      .then(data=>data.json())
-      .then(data=>{
 
-        this.accesoU.access_token=data.access_token;
-        this.accesoU.refresh_token=data.refresh_token;
-        this.accesoU.user.username=data.user.username;
-        this.accesoU.user.pk=data.user.pk;
-        this.accesoU.user.email=data.user.email;
-        this.accesoU.user.first_name=data.user.first_name;
-        this.accesoU.user.last_name=data.user.last_name;
-
-      })
-
-      console.log(this.accesoU);
+  }
 
 
-
-
-
-
-
-
-
-
-
-
-    fetch("http://sadminhoteles.pythonanywhere.com/api/user_type/"+this.accesoU.user.pk)
-    .then(data=>data.json())
-      .then(data=>{
-        this.usuario_viejos=data;
-        console.log(elUser.usuario);
-      })
-
-    this.usuariosService.login(elUser).subscribe(
-      res  => {
-        if(this.usuario_viejos.is_client==false){
-
-          this.router.navigate(['./admin']);
-        }
-
-
-      },
-      err  => {
-        //console.log(err.error.message)
-        Swal.fire({
-          title: 'Error!',
-          text: err.error.message,
-          icon: 'error',
-          confirmButtonText: 'Aceptar'
-        })
-      }
-
-    )
-
-
-*/
-}
 }

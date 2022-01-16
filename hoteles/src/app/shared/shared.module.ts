@@ -3,6 +3,7 @@ import {RouterModule} from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavbarClientComponent } from './navbar-client/navbar-client.component';
+import { NavbarAdminComponent } from './navbar-admin/navbar-admin.component';
 
 
 @NgModule({
@@ -10,13 +11,14 @@ import { NavbarClientComponent } from './navbar-client/navbar-client.component';
 
 
     NavbarComponent,
-      NavbarClientComponent
+      NavbarClientComponent,
+      NavbarAdminComponent
   ],
   imports: [
     CommonModule,
     RouterModule
   ],
-  exports:[NavbarComponent,NavbarClientComponent]
+  exports:[NavbarComponent,NavbarClientComponent,NavbarAdminComponent]
 })
 export class SharedModule { }
 

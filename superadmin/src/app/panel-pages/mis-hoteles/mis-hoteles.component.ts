@@ -1,25 +1,48 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { UsuariosService } from '../../service/usuarios.service';
 
 @Component({
   selector: 'app-mis-hoteles',
   templateUrl: './mis-hoteles.component.html',
   styleUrls: ['./mis-hoteles.component.css']
 })
+
 export class MisHotelesComponent implements OnInit {
   hoteles:any =[];
-  constructor() { }
+
+
+  public tokenC: string='';
+  constructor(private usuariosService : UsuariosService) { }
+
 
   ngOnInit(): void {
+    //obtengo el token
+    var dat = localStorage.getItem("datosF2")||"{}"
+    var json2= JSON.parse(dat)
+    this.tokenC= json2.access_token
+    console.log(this.tokenC)
 
-            fetch("http://127.0.0.1:8000/api/hotels/")
-            .then(data => data.json())
-            .then(data => {
+  // obtengo los hoteles
 
-              this.hoteles=data
-              console.log(this.hoteles)
 
-              let tbody = document.getElementById("ordenes_tablas")
+  this.usuariosService.getHoteles(this.tokenC).subscribe(
+    res  => {
+      localStorage.setItem('Hoteles',JSON.stringify(res));
+    },
+    err  => {
 
+    }
+
+  )
+
+
+/*
+    console.log(this.hoteles)
+
+    this.hoteles=data
+
+    let tbody = document.getElementById("ordenes_tablas")
               if (tbody) {
                 tbody.innerHTML = "";
 
@@ -36,11 +59,7 @@ export class MisHotelesComponent implements OnInit {
                 }
 
               }
-
-            });
-
-
-
+              */
       }
 
 }

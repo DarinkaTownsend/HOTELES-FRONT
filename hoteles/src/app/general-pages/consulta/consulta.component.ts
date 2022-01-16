@@ -12,10 +12,9 @@ export class ConsultaComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    fetch("http://127.0.0.1:8000/api/room_types/1")
+    fetch("https://sadminhoteles.pythonanywhere.com/room_types/1")
       .then(data => data.json())
       .then(data => {
-
         this.rooms = data
         console.log(this.rooms)
         let contenedor = document.getElementsByClassName("container py-3");
@@ -105,7 +104,7 @@ export class ConsultaComponent implements OnInit {
             titulo[5].textContent = "Lavanderia: No";
           }*/
           contenedor[0].innerHTML += plantillaCarta;
-          
+
         }
 
 

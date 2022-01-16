@@ -7,7 +7,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http'
 })
 export class UsuariosService {
 
-  API_URI = 'http://127.0.0.1:8000'
+  API_URI = 'https://sadminhoteles.pythonanywhere.com'
 
   constructor(private http: HttpClient) { }
 
@@ -38,5 +38,25 @@ export class UsuariosService {
   }
   getRoomType(){
     return this.http.get(`${this.API_URI}/api/room_types/1`)
+  }
+
+  getDatosU(pk:any, token:string){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'auth': token
+      }),
+      responseType: 'text' as 'json'
+    };
+    return this.http.get(`${this.API_URI}/api/user_type/${pk}`,httpOptions)
+
+  }
+  getUsuarioCara(pk:any,token: string){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'auth': token
+      }),
+      responseType: 'text' as 'json',
+    }
+    return this.http.get(`${this.API_URI}/api/user_type/`+pk,httpOptions)
   }
 }

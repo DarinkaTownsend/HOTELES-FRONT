@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./administrador.component.css']
 })
 export class AdministradorComponent implements OnInit {
-
+  public usuario: any = '';
   constructor() { }
 
   ngOnInit(): void {
+    var stringa = localStorage.getItem('username')
+    this.usuario=stringa;
   }
 
 }

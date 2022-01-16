@@ -1,31 +1,27 @@
-<!--<app-header></app-header>-->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+
 <div class="login-wrap">
   <div class="login-html">
     <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
     <div class="login-form">
-
-
-
-
-
-      <div class="sign-in-htm">
-        <form [formGroup]="miFormulario" (ngSubmit)="miSubmit()" novalidate="">
-
+    <form [formGroup]="signupForm" (ngSubmit)="enviar(signupForm.value)">
           <div class="group">
             <label for="user" class="label">Username</label>
-            <input id="user" type="text" class="input" formControlName="usuario">
+            <input id="user" type="text" class="input" formControlName="usuario"/>
           </div>
-          <div class="group">
+
+          <div class="campo group">
             <label for="pass" class="label">Password</label>
-            <input id="pass" type="password" class="input" data-type="password" formControlName="contrasena">
+            <input class="input" type="password" id="passwordF" formControlName="contrasena"/>
+            <span class="input-group-addon glyphicon glyphicon glyphicon-eye-open" type="button" ></span>
           </div>
+
+
           <div class="group">
-            <input id="check" type="checkbox" class="check" checked>
-            <label for="check"><span class="icon"></span> Keep me Signed in</label>
-          </div>
-          <div class="group">
-            <input type="submit" class="button" value="Sign In">
+            <input class="button" type="submit">
           </div>
         </form>
         <div class="hr"></div>
@@ -34,52 +30,15 @@
         </div>
 
       </div>
-
-
-
-
-
-
-      <div class="sign-up-htm">
-        <form [formGroup]="miFormulario2" (ngSubmit)="miSubmit2()" novalidate="">
-          <div class="group">
-            <label for="name" class="label">Nombres</label>
-            <input id="name" type="text" class="input" name="name" formControlName="name">
-          </div>
-          <div class="group">
-            <label for="apellido" class="label">Apellidos</label>
-            <input id="apellido" type="text" class="input" name="apellido" formControlName="apellido">
-          </div>
-          <div class="group">
-            <label for="user" class="label">Username</label>
-            <input id="user" type="text" class="input" name="usuario" formControlName="usuario">
-          </div>
-          <div class="group">
-            <label for="pass" class="label">Password</label>
-            <input id="pass" type="password" class="input" data-type="password" name="contrasena" formControlName="contrasena">
-          </div>
-          <div class="group">
-            <label for="pass" class="label">Repeat Password</label>
-            <input id="pass" type="password" class="input" data-type="password" name="contrasena2" formControlName="contrasena2">
-          </div>
-          <div class="group">
-            <label for="pass" class="label">Email Address</label>
-            <input id="pass" type="text" class="input" name="correo" formControlName="correo">
-          </div>
-          <div class="group">
-            <input type="submit" class="button" value="Sign Up" >
-          </div>
-
-        </form>
-
-      </div>
-
-
-
+    </div>
 
     </div>
-  </div>
-</div>
+
+
+
+
+
+
 
 
 

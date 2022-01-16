@@ -1,21 +1,25 @@
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+
 <div class="login-wrap">
   <div class="login-html">
     <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
     <div class="login-form">
     <form [formGroup]="signupForm" (ngSubmit)="enviar(signupForm.value)">
           <div class="group">
             <label for="user" class="label">Username</label>
             <input id="user" type="text" class="input" formControlName="usuario"/>
           </div>
-          <div class="group">
+
+          <div class="campo group">
             <label for="pass" class="label">Password</label>
-            <input id="pass" type="password" class="input" data-type="password" formControlName="contrasena">
+            <input class="input" type="password" id="passwordF" formControlName="contrasena"/>
+            <span class="input-group-addon glyphicon glyphicon glyphicon-eye-open" type="button" (click)="mostrar()"></span>
           </div>
-          <div class="group">
-            <input id="check" type="checkbox" class="check" checked>
-            <label for="check"><span class="icon"></span> Keep me Signed in</label>
-          </div>
+
+
           <div class="group">
             <input class="button" type="submit">
           </div>
@@ -29,6 +33,20 @@
     </div>
 
     </div>
+    <script>
+      document.querySelector('.campo span').addEventListener('click', e => {
+    const passwordInput = document.querySelector('#password');
+    if (e.target.classList.contains('show')) {
+        e.target.classList.remove('show');
+        e.target.textContent = 'Ocultar';
+        passwordInput.type = 'text';
+    } else {
+        e.target.classList.add('show');
+        e.target.textContent = 'Mostrar';
+        passwordInput.type = 'password';
+    }
+});
+    </script>
 
 
 

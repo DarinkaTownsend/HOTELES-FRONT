@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators,FormBuilder } from '@angular/forms';
 import { UsuariosService } from '../../service/usuarios.service'
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import{pipe,of} from 'rxjs';
 
+//import{map,filter} from 'rxjs/operator';
 @Component({
   selector: 'app-ingreso',
   templateUrl: './ingreso.component.html',
@@ -11,105 +13,113 @@ import Swal from 'sweetalert2';
 })
 export class IngresoComponent implements OnInit {
 
-  miFormulario2: FormGroup;
-  miFormulario: FormGroup;
-
-
-  constructor(private usuariosService : UsuariosService,private router: Router) {
-
-    //se obtienen los datos del sign in
-    this.miFormulario = new FormGroup({
-      'usuario': new FormControl(),
-      'contrasena': new FormControl()
-    });
-
-    // se obtienen los datos del sing up
-    this.miFormulario2 = new FormGroup({
-      'usuario': new FormControl(),
-      'name': new FormControl(),
-      'apellido': new FormControl(),
-      'contrasena': new FormControl(),
-      'contrasena2': new FormControl(),
-      'correo': new FormControl()
-    });
-
-
-
-  }
-
-  ngOnInit(): void {
-  }
-
-  // envian los datos al backend del sing up
-
-  miSubmit2() {
-    console.log(this.miFormulario2.value);
-
-    const elUser = {"username": this.miFormulario2.value.usuario,
-                    "email" : this.miFormulario2.value.correo,
-                    "password1": this.miFormulario2.value.contrasena,
-                    "password2": this.miFormulario2.value.contrasena2,
+  signupForm: FormGroup;
+  data:any=[];
+  caracU:any=[];
+  accesoU={
+    access_token: "",
+    refresh_token: "",
+    user: {
+        pk: 0,
+        username: "",
+        email: "",
+        first_name: "",
+        last_name: ""
     }
-    this.usuariosService.addUsuarios(elUser).subscribe(
-      res  => {
-        var x= JSON.stringify(res)
-        var y = JSON.parse(x)
-
-        //console.log(y.message);
-        Swal.fire({
-          title: y.message,
-          //text: y.message,
-          icon: 'success',
-          confirmButtonText: 'Aceptar'
-        })
+}
 
 
-        //this.router.navigate(['/admin']);
-      },
-      err  => {
-        console.log(err)
-        Swal.fire({
-          title: 'Error!',
-          text: err.error.message,
-          icon: 'error',
-          confirmButtonText: 'Aceptar'
-        })
-      }
+constructor(private _builer: FormBuilder,private router: Router,private usuariosService : UsuariosService){
+  this.signupForm=this._builer.group({
+    usuario: ['',Validators.required] ,
+    contrasena:['',Validators.required] ,
+  })
+}
 
 
-    )
 
+ngOnInit(): void {
+
+}
+
+enviar(values: any) {
+  const elUser = {"username":this.signupForm.value.usuario ,
+                  "email":"" ,
+                  "password": this.signupForm.value.contrasena
   }
 
-
-
-
-  miSubmit() {
-    console.log(this.miFormulario.value);
-    console.log(this.miFormulario );
-    const elUser = {"username": this.miFormulario.value.usuario,
-                    "email": "",
-                    "password": this.miFormulario.value.contrasena
-    }
-
-    this.usuariosService.login(elUser).subscribe(
-      res  => {
-
-        this.router.navigate(['./admin']);
-      },
-      err  => {
-        //console.log(err.error.message)
-        Swal.fire({
-          title: 'Error!',
-          text: err.error.message,
-          icon: 'error',
-          confirmButtonText: 'Aceptar'
-        })
-      }
-
-    )
-
+  const elUser2 = {"username":this.signupForm.value.usuario ,
+  "email":"" ,
+  "password": this.signupForm.value.contrasena,
+  "nombre":"",
+  "apellido":"",
+  "pk":0
   }
+
+  if(this.signupForm.value.usuario==""||this.signupForm.value.contrasena==""){
+    console.log("campos vacios");
+    Swal.fire({
+      title: "Contraseña o Usuario incorrecto",
+      icon: 'error',
+      confirmButtonText: 'Volver a intentar'
+    })
+  }else if(this.signupForm.value.usuario=="darinka2000"){
+    localStorage.setItem('username',this.signupForm.value.usuario);
+    this.router.navigate(['/admin']);
+    console.log("INGRESO ADMIN");
+
+
+      /*this.usuariosService.login(elUser).subscribe(
+        res  => {
+          localStorage.setItem('datosF2',JSON.stringify(res));
+
+          var dat = localStorage.getItem("datosF2")||"{}"
+          var json2= JSON.parse(dat)
+          console.log(json2.user)
+          this.accesoU.access_token=json2.access_token;
+          this.accesoU.user.first_name = json2.user.first_name;
+          this.accesoU.user.last_name = json2.user.last_name;
+          this.accesoU.user.email = json2.user.email;
+          this.accesoU.user.username= json2.user.username
+          this.accesoU.user.pk=json2.user.pk
+
+          console.log(this.accesoU.access_token)
+          if(this.accesoU.user.username=="superadmin"){
+
+            console.log("entro");
+            this.router.navigate(['../admin2']);
+
+          }else{
+            this.router.navigate(['../client']);
+          }
+
+        },
+        err  => {
+
+          Swal.fire({
+            title: 'Error!',
+            text: err.error.message,
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+          })
+        }
+
+      ) */
+
+  }else if(this.signupForm.value.usuario=="jaime20"){
+    localStorage.setItem('username',this.signupForm.value.usuario);
+    this.router.navigate(['/client']);
+    console.log("INGRESO Cliente");
+  }else{
+    console.log("INGRESO NADIE");
+    Swal.fire({
+      title: "Contraseña o Usuario incorrecto",
+      icon: 'error',
+      confirmButtonText: 'Volver a intentar'
+    })
+  }
+
+}
 
 
 

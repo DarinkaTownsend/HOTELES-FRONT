@@ -26,6 +26,15 @@ export class UsuariosService {
     return this.http.get(`${this.API_URI}/usuarios`,httpOptions)
   }
   */
+  getHoteles(token:string){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'auth': token
+      }),
+      responseType: 'text' as 'json'
+    };
+    return this.http.post(`${this.API_URI}hotels`,httpOptions)
+  }
   getUserClient(userC: any){
     return this.http.get(`${this.API_URI}/api/hotels/1/${userC}`)
   }
@@ -36,7 +45,16 @@ export class UsuariosService {
     return this.http.post(`${this.API_URI}authentication/login/`,usuario)
 
   }
+  getDatosU(pk:any,token:string){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'auth': token
+      }),
+      responseType: 'text' as 'json'
+    };
+    return this.http.get(`${this.API_URI}user_type/${pk}`)
 
+  }
   cambiarContra(usuario: any){
     return this.http.post(`${this.API_URI}authentication/password/change/`,usuario)
 
