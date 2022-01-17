@@ -7,6 +7,7 @@ import { IngresoComponent } from './ingreso/ingreso.component';
 import { ConsultaComponent } from './consulta/consulta.component';
 import { ReservaComponent } from './reserva/reserva.component';
 import { ConfirmacionComponent } from './confirmacion/confirmacion.component';
+import { ContactosComponent } from './contactos/contactos.component';
 
 
 
@@ -21,6 +22,8 @@ const routes: Routes = [
     {path:"consultar", component:ConsultaComponent},
     {path:"reservar", component:ReservaComponent},
     {path:"confirmar", component:ConfirmacionComponent},
+    {path:"contacto", component:ContactosComponent}
+
 
 
 

@@ -1,0 +1,31 @@
+.botonEnviar{
+  display: grid;
+  grid-template-columns: auto;
+  padding-top: 3%;
+  padding-bottom: 5%;
+  align-content: center;
+  padding-left: 30%;
+  padding-right: 30%;
+}
+
+.btn:hover {
+  background: #8308eb;
+  color: #fff;
+}
+
+.btn{
+
+  font-size: 16px;
+  background-color: #090808;
+  color: #fff;
+  width: 50%;
+
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 1%;
+  padding-top: 1%;
+}

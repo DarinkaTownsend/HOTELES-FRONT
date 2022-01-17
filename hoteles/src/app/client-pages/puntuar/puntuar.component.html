@@ -1,1 +1,97 @@
-<p>puntuar works!</p>
+
+
+
+    <main role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">¡Nos encantaría saber tu opinión {{usuarioC}}!</h1>
+          <hr>
+          <h4>Califica nuestro servicio del 1 al 5 (1 = horrible, 5 = excelente)</h4>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Servicio al Cliente</h2>
+            <i class="imagenPrin"><img src="../../../assets/servicioCliente.png" width="150px" height = "150px" alt="#" /></i>
+            <div class="input-group mt-4">
+              <div class="input-group-prepend">
+                <label class="input-group-text">Calificación</label>
+              </div>
+              <input type="number" placeholder="5" min="0" max="5" id="01" value="5">
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <h2>Trato de empleados</h2>
+            <i class="imagenPrin"><img src="../../../assets/botones.png" width="150px" height = "150px" alt="#" /></i>
+            <div class="input-group mt-4">
+              <div class="input-group-prepend">
+                <label class="input-group-text">Calificación</label>
+              </div>
+              <input type="number" placeholder="5" min="0" max="5" id="02" value=5>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <h2>Calidad de alimentos</h2>
+            <i class="imagenPrin"><img src="../../../assets/desayuno.png" width="150px" height = "150px" alt="#" /></i>
+            <div class="input-group mt-4">
+              <div class="input-group-prepend">
+                <label class="input-group-text">Calificación</label>
+              </div>
+              <input type="number" placeholder="5" min="0" max="5" id="03" value=5>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <h2>Instalaciones</h2>
+            <i class="imagenPrin"><img src="../../../assets/piscina.png" width="150px" height = "150px" alt="#" /></i>
+            <div class="input-group mt-4">
+              <div class="input-group-prepend">
+                <label class="input-group-text">Calificación</label>
+              </div>
+              <input type="number" placeholder="5" min="0" max="5" id="04" value=5>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <h2>Habitacion</h2>
+            <i class="imagenPrin"><img src="../../../assets/camaI.png" width="150px" height = "150px" alt="#" /></i>
+            <div class="input-group mt-4">
+              <div class="input-group-prepend">
+                <label class="input-group-text">Calificación</label>
+              </div>
+              <input type="number" placeholder="5" min="0" max="5" id="05" value=5>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <h2>Limpieza</h2>
+            <i class="imagenPrin"><img src="../../../assets/limpieza.png" width="150px" height = "150px" alt="#" /></i>
+            <div class="input-group mt-4">
+              <div class="input-group-prepend">
+                <label class="input-group-text">Calificación</label>
+              </div>
+              <input type="number" placeholder="5" min="0" max="5" id="06" value=5>
+            </div>
+          </div>
+
+        </div>
+
+        <hr>
+
+      </div>
+      <div class="botonEnviar">
+        <button class="btn" (click)="enviarForm()" >Enviar calificación</button>
+      </div>
+
+
+    </main>
+
+
+

@@ -17,25 +17,29 @@
                  <div class="navbar-collapse collapse" >
                     <ul class="navbar-nav mr-auto">
                        <li class="nav-item">
-                          <a class="nav-link" routerLink='/inicio'    >Inicio</a>
+                          <a class="nav-link" routerLink='/client/'    >Inicio</a>
                        </li>
                        <li class="nav-item">
-                        <a class="nav-link" routerLink='/reservation'   >Mis reservaciones</a>
+                        <a class="nav-link" routerLink='/client/reservaciones'   >Reservaciones</a>
                         </li>
 
                        <li class="nav-item">
-                          <a class="nav-link" routerLink='/servicios'   >Facturas</a>
+                          <a class="nav-link" routerLink='/client/facturas'   >Facturas</a>
                        </li>
                        <li class="nav-item">
-                        <a class="nav-link" routerLink='/servicios'   >Puntuar Hotel</a>
+                        <a class="nav-link" routerLink='/client/puntuacion'   >Puntuación</a>
                      </li>
                        <li class="nav-item">
-                          <a class="nav-link" routerLink='/contactos'   >Contactos</a>
+                          <a class="nav-link" routerLink='/client/contactos'   >Contactos</a>
                        </li>
 
-                       <li class="nav-item">
-                        <i><img src="../../../assets/usuario.png" width= "35" height= "35" alt="#" /></i>
+                      <li class="nav-item">
+                        <a class="nav-link" routerLink='/client/cuenta'   >Cuenta</a>
                       </li>
+
+                      <li class="nav-item">
+                        <a (click)="outSesion()" class="nav-link" routerLink='/' >Salir</a>
+                     </li>
 
                     </ul>
                  </div>
