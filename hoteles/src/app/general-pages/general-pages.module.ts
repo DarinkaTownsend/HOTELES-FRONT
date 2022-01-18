@@ -24,9 +24,10 @@ import { PaqueteOceanoComponent } from './paquete-oceano/paquete-oceano.componen
 import { PaqueteFamiliarComponent } from './paquete-familiar/paquete-familiar.component';
 import { PaqueteParejaComponent } from './paquete-pareja/paquete-pareja.component';
 import { CheckoutTurismoComponent } from './checkout-turismo/checkout-turismo.component';
+import { NosotrosComponent } from './nosotros/nosotros.component';
 
 @NgModule({
-  declarations: [GeneralPagesComponent, InicioComponent, IngresoComponent, ConsultaComponent, ReservaComponent, ConfirmacionComponent, ContactosComponent, ServiciosComponent, PaqueteOceanoComponent, PaqueteFamiliarComponent, PaqueteParejaComponent, CheckoutTurismoComponent,],
+  declarations: [GeneralPagesComponent, InicioComponent, IngresoComponent, ConsultaComponent, ReservaComponent, ConfirmacionComponent, ContactosComponent, ServiciosComponent, PaqueteOceanoComponent, PaqueteFamiliarComponent, PaqueteParejaComponent, CheckoutTurismoComponent, NosotrosComponent,],
   imports: [
     CommonModule,
     FormsModule,

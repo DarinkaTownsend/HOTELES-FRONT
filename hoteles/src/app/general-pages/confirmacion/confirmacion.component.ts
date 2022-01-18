@@ -9,6 +9,10 @@ import Swal from 'sweetalert2';
 })
 export class ConfirmacionComponent implements OnInit {
   miFormulario3: FormGroup;
+
+  habitacion:any="";
+  precio:any="";
+
   constructor() {
     this.miFormulario3 = new FormGroup({
       'usuario': new FormControl(),
@@ -24,12 +28,13 @@ export class ConfirmacionComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  Reservar(){
+  Finalizar(){
     Swal.fire({
-      title: 'Se ha realizado su reservación',
-      //text: y.message,
-      icon: 'success',
-      confirmButtonText: 'Aceptar'
+      title:"Reserva realizada",
+      text:"¡Gracias por su compra!",
+      icon:"success",
+      confirmButtonColor:"#3085d6",
+      confirmButtonText:"Cerrar"
     })
   }
 }

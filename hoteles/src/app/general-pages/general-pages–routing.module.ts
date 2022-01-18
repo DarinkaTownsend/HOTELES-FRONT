@@ -13,6 +13,7 @@ import { PaqueteOceanoComponent } from './paquete-oceano/paquete-oceano.componen
 import { PaqueteFamiliarComponent } from './paquete-familiar/paquete-familiar.component';
 import { PaqueteParejaComponent } from './paquete-pareja/paquete-pareja.component';
 import { CheckoutTurismoComponent } from './checkout-turismo/checkout-turismo.component';
+import { NosotrosComponent } from './nosotros/nosotros.component';
 
 
 
@@ -32,7 +33,9 @@ const routes: Routes = [
     {path:"pareja", component:PaqueteParejaComponent},
     {path:"oceano", component:PaqueteOceanoComponent},
     {path:"familiar", component:PaqueteFamiliarComponent},
-    {path:"pagart", component:CheckoutTurismoComponent}
+    {path:"pagart", component:CheckoutTurismoComponent},
+    {path:"nosotros", component:NosotrosComponent}
+
   ]
   }
 ];
