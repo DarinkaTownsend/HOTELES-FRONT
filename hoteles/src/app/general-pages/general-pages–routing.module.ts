@@ -8,6 +8,7 @@ import { ConsultaComponent } from './consulta/consulta.component';
 import { ReservaComponent } from './reserva/reserva.component';
 import { ConfirmacionComponent } from './confirmacion/confirmacion.component';
 import { ContactosComponent } from './contactos/contactos.component';
+import { ServiciosComponent } from './servicios/servicios.component';
 
 
 
@@ -22,7 +23,9 @@ const routes: Routes = [
     {path:"consultar", component:ConsultaComponent},
     {path:"reservar", component:ReservaComponent},
     {path:"confirmar", component:ConfirmacionComponent},
-    {path:"contacto", component:ContactosComponent}
+    {path:"contacto", component:ContactosComponent},
+    {path:"servicios", component:ServiciosComponent}
+
 
 
 

@@ -19,9 +19,10 @@ import { ConsultaComponent } from './consulta/consulta.component';
 import { ReservaComponent } from './reserva/reserva.component';
 import { ConfirmacionComponent } from './confirmacion/confirmacion.component';
 import { ContactosComponent } from './contactos/contactos.component';
+import { ServiciosComponent } from './servicios/servicios.component';
 
 @NgModule({
-  declarations: [GeneralPagesComponent, InicioComponent, IngresoComponent, ConsultaComponent, ReservaComponent, ConfirmacionComponent, ContactosComponent,],
+  declarations: [GeneralPagesComponent, InicioComponent, IngresoComponent, ConsultaComponent, ReservaComponent, ConfirmacionComponent, ContactosComponent, ServiciosComponent,],
   imports: [
     CommonModule,
     FormsModule,
