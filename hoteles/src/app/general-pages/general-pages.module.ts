@@ -20,9 +20,13 @@ import { ReservaComponent } from './reserva/reserva.component';
 import { ConfirmacionComponent } from './confirmacion/confirmacion.component';
 import { ContactosComponent } from './contactos/contactos.component';
 import { ServiciosComponent } from './servicios/servicios.component';
+import { PaqueteOceanoComponent } from './paquete-oceano/paquete-oceano.component';
+import { PaqueteFamiliarComponent } from './paquete-familiar/paquete-familiar.component';
+import { PaqueteParejaComponent } from './paquete-pareja/paquete-pareja.component';
+import { CheckoutTurismoComponent } from './checkout-turismo/checkout-turismo.component';
 
 @NgModule({
-  declarations: [GeneralPagesComponent, InicioComponent, IngresoComponent, ConsultaComponent, ReservaComponent, ConfirmacionComponent, ContactosComponent, ServiciosComponent,],
+  declarations: [GeneralPagesComponent, InicioComponent, IngresoComponent, ConsultaComponent, ReservaComponent, ConfirmacionComponent, ContactosComponent, ServiciosComponent, PaqueteOceanoComponent, PaqueteFamiliarComponent, PaqueteParejaComponent, CheckoutTurismoComponent,],
   imports: [
     CommonModule,
     FormsModule,

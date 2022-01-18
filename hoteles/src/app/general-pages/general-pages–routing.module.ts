@@ -9,6 +9,10 @@ import { ReservaComponent } from './reserva/reserva.component';
 import { ConfirmacionComponent } from './confirmacion/confirmacion.component';
 import { ContactosComponent } from './contactos/contactos.component';
 import { ServiciosComponent } from './servicios/servicios.component';
+import { PaqueteOceanoComponent } from './paquete-oceano/paquete-oceano.component';
+import { PaqueteFamiliarComponent } from './paquete-familiar/paquete-familiar.component';
+import { PaqueteParejaComponent } from './paquete-pareja/paquete-pareja.component';
+import { CheckoutTurismoComponent } from './checkout-turismo/checkout-turismo.component';
 
 
 
@@ -24,14 +28,11 @@ const routes: Routes = [
     {path:"reservar", component:ReservaComponent},
     {path:"confirmar", component:ConfirmacionComponent},
     {path:"contacto", component:ContactosComponent},
-    {path:"servicios", component:ServiciosComponent}
-
-
-
-
-
-
-
+    {path:"servicios", component:ServiciosComponent},
+    {path:"pareja", component:PaqueteParejaComponent},
+    {path:"oceano", component:PaqueteOceanoComponent},
+    {path:"familiar", component:PaqueteFamiliarComponent},
+    {path:"pagart", component:CheckoutTurismoComponent}
   ]
   }
 ];

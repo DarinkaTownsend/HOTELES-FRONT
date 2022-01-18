@@ -1,2 +1,105 @@
+.container {
+  max-width: 960px;
+}
+
+
+
+
+.fondo1 {
+  background-image: url("../../../assets/turismo/t3.jpg");
+  background-repeat:no-repeat;
+  background-position-x:center;
+  background-position-y:center;
+  background-size: 100%;
+
+
+}
+
+.fondoC{
+  background-color: #f8f9fa;
+}
+
+.fondo2 {
+  background-image: url("../../../assets/turismo/t2.jpg");
+  background-repeat:no-repeat;
+  background-position-x:center;
+  background-position-y:center;
+  background-size: 100%;
+
+
+}
+
+.fondo3 {
+  background-image: url("../../../assets/turismo/t7.jpg");
+  background-repeat:no-repeat;
+  background-position-x:center;
+  background-position-y:center;
+  background-size: 100%;
+
+
+}
+
+.fuente{
+  color: #fff;
+  padding-bottom: 20px;
+  font-weight: 900;
+  font-size: 45px;
+}
+
+
+
+.fondo {
+  display: block;
+  position: relative;
+  background-color: #006c6c;
+  border-radius: 40px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+
+.titlepage {
+  text-align: center;
+  padding-bottom: 3%;
+  font-size: 20px;
+
+}
+
+h2 {
+  color: #fff;
+  padding-bottom: 20px;
+  font-weight: 900;
+  font-size: 45px;
+}
+
+p {
+  color: #fff;
+}
+
+
+.boton {
+  font-size: 16px;
+  background-color: #ffd63f;
+  color: #003617;
+  padding: 5px 0px;
+  width: 100%;
+  max-width: 190px;
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  }
+
+  .boton:hover{
+    background: #ff593c;
+    color: #fff;
+  }
+
+
+
+
 
 

@@ -1,29 +1,47 @@
-#map {
-  height: 50%;
-  min-height: 790px;
+#imagen{
+  width: 100%;
+
 }
 
-.mapa{
+.fondo{
+  background-color: #f8f9fa;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+.segundo{
   display: grid;
   grid-template-rows: auto auto;
-  text-align: center;
+  align-content: center;
+  align-items: center;
 }
 
 .todos{
   display: grid;
   grid-template-columns: auto auto;
-  align-content: center;
+  align-content: space-around;
+  padding-top: 5%;
+
 }
 
-h2 {
-  padding-top: 5%;
+.titlepage {
+  text-align: center;
   padding-bottom: 3%;
-  font-size: 50px;
-  color: #050505;
-  text-align: justify;
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
+  font-size: 20px;
+
 }
+
+.titlepage h2 {
+  color: #003617;
+  padding-bottom: 20px;
+  font-weight: 900;
+  font-size: 45px;
+}
+
+.titlepage p {
+  color: #003617;
+}
+
+
 
 * {
   box-sizing: border-box !important;
@@ -90,14 +108,13 @@ button {
 /** contact section **/
 
 .contact {
-  padding-top: 10%;
   font-family: Poppins;
   padding-left: 5%;
   padding-right: 5%;
 }
 
 .main_form {
-  background: #252529;
+  background:  #006c6c;
   padding: 55px 55px;
   border-radius: 30px;
   /*Aqui se define el margen de abajo */
@@ -130,8 +147,8 @@ button {
 .contact .main_form .send {
   font-size: 16px;
   transition: ease-in all 0.5s;
-  background-color: #fff;
-  color: #ef4259;
+  background-color: #fbffb6;
+  color: #003617;
   padding: 12px 70px;
   margin: 0 auto;
   display: block;
@@ -139,7 +156,7 @@ button {
 }
 
 .contact .main_form .send:hover {
-  background-color: #000000;
+  background-color: #ff593c;
   transition: ease-in all 0.5s;
   color: #fff;
 }
