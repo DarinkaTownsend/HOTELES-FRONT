@@ -63,7 +63,7 @@ enviar(values: any) {
       icon: 'error',
       confirmButtonText: 'Volver a intentar'
     })
-  }else if(this.signupForm.value.usuario=="darinka2000"){
+  }else if(this.signupForm.value.usuario=="darinka2000"||this.signupForm.value.usuario=="cliente02"){
     localStorage.setItem('username',this.signupForm.value.usuario);
     this.router.navigate(['/admin']);
     console.log("INGRESO ADMIN");
@@ -106,9 +106,9 @@ enviar(values: any) {
 
       ) */
 
-  }else if(this.signupForm.value.usuario=="jaime20"){
+  }else if(this.signupForm.value.usuario=="jaime20" ||this.signupForm.value.usuario=="cliente01"){
     localStorage.setItem('username',this.signupForm.value.usuario);
-    this.router.navigate(['/client']);
+    this.router.navigate(['/client/inicio']);
     console.log("INGRESO Cliente");
   }else{
     console.log("INGRESO NADIE");

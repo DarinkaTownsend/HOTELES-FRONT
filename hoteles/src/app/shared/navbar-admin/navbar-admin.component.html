@@ -1,39 +1,47 @@
-<div class="header" id="cabecera">
-  <div class="container">
-    <div class="row">
+<header>
+  <!-- header inner -->
+  <div class="header pegajoso" id="cabecera" >
 
-          <nav class="navigation navbar navbar-expand-md navbar-dark ">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation" (click)="myFunction()">
-              <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="navbar-collapse collapse" id="navbarsExample04">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                      <a class="nav-link" routerLink='/admin' >Panel de Control</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" routerLink='/admin/reservaciones' > Reservaciones </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" routerLink='/admin/habitaciones' >Habitaciones</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" routerLink='/admin/publicidad' >Publicidad</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" routerLink='/admin/reportes' >Reportes</a>
-                    </li>
-                    <li class="nav-item">
-                      <a (click)="outSesion()" class="nav-link" routerLink='/' >Cerrar sesión</a>
-                       <!-- En caso que al cerrar sesion quiera redirigirse mejor al login-->
-                      <!--<a (click)="outSesion()" class="nav-link" routerLink='/ingreso' >Cerrar sesión</a>-->
-                    </li>
-                </ul>
-              </div>
-          </nav>
-        </div>
+        <div class="objetos" >
 
-  </div>
-</div>
+          <div>
+            <img src="../../../assets/palmera.png" alt="#" width="50" height="50"/>
+
+          </div>
 
 
+
+
+
+              <nav class="navigation  navbar-expand-md navbar-dark " >
+
+                    <ul class="navbar-nav mr-auto" id="cabe">
+                       <li class="nav-item">
+                          <a class="nav-link" routerLink='/admin/'    >Panel de control</a>
+                       </li>
+                       <li class="nav-item">
+                          <a class="nav-link" routerLink='/admin/reservaciones'  > Reservaciones</a>
+                       </li>
+                       <li class="nav-item">
+                          <a class="nav-link" routerLink='/admin/habitaciones'   > Habitaciones</a>
+                       </li>
+                       <li class="nav-item">
+                          <a class="nav-link" routerLink='/admin/publicidad'   >Publicidad</a>
+                       </li>
+                       <li class="nav-item">
+                          <a class="nav-link" routerLink='/admin/reportes'   >Reportes</a>
+                       </li>
+
+
+
+                       <li class="nav-item">
+                        <a class="nav-link" routerLink='/'  (click)="outSesion()" >Salir</a>
+                      </li>
+                    </ul>
+
+              </nav>
+           </div>
+
+     </div>
+
+</header>

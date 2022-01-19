@@ -66,4 +66,30 @@ img {
 :focus {
   outline: 0;
 }
+.container{
+  padding-top: 6%;
+}
+
+.boton {
+  font-size: 16px;
+  background-color: #ffd63f;
+  color: #003617;
+  padding: 5px 0px;
+  width: 100%;
+  max-width: 190px;
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  border:none;
+
+  }
+
+  .boton:hover{
+    background: #ff593c;
+    color: #fff;
+  }
 
