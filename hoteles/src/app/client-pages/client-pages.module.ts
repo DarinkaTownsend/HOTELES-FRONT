@@ -11,6 +11,9 @@ import { MisReservacionesComponent } from './mis-reservaciones/mis-reservaciones
 import { FacturasComponent } from './facturas/facturas.component';
 import { ContactoCComponent } from './contacto-c/contacto-c.component';
 import { CuentaComponent } from './cuenta/cuenta.component';
+import { ConsultarClientComponent } from './consultar-client/consultar-client.component';
+import { ReservarClientComponent } from './reservar-client/reservar-client.component';
+import { ConfirmarClientComponent } from './confirmar-client/confirmar-client.component';
 //import { HeaderdosComponent } from '../shared/components/headerdos/headerdos.component'
 
 
@@ -19,7 +22,7 @@ import { CuentaComponent } from './cuenta/cuenta.component';
 
 
 @NgModule({
-  declarations: [ClientPagesComponent, ClienteInicioComponent, PuntuarComponent, MisReservacionesComponent, FacturasComponent, ContactoCComponent, CuentaComponent,
+  declarations: [ClientPagesComponent, ClienteInicioComponent, PuntuarComponent, MisReservacionesComponent, FacturasComponent, ContactoCComponent, CuentaComponent, ConsultarClientComponent, ReservarClientComponent, ConfirmarClientComponent,
 
   ],
   imports: [

@@ -22,7 +22,7 @@ carousel .carousel-cells .carousel-cell{
 	text-align:center;
 	width:30px;
 	height:30px;
-	background-color:#d9d9d9;
+	background-color:#e5f4fc;
 	position:absolute;
 	top:0;
 	right:0px;
@@ -30,6 +30,12 @@ carousel .carousel-cells .carousel-cell{
 }
 
 #calendario{
+  padding-left: 4%;
+  padding-right:4%;
+  text-align: center;
+}
+
+#calendario1{
   padding-left: 4%;
   padding-right:4%;
   text-align: center;
@@ -76,7 +82,7 @@ select:focus{ outline: none;}
 #fondoG {
   height: 300px;
   width: 100%;
-  background-image: url("../../../assets/h1.jpg");
+  background-image: url("../../../assets/fondoI.jpg");
   background-repeat:no-repeat;
   background-position-x:center;
   background-position-y:center;
@@ -84,7 +90,7 @@ select:focus{ outline: none;}
 }
 
 .cabecera{
-  color: #fff;
+  color: #e5f4fc;
   height: 200px;
   line-height: 200px;
   text-align: center;
@@ -93,14 +99,15 @@ select:focus{ outline: none;}
 }
 
 #check{
-  background-color:#104c97;
+  background-color:#006c6c;
   margin-top: 3%;
   padding: 1% 1% 1% 1%;
+  border-radius: 40px;
 }
 .boton {
   font-size: 16px;
-  background-color: #262728;
-  color: #fff;
+  background-color: #ffd63f;
+  color: #003617;
   padding: 5px 0px;
   width: 100%;
   max-width: 190px;
@@ -114,6 +121,84 @@ select:focus{ outline: none;}
   }
 
   .boton:hover{
-    background: #019cdd;
+    background: #ff593c;
     color: #fff;
   }
+
+
+.Services {
+  margin-top: 1%;
+  padding: 60px 0;
+  background: #fff;
+}
+
+.Services .titlepage {
+  text-align: center;
+  padding-bottom: 3%;
+  font-size: 20px;
+
+}
+.titlepage2{
+  color: #003617;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  font-weight: 900;
+  font-size: 45px;
+  text-align: center;
+}
+.Services .titlepage h2 {
+  color: #003617;
+  padding-bottom: 20px;
+  font-weight: 900;
+  font-size: 45px;
+}
+
+.Services .titlepage p {
+  color: #003617;
+}
+
+.Services .Services-box i {
+  background: #006c6c;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  display: inline-block;
+  padding-top: 19px;
+}
+
+
+
+.Services .Services-box h3 {
+  padding: 20px 0px 20px 0px;
+  font-size: 20px;
+  line-height: 25px;
+  color: #fff;
+  display: block;
+  font-weight: 500;
+}
+
+.Services .Services-box {
+  text-align: center;
+  background-color: #006c6c;
+  border-radius: 20px;
+
+  padding: 40px;
+  transition: ease-in all 0.5s;
+  margin-bottom: 30px;
+}
+
+.Services .Services-box:hover {
+  background: #fbffb6;
+  transition: ease-in all 0.5s;
+  cursor: pointer;
+
+}
+
+.Services .Services-box p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #003617;
+}
+
+
+

@@ -1,9 +1,11 @@
 .container{
   display: grid;
   align-content: center;
+  padding-top: 10%;
 }
 .todo{
   padding-bottom: 40%;
+
 }
 
 .formT{
@@ -32,27 +34,26 @@
 }
 
 .btn{
-
-  font-size: 16px;
-  background-color: #262728;
-  color: #fff;
+  font-size: 20px;
+  background-color: #ffd63f;
+  color: #003617;
   padding: 5px 0px;
-  border-radius: 20px;
-
-
-  max-width: 190px;
+  width: 100%;
+  max-width: 70%;
   display: flex;
   justify-content: center;
   text-align: justify;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 20px;
-  width: 50%;
+  border-radius: 5px;
+  border:none;
+
 
 }
 
 
 .btn:hover {
-  background: #ff5722;
+  background: #ff593c;
   color: #fff;
 }

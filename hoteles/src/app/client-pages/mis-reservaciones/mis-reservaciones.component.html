@@ -1,1 +1,80 @@
-<p>mis-reservaciones works!</p>
+<div class="ini2">
+  <div class="container ini">
+    <h1 class="display-3">¡Estas son tus reservaciones Activas {{usuarioC}}!</h1>
+    <hr>
+  </div>
+</div>
+
+<div class="container">
+  <main class="col-12 ms-sm-auto px-md-4">
+      <div class="table-responsive">
+          <div class="table-wrapper">
+              <table id="reporte" class="table table-striped table-hover">
+                  <thead>
+                      <tr>
+                          <th>#</th>
+                          <th>Fecha de Reservación</th>
+                          <th>Costo</th>
+                          <th>Extender reserva</th>
+                          <th>Cancelar reserva</th>
+                      </tr>
+                  </thead>
+                  <tbody id="ordenes_tablas">
+
+                  </tbody>
+              </table>
+
+          </div>
+      </div>
+  </main>
+</div>
+
+<div class="ini2">
+  <div class="container ini">
+    <h1 class="display-3">¡Estas son tus reservaciones Pasadas {{usuarioC}}!</h1>
+    <hr>
+  </div>
+</div>
+
+<div class="container">
+  <main class="col-12 ms-sm-auto px-md-4">
+      <div class="row d-flex justify-content-between">
+          <div class="col-sm-4">
+              <div class="input-group mt-4">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="inputGroupSelect01">Reporte</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01">
+                  <option selected>Reservaciones</option>
+                  <option>Terminadas</option>
+                  <option>Canceladas</option>
+                  <option>Todas</option>
+
+                </select>
+              </div>
+          </div>
+
+
+      </div>
+      <div class="table-responsive">
+          <div class="table-wrapper">
+              <table id="reporte" class="table table-striped table-hover">
+                  <thead>
+                      <tr>
+                          <th>#</th>
+                          <th>Fecha de Reservación</th>
+                          <th>Estado</th>
+                          <th>Costo</th>
+                          <th>Extender reserva</th>
+                      </tr>
+                  </thead>
+                  <tbody id="ordenes_tablas">
+
+                  </tbody>
+              </table>
+
+          </div>
+      </div>
+  </main>
+</div>
+

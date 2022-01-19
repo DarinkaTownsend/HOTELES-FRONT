@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mis-reservaciones.component.css']
 })
 export class MisReservacionesComponent implements OnInit {
-
+  usuarioC:any=""
   constructor() { }
 
   ngOnInit(): void {
+    this.usuarioC=localStorage.getItem("username")
   }
 
 }

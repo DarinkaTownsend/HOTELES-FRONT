@@ -1,58 +1,49 @@
 <header>
   <!-- header inner -->
-  <div class="header" id="cabecera">
-    <div class="container">
-      <div class="row" >
-         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
-            <div class="full">
-               <div class="center-desk">
-                  <div class="logo">
-                   <i><img src="../../../assets/logo.png" width= "150" height= "75" alt="#" /></i>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9" id="cabe">
-              <nav class="navigation navbar navbar-expand-md navbar-dark ">
-                 <div class="navbar-collapse collapse" >
-                    <ul class="navbar-nav mr-auto">
-                       <li class="nav-item">
-                          <a class="nav-link" routerLink='/client/'    >Inicio</a>
-                       </li>
-                       <li class="nav-item">
-                        <a class="nav-link" routerLink='/client/reservaciones'   >Reservaciones</a>
-                        </li>
+  <div class="header pegajoso" id="cabecera" >
 
+        <div class="objetos" >
+
+          <div>
+            <img src="../../../assets/palmera.png" alt="#" width="50" height="50"/>
+
+          </div>
+
+
+
+
+
+              <nav class="navigation  navbar-expand-md navbar-dark " >
+
+                    <ul class="navbar-nav mr-auto" id="cabe">
                        <li class="nav-item">
-                          <a class="nav-link" routerLink='/client/facturas'   >Facturas</a>
+                          <a class="nav-link" routerLink='/client/inicio'    >Inicio</a>
                        </li>
                        <li class="nav-item">
-                        <a class="nav-link" routerLink='/client/puntuacion'   >Puntuación</a>
-                     </li>
+                          <a class="nav-link" routerLink='/client/reservaciones'  > Mis reservas</a>
+                       </li>
+                       <li class="nav-item">
+                          <a class="nav-link" routerLink='/client/facturas'   > Facturas</a>
+                       </li>
+                       <li class="nav-item">
+                          <a class="nav-link" routerLink='/client/puntuacion'   >Puntuación</a>
+                       </li>
                        <li class="nav-item">
                           <a class="nav-link" routerLink='/client/contactos'   >Contactos</a>
                        </li>
 
-                      <li class="nav-item">
+                       <li class="nav-item">
                         <a class="nav-link" routerLink='/client/cuenta'   >Cuenta</a>
                       </li>
 
-                      <li class="nav-item">
-                        <a (click)="outSesion()" class="nav-link" routerLink='/' >Salir</a>
-                     </li>
-
+                       <li class="nav-item">
+                        <a class="nav-link" routerLink='/'  (click)="outSesion()" >Salir</a>
+                      </li>
                     </ul>
-                 </div>
+
               </nav>
            </div>
-      </div>
-    </div>
-  </div>
+
+     </div>
+
 </header>
-
-
-
-
-
-
-

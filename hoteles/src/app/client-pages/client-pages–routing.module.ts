@@ -8,18 +8,24 @@ import { CuentaComponent } from './cuenta/cuenta.component';
 import { FacturasComponent } from './facturas/facturas.component';
 import { MisReservacionesComponent } from './mis-reservaciones/mis-reservaciones.component';
 import { PuntuarComponent } from './puntuar/puntuar.component';
-
+import { ConsultarClientComponent } from './consultar-client/consultar-client.component';
+import { ReservarClientComponent } from './reservar-client/reservar-client.component';
+import { ConfirmarClientComponent } from './confirmar-client/confirmar-client.component';
 
 
 const routes: Routes = [
   {path:"", component:ClientPagesComponent,
   children:[
-    {path:"", component:ClienteInicioComponent},
+    {path:"inicio", component:ClienteInicioComponent},
     {path:"contactos", component:ContactoCComponent},
     {path:"cuenta", component:CuentaComponent},
     {path:"facturas", component:FacturasComponent},
     {path:"reservaciones", component:MisReservacionesComponent},
-    {path:"puntuacion", component:PuntuarComponent}
+    {path:"puntuacion", component:PuntuarComponent},
+    {path:"consultarc", component:ConsultarClientComponent},
+    {path:"reservarc", component:ReservarClientComponent},
+    {path:"confirmarc", component:ConfirmarClientComponent}
+
   ]
   }
 ];

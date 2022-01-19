@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./facturas.component.css']
 })
 export class FacturasComponent implements OnInit {
+  usuarioC:any=""
 
   constructor() { }
 
   ngOnInit(): void {
+    this.usuarioC=localStorage.getItem("username")
   }
 
 }
