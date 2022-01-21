@@ -15,6 +15,30 @@ body {
   font-weight: normal;
 }
 
+.boton{
+  font-size: 20px;
+  background-color: #ffd63f;
+  color: #003617;
+  padding: 5px 0px;
+  width: 100%;
+  max-width: 70%;
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border:none;
+
+  }
+
+  .boton:hover{
+    background: #ff593c;
+    color: #fff;
+    text-decoration: none;
+  }
+
 
 h1,
 h2 {

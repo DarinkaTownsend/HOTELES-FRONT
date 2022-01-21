@@ -63,7 +63,7 @@ enviar(values: any) {
       icon: 'error',
       confirmButtonText: 'Volver a intentar'
     })
-  }else if(this.signupForm.value.usuario=="darinka2000"||this.signupForm.value.usuario=="cliente02"){
+  }else if((this.signupForm.value.usuario=="darinka2000"||this.signupForm.value.usuario=="cliente02")&&(this.signupForm.value.contrasena=="123")){
     localStorage.setItem('username',this.signupForm.value.usuario);
     this.router.navigate(['/admin']);
     console.log("INGRESO ADMIN");
@@ -106,7 +106,7 @@ enviar(values: any) {
 
       ) */
 
-  }else if(this.signupForm.value.usuario=="jaime20" ||this.signupForm.value.usuario=="cliente01"){
+  }else if((this.signupForm.value.usuario=="jaime20" ||this.signupForm.value.usuario=="cliente01")&&(this.signupForm.value.contrasena=="123")){
     localStorage.setItem('username',this.signupForm.value.usuario);
     this.router.navigate(['/client/inicio']);
     console.log("INGRESO Cliente");
@@ -117,6 +117,18 @@ enviar(values: any) {
       icon: 'error',
       confirmButtonText: 'Volver a intentar'
     })
+  }
+
+  if(this.signupForm.value.usuario=="darinka2000"){
+    localStorage.setItem('idC',"1");
+  }else if(this.signupForm.value.usuario=="cliente01"){
+    localStorage.setItem('idC',"2");
+    localStorage.setItem('cedula',"0998765432");
+  }else if(this.signupForm.value.usuario=="cliente02"){
+    localStorage.setItem('idC',"3");
+  }else if(this.signupForm.value.usuario=="jaime20"){
+    localStorage.setItem('idC',"4");
+    localStorage.setItem('cedula',"0984578546");
   }
 
 }

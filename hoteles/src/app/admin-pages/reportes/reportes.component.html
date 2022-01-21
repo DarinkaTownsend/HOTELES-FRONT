@@ -9,10 +9,10 @@
                   </div>
                   <select class="custom-select" id="inputGroupSelect01">
                     <option selected>Tipos de reportes</option>
-                    <option>Publicidad</option>
-                    <option>Reservas</option>
-                    <option>Ventas</option>
-                    <option>Calificacion hotel</option>
+                    <option value="publicidad">Publicidad</option>
+                    <option value="reserva">Reservas</option>
+                    <option value="venta">Ventas</option>
+                    <option value="CalHotel">Calificacion hotel</option>
 
                   </select>
                 </div>
@@ -23,15 +23,8 @@
         <div class="table-responsive">
             <div class="table-wrapper">
                 <table id="reporte" class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Fecha de Factura</th>
-                            <th>Servicio</th>
-                            <th>Ganancia</th>
-                            <th>Gasto</th>
-                            <th>PDF</th>
-                        </tr>
+                    <thead id="cabecera">
+
                     </thead>
                     <tbody id="ordenes_tablas">
 
