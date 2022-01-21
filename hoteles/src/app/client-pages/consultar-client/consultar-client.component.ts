@@ -1,3 +1,4 @@
+import { hostViewClassName } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -13,3 +14,6 @@ export class ConsultarClientComponent implements OnInit {
   }
 
 }
+function hola() { 
+ console.log("holaaa");
+};

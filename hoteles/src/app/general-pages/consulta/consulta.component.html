@@ -1,6 +1,6 @@
 <div class="container py-3">
 
-    <div >
+    <div>
         <div class="container todo">
             <div>
                 <div>
@@ -11,9 +11,9 @@
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Precio</label>
                                         <div class="caja">
-                                            <select class="cs-select cs-skin-border" id="seleccion">
-                                                <option value="email" disabled selected>Desde lo más barato</option>
-                                                <option value="twitter">Desde lo más caro</option>
+                                            <select class="cs-select cs-skin-border" id="precio">
+                                                <option value="barato" disabled selected>Desde lo más barato</option>
+                                                <option value="caro">Desde lo más caro</option>
                                             </select>
                                         </div>
                                     </div>
@@ -23,10 +23,10 @@
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Camas</label>
                                         <div class="caja">
-                                            <select class="cs-select cs-skin-border" id="seleccion">
-                                                <option value="email" disabled selected>1</option>
-                                                <option value="twitter">2</option>
-                                                <option value="twitter">3</option>
+                                            <select class="cs-select cs-skin-border" id="cama">
+                                                <option value="1" disabled selected>1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
                                             </select>
                                         </div>
                                     </div>
@@ -36,9 +36,9 @@
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Wifi</label>
                                         <div class="caja">
-                                            <select class="cs-select cs-skin-border" id="seleccion">
-                                                <option value="email" disabled selected>Si</option>
-                                                <option value="twitter">No</option>
+                                            <select class="cs-select cs-skin-border" id="wifi">
+                                                <option value="si" disabled selected>Si</option>
+                                                <option value="no">No</option>
                                             </select>
                                         </div>
                                     </div>
@@ -48,9 +48,9 @@
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Cocina</label>
                                         <div class="caja">
-                                            <select class="cs-select cs-skin-border" id="seleccion">
-                                                <option value="email" disabled selected>Si</option>
-                                                <option value="twitter">No</option>
+                                            <select class="cs-select cs-skin-border" id="cocina">
+                                                <option value="si" disabled selected>Si</option>
+                                                <option value="no">No</option>
                                             </select>
                                         </div>
                                     </div>
@@ -60,9 +60,9 @@
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Desayuno Incluido</label>
                                         <div class="caja">
-                                            <select class="cs-select cs-skin-border" id="seleccion">
-                                                <option value="email" disabled selected>Si</option>
-                                                <option value="twitter">No</option>
+                                            <select class="cs-select cs-skin-border" id="desayuno">
+                                                <option value="si" disabled selected>Si</option>
+                                                <option value="no">No</option>
                                             </select>
                                         </div>
                                     </div>
@@ -72,9 +72,9 @@
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Lavandería</label>
                                         <div class="caja">
-                                            <select class="cs-select cs-skin-border" id="seleccion">
-                                                <option value="email" disabled selected>Si</option>
-                                                <option value="twitter">No</option>
+                                            <select class="cs-select cs-skin-border" id="lavanderia">
+                                                <option value="si" disabled selected>Si</option>
+                                                <option value="no">No</option>
                                             </select>
                                         </div>
                                     </div>
@@ -86,12 +86,12 @@
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Huespedes</label>
                                         <div class="caja">
-                                            <select class="cs-select cs-skin-border" id="seleccion">
-                                                <option value="email" disabled selected>1</option>
-                                                <option value="twitter">2</option>
-                                                <option value="linkedin">3</option>
-                                                <option value="linkedin">4</option>
-                                                <option value="linkedin">+5</option>
+                                            <select class="cs-select cs-skin-border" id="huespedes">
+                                                <option value="1" disabled selected>1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">+5</option>
                                             </select>
                                         </div>
                                     </div>
@@ -101,7 +101,7 @@
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Tipo habitación</label>
                                         <div class="caja">
-                                            <select class="cs-select cs-skin-border" id="seleccion">
+                                            <select class="cs-select cs-skin-border" id="tipo">
                                                 <option value="individual" disabled selected>individual</option>
                                                 <option value="familiar">pareja</option>
                                                 <option value="pareja">pareja</option>
@@ -133,7 +133,7 @@
 
             <div class="col-md-7 px-3" id="carta">
                 <div class="card-block px-6">
-                    <h4 class="card-title">Habitación </h4>
+                    <h4 class="card-title"></h4>
                     <div class="fila1">
                         <div class="sec">
                             <img src="../../../assets/personas.png" width="50px" height="50px">
@@ -166,13 +166,13 @@
 
                         <div class="sec te">
                             <img src="../../../assets/lavanderia.png" width="50px" height="50px">
-                            <label class="card-text te">lavandería : </label>
+                            <label class="card-text te">Lavandería : </label>
                         </div>
 
                     </div>
 
                     <div id="reser">
-                        <h4>Precio: $100</h4>
+                        <h4 class="precio">Precio: $100</h4>
                         <a href="#" class="boton" routerLink="../reservar">Ver más</a>
                     </div>
                 </div>
@@ -184,7 +184,6 @@
             <!-- End of carousel -->
         </div>
     </div>
-
 
     <!-- End of card -->
 
