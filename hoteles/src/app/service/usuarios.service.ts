@@ -59,4 +59,8 @@ export class UsuariosService {
     }
     return this.http.get(`${this.API_URI}/api/user_type/`+pk,httpOptions)
   }
+
+  getPublicidad(){
+    return this.http.get(`${this.API_URI}/api/publicidad/`)
+  }
 }
