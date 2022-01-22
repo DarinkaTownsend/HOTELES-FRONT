@@ -9,7 +9,9 @@ import { ReportesComponent } from './reportes/reportes.component';
 
 
 import { AdminPagesComponent } from './admin-pages.component'
-
+import { ExtenderReservaComponent } from './extender-reserva/extender-reserva.component';
+import { AgregarCargosComponent } from './agregar-cargos/agregar-cargos.component';
+import { CancelarReservaComponent } from './cancelar-reserva/cancelar-reserva.component';
 
 const routes: Routes = [
   {path:"", component:AdminPagesComponent,
@@ -18,7 +20,11 @@ const routes: Routes = [
     {path:"reservaciones", component:ReservacionesComponent},
     {path:"habitaciones", component:HabitacionesComponent},
     {path:"publicidad", component:PublicidadComponent},
-    {path:"reportes", component:ReportesComponent}
+    {path:"reportes", component:ReportesComponent},
+    {path:"extender", component:ExtenderReservaComponent},
+    {path:"cancelar", component:CancelarReservaComponent},
+    {path:"agregar", component:AgregarCargosComponent}
+
 
   ]
   }

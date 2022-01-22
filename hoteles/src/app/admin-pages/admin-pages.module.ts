@@ -10,10 +10,13 @@ import { ReservacionesComponent } from './reservaciones/reservaciones.component'
 import { HabitacionesComponent } from './habitaciones/habitaciones.component';
 import { PublicidadComponent } from './publicidad/publicidad.component';
 import { ReportesComponent } from './reportes/reportes.component';
+import { ExtenderReservaComponent } from './extender-reserva/extender-reserva.component';
+import { CancelarReservaComponent } from './cancelar-reserva/cancelar-reserva.component';
+import { AgregarCargosComponent } from './agregar-cargos/agregar-cargos.component';
 //import { HeaderdosComponent } from '../shared/components/headerdos/headerdos.component'
 
 @NgModule({
-  declarations: [AdminPagesComponent, AdministradorComponent, ReservacionesComponent, HabitacionesComponent, PublicidadComponent, ReportesComponent],
+  declarations: [AdminPagesComponent, AdministradorComponent, ReservacionesComponent, HabitacionesComponent, PublicidadComponent, ReportesComponent, ExtenderReservaComponent, CancelarReservaComponent, AgregarCargosComponent],
   imports: [CommonModule,AdminPagesRoutingModule,SharedModule,NgbModule,]
 })
 export class AdminPagesModule { }
