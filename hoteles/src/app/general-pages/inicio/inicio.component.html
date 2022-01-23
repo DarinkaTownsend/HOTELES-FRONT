@@ -41,7 +41,7 @@
                                                 <option *ngFor="let n on food">{{ n }}}</option>
                                             </select>-->
 
-                                            <select class="cs-select cs-skin-border" [(ngModel)]="opcionSeleccionado" (change)="capturar()" [ngModelOptions]="{standalone: true}">
+                                            <select class="cs-select cs-skin-border" id="huespedes" [(ngModel)]="opcionSeleccionado" (change)="capturar()" [ngModelOptions]="{standalone: true}">
                                                 <option value="0">Selecciona una opción</option>
                                                 <option *ngFor="let dato of datos">
                                                   {{dato}}

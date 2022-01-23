@@ -28,7 +28,7 @@ export class CrearPublicidadComponent implements OnInit {
     var e3 = document.getElementById("03")as HTMLInputElement;
     this.costo=e3.value;
 
-//
+
 
     var e4 = document.getElementById("04")as HTMLInputElement;
     this.fecha_creada=e4.value.slice(0,10)+"T00:00:00Z";
