@@ -38,7 +38,9 @@ body {
     text-transform: uppercase;
 }
 
-.boton {
+.boton,
+.boton1,
+.boton5 {
     font-size: 20px;
     background-color: #ffd63f;
     color: #003617;

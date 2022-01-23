@@ -7,11 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
+  personak :any = 0;
+  datos:any = [];
 
-  food=['1','2','3']
-  constructor() { }
+  opcionSeleccionado: string  = '0';
+  verSeleccion: string        = '';
+  constructor() {
+    this.datos = [1,2,3,4,5];
+   }
 
   ngOnInit(): void {
+    //document.getElementsByClassName("boton3")[0].addEventListener("click", this.capturar()) ;
   }
 
   reservation(){
@@ -19,26 +25,17 @@ export class InicioComponent implements OnInit {
     console.log(document.querySelector("input[type=date]"));
 
   }
-    opcionSeleccionado: string  = '0';
-  verSeleccion: string        = '';
-
+   
 
   capturar() {
       // Pasamos el valor seleccionado a la variable verSeleccion
       this.verSeleccion = this.opcionSeleccionado;
-      
+      variable= this.opcionSeleccionado;
+      localStorage.setItem("personak",variable);
       console.log( this.verSeleccion);
   }
 
- 
-
-
-
 }
 
-export var variable = document.getElementsByClassName("cs-select cs-skin-border");
+export var variable = "";
 // var vv = variable[0].value;
-export function myFunction() {
-   var variable
-   return variable // O lo que quieras hacer con tu funcion :D
-}

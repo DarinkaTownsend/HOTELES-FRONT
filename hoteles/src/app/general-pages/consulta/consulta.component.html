@@ -11,9 +11,15 @@
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Precio</label>
                                         <div class="caja">
-                                            <select class="cs-select cs-skin-border" id="precio">
+                                            <!-- <select class="cs-select cs-skin-border" id="precio">
                                                 <option value="barato" disabled selected>Desde lo más barato</option>
                                                 <option value="caro">Desde lo más caro</option>
+                                            </select>-->
+                                            <select class="cs-select cs-skin-border" [(ngModel)]="opcionPrecio" (change)="capturar1()" [ngModelOptions]="{standalone: true}">
+                                                <option value="0">Selecciona una opción</option>
+                                                <option *ngFor="let precio of precios">
+                                                  {{precio}}
+                                                </option>
                                             </select>
                                         </div>
                                     </div>
@@ -23,11 +29,18 @@
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Camas</label>
                                         <div class="caja">
-                                            <select class="cs-select cs-skin-border" id="cama">
+                                            <!--<select class="cs-select cs-skin-border" id="cama">
                                                 <option value="1" disabled selected>1</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
                                             </select>
+                                        -->
+                                            <select class="cs-select cs-skin-border" [(ngModel)]="opcionCama" (change)="capturar()" [ngModelOptions]="{standalone: true}">
+                                            <option value="0">Selecciona una opción</option>
+                                            <option *ngFor="let cama of camas">
+                                              {{cama}}
+                                            </option>
+                                        </select>
                                         </div>
                                     </div>
                                 </div>
@@ -36,9 +49,15 @@
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Wifi</label>
                                         <div class="caja">
-                                            <select class="cs-select cs-skin-border" id="wifi">
+                                            <!--<select class="cs-select cs-skin-border" id="wifi">
                                                 <option value="si" disabled selected>Si</option>
                                                 <option value="no">No</option>
+                                            </select>-->
+                                            <select class="cs-select cs-skin-border" [(ngModel)]="opcionWifi" (change)="capturar()" [ngModelOptions]="{standalone: true}">
+                                                <option value="0">Selecciona una opción</option>
+                                                <option *ngFor="let wifi of wifis">
+                                                  {{wifi}}
+                                                </option>
                                             </select>
                                         </div>
                                     </div>
@@ -48,9 +67,15 @@
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Cocina</label>
                                         <div class="caja">
-                                            <select class="cs-select cs-skin-border" id="cocina">
+                                            <!--<select class="cs-select cs-skin-border" id="cocina">
                                                 <option value="si" disabled selected>Si</option>
                                                 <option value="no">No</option>
+                                            </select>-->
+                                            <select class="cs-select cs-skin-border" [(ngModel)]="opcionCocina" (change)="capturar()" [ngModelOptions]="{standalone: true}">
+                                                <option value="0">Selecciona una opción</option>
+                                                <option *ngFor="let cocina of cocinas">
+                                                  {{cocina}}
+                                                </option>
                                             </select>
                                         </div>
                                     </div>
@@ -60,9 +85,15 @@
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Desayuno Incluido</label>
                                         <div class="caja">
-                                            <select class="cs-select cs-skin-border" id="desayuno">
+                                            <!--<select class="cs-select cs-skin-border" id="desayuno">
                                                 <option value="si" disabled selected>Si</option>
                                                 <option value="no">No</option>
+                                            </select>-->
+                                            <select class="cs-select cs-skin-border" [(ngModel)]="opcionDesayuno" (change)="capturar()" [ngModelOptions]="{standalone: true}">
+                                                <option value="0">Selecciona una opción</option>
+                                                <option *ngFor="let desayuno of desayunos">
+                                                  {{desayuno}}
+                                                </option>
                                             </select>
                                         </div>
                                     </div>
@@ -72,9 +103,15 @@
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Lavandería</label>
                                         <div class="caja">
-                                            <select class="cs-select cs-skin-border" id="lavanderia">
+                                            <!--<select class="cs-select cs-skin-border" id="lavanderia">
                                                 <option value="si" disabled selected>Si</option>
                                                 <option value="no">No</option>
+                                            </select>-->
+                                            <select class="cs-select cs-skin-border" [(ngModel)]="opcionLavanderia" (change)="capturar()" [ngModelOptions]="{standalone: true}">
+                                                <option value="0">Selecciona una opción</option>
+                                                <option *ngFor="let lavanderia of lavanderias">
+                                                  {{lavanderia}}
+                                                </option>
                                             </select>
                                         </div>
                                     </div>
@@ -86,12 +123,18 @@
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Huespedes</label>
                                         <div class="caja">
-                                            <select class="cs-select cs-skin-border" id="huespedes">
+                                            <!--<select class="cs-select cs-skin-border" id="huespedes">
                                                 <option value="1" disabled selected>1</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
                                                 <option value="4">4</option>
                                                 <option value="5">+5</option>
+                                            </select>-->
+                                            <select class="cs-select cs-skin-border" [(ngModel)]="opcionHuespede" (change)="capturar()" [ngModelOptions]="{standalone: true}">
+                                                <option value="0">Selecciona una opción</option>
+                                                <option *ngFor="let huespede of huespedes">
+                                                  {{huespede}}
+                                                </option>
                                             </select>
                                         </div>
                                     </div>
@@ -101,12 +144,18 @@
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Tipo habitación</label>
                                         <div class="caja">
-                                            <select class="cs-select cs-skin-border" id="tipo">
+                                            <!--<select class="cs-select cs-skin-border" id="tipo">
                                                 <option value="individual" disabled selected>individual</option>
                                                 <option value="familiar">pareja</option>
                                                 <option value="pareja">pareja</option>
                                                 <option value="lujo">lujo</option>
                                                 <option value="presidencial">presidencial</option>
+                                            </select>-->
+                                            <select class="cs-select cs-skin-border" [(ngModel)]="opcionTipo" (onchange)="capturar()" [ngModelOptions]="{standalone: true}">
+                                                <option value="0">Selecciona una opción</option>
+                                                <option *ngFor="let tipo  of tipos">
+                                                  {{tipo}}
+                                                </option>
                                             </select>
                                         </div>
                                     </div>
@@ -115,7 +164,7 @@
                             </div>
 
                             <div class="a-col action">
-                                <a href="#" class="boton" type="submit" (ngSubmit)="reservation()" routerLink="../consultar"> Filtrar </a>
+                                <a class="boton5" type="submit"> Filtrar </a>
                             </div>
                         </form>
                     </div>
@@ -173,7 +222,7 @@
 
                     <div id="reser">
                         <h4 class="precio">Precio: $100</h4>
-                        <a href="#" class="boton" routerLink="../reservar">Ver más</a>
+                        <a href="#" class="boton1" routerLink="../reservar">Ver más</a>
                     </div>
                 </div>
             </div>

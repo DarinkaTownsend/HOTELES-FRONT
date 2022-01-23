@@ -27,17 +27,27 @@
                                 <div class="a-col alternate">
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Huespedes</label>
+                                        <!-- <a href="#" class="boton3" type="submit" onclick="carga()"> Consultar </a>-->
+
                                         <div class="caja">
-                                           <select class="cs-select cs-skin-border" id="huespedes">
-                                                <option value="1"  selected="selected">1</option>
+                                            <!-- <select class="cs-select cs-skin-border" id="huespedes">
+                                                <option value="1">1</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
                                                 <option value="4">4</option>
                                                 <option value="5">+5</option>
-                                            </select>   
-                                              <!--<select (ngModel)="selected" class="cs-select cs-skin-border" id="huespedes">
+                                            </select>
+                                            <select (ngModel)="selected" class="cs-select cs-skin-border" id="huespedes">
                                                 <option *ngFor="let n on food">{{ n }}}</option>
                                             </select>-->
+
+                                            <select class="cs-select cs-skin-border" [(ngModel)]="opcionSeleccionado" (change)="capturar()" [ngModelOptions]="{standalone: true}">
+                                                <option value="0">Selecciona una opción</option>
+                                                <option *ngFor="let dato of datos">
+                                                  {{dato}}
+                                                </option>
+                                            </select>
+                                            <p [hidden]="opcionSeleccionado == '0'">Haz seleccionado la opción # {{ verSeleccion }}</p>
                                         </div>
                                     </div>
                                 </div>
