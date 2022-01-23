@@ -85,7 +85,7 @@ select:focus {
 #fondoG {
   height: 300px;
   width: 100%;
-  background-image: url("../../../assets/fondoI.jpg");
+  background-image: url("https://sadminhoteles.pythonanywhere.com/media/fondoI.jpg");
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: center;

@@ -28,6 +28,8 @@ export class FacturasComponent implements OnInit {
                 for(let reserva of reservaciones){
 
 
+
+
                   let row =
                     `<tr>
                       <td>${reserva["id_booking"]}</td>
