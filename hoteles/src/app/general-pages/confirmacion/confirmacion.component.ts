@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { UsuariosService } from 'src/app/service/usuarios.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-confirmacion',
@@ -8,11 +10,9 @@ import Swal from 'sweetalert2';
   styleUrls: ['./confirmacion.component.css']
 })
 export class ConfirmacionComponent implements OnInit {
-  miFormulario3: FormGroup;
 
-  habitacion:any="";
-  precio:any="";
-  tipoHabitacion:any="";
+  username:any="";
+
 
 
   public cedula:String="";
@@ -25,28 +25,50 @@ export class ConfirmacionComponent implements OnInit {
   public fExp:String="";
   public CVV:String="";
 
+  numeroHS:any="";
+  numeroPS:any="";
+  numeroCS:any="";
+  wifi:any="";
+  breakfast:any="";
+  kitchen:any="";
+  lawdry:any="";
+  precio:any="";
+  tipoHabitacion:any="";
+
+  idHabitacion:any="";
+  fechaReservaS:any="";
+  fechaCerrarS:any="";
 
 
 
 
 
 
+  constructor(private usuario:UsuariosService, private router:Router) {
 
-  constructor() {
-    this.miFormulario3 = new FormGroup({
-      'usuario': new FormControl(),
-      'name': new FormControl(),
-      'apellido': new FormControl(),
-      'contrasena': new FormControl(),
-      'contrasena2': new FormControl(),
-      'correo': new FormControl()
-    });
 
   }
 
   ngOnInit(): void {
     this.tipoHabitacion=localStorage.getItem("tipoHabitacion")
     this.precio=localStorage.getItem("precioH")
+
+    this.username=0
+
+    this.tipoHabitacion=localStorage.getItem("nombreHS")
+    this.numeroPS=localStorage.getItem("numeroPerS")
+    this.numeroCS=localStorage.getItem("numeroCS")
+    this.breakfast=localStorage.getItem("desayunoS")
+    this.kitchen=localStorage.getItem("cocinaS")
+    this.wifi=localStorage.getItem("wifiS")
+    this.lawdry=localStorage.getItem("lavadoraS")
+    this.precio=localStorage.getItem("precioS")
+    this.idHabitacion=localStorage.getItem("idHabitacionS")
+
+    this.fechaReservaS=localStorage.getItem("fechaReservaS")
+    this.fechaCerrarS=localStorage.getItem("fechaCerrarS")
+
+
 
   }
 
@@ -154,13 +176,40 @@ export class ConfirmacionComponent implements OnInit {
         //Validamos que el digito validador sea igual al de la cedula
         if(digito_validador == ultimo_digito){
           console.log('la cedula:' + this.cedula + ' es correcta');
-          Swal.fire({
-            title:"Reserva realizada",
-            text:"¡Gracias por su compra!",
-            icon:"success",
-            confirmButtonColor:"#3085d6",
-            confirmButtonText:"Cerrar"
-          })
+          let cuerpo={
+            "id_hotel":5,
+            "room": parseInt(this.idHabitacion),
+            "user": parseInt(this.username),
+            "cedula": this.cedula,
+            "costo_booking": this.precio,
+            "begin_at": this.fechaReservaS,
+            "ends_at" : this.fechaCerrarS
+          }
+          console.log(cuerpo)
+          this.usuario.AgregarReserva(cuerpo).subscribe(
+            res  => {
+              Swal.fire({
+                title:"Reserva realizada",
+                text:"¡Gracias por su compra!",
+                icon:"success",
+                confirmButtonColor:"#3085d6",
+                confirmButtonText:"Cerrar"
+              })
+              this.router.navigateByUrl("/inicio");
+            },
+            err  => {
+
+              Swal.fire({
+                title: 'Error!',
+                text: err.error.message,
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+              })
+            }
+          )
+
+
+
 
         }else{
           console.log('la cedula:' + this.cedula + ' es incorrecta');

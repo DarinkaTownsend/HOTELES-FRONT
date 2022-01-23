@@ -35,7 +35,7 @@ export class MisReservacionesComponent implements OnInit {
                       <td>${reserva["id_booking"]}</td>
                       <td>${reserva["begin_at"]}</td>
                       <td>${reserva["room"]}</td>
-                      <td>${reserva["price_room"]}</td>
+                      <td>${reserva["costo_booking"]}</td>
                       <td><button class="boton" type="submit" routerLink="/reservar">Extender</button></td>
                       <td><button class="boton" type="submit" routerLink="/reservar">Cancelar Reserva</button></td>
 
@@ -50,7 +50,7 @@ export class MisReservacionesComponent implements OnInit {
                       <td>${reserva["ends_at"]}</td>
                       <td>${reserva["room"]}</td>
                       <td>${reserva["status"]}</td>
-                      <td>${reserva["price_room"]}</td>
+                      <td>${reserva["costo_booking"]}</td>
                       <td>${reserva["cedula"]}</td>
 
 

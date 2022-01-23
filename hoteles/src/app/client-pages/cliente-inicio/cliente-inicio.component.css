@@ -1,74 +1,77 @@
-carousel .carousel-cells .carousel-cell{
+carousel .carousel-cells .carousel-cell {
   object-fit: cover;
 }
 
-#availability{
- display: grid;
- grid-template-columns: auto auto auto;
- padding-bottom: 1px;
+#availability {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding-bottom: 1px;
 }
 
-#boton_check{
+#boton_check {
   display: grid;
   grid-template-columns: auto;
   align-content: center;
-
 }
 
-.caja::after{
-	content:"\025be";
-	display:table-cell;
-	padding-top:7px;
-	text-align:center;
-	width:30px;
-	height:30px;
-	background-color:#e5f4fc;
-	position:absolute;
-	top:0;
-	right:0px;
-	pointer-events: none;
+.caja::after {
+  content: "\025be";
+  display: table-cell;
+  padding-top: 7px;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  background-color: #e5f4fc;
+  position: absolute;
+  top: 0;
+  right: 0px;
+  pointer-events: none;
 }
 
-#calendario{
+#calendario {
   padding-left: 4%;
-  padding-right:4%;
+  padding-right: 4%;
   text-align: center;
 }
 
-#calendario1{
+#calendario1 {
   padding-left: 4%;
-  padding-right:4%;
+  padding-right: 4%;
   text-align: center;
 }
 
 .caja {
-  margin:0px auto 0px auto;
-  border:1px solid #d9d9d9;
-  height:30px;
+  margin: 0px auto 0px auto;
+  border: 1px solid #d9d9d9;
+  height: 30px;
   overflow: hidden;
   width: 100%;
-
 }
 
-#subtitulos{
-  color:  white;
+#subtitulos {
+  color: white;
   font-size: 20px;
   font-weight: bold;
   padding-right: 5%;
-
 }
 
-#fechas{
+#fechas {
   display: grid;
   align-content: center;
   text-align: center;
 }
-.alternate{
+
+.alternate {
   padding-right: 2%;
   padding-left: 2%;
 }
-select:focus{ outline: none;}
-#seleccion{
+
+select:focus {
+  outline: none;
+}
+
+#seleccion,
+#huespedes {
   display: grid;
   align-content: center;
   text-align: center;
@@ -83,13 +86,13 @@ select:focus{ outline: none;}
   height: 300px;
   width: 100%;
   background-image: url("../../../assets/fondoI.jpg");
-  background-repeat:no-repeat;
-  background-position-x:center;
-  background-position-y:center;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
   background-size: 100%;
 }
 
-.cabecera{
+.cabecera {
   color: #e5f4fc;
   height: 200px;
   line-height: 200px;
@@ -98,12 +101,13 @@ select:focus{ outline: none;}
   text-shadow: #111 0px 0px 10px;
 }
 
-#check{
-  background-color:#006c6c;
+#check {
+  background-color: #006c6c;
   margin-top: 3%;
   padding: 1% 1% 1% 1%;
   border-radius: 40px;
 }
+
 .boton {
   font-size: 16px;
   background-color: #ffd63f;
@@ -117,14 +121,12 @@ select:focus{ outline: none;}
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
+}
 
-  }
-
-  .boton:hover{
-    background: #ff593c;
-    color: #fff;
-  }
-
+.boton:hover {
+  background: #ff593c;
+  color: #fff;
+}
 
 .Services {
   margin-top: 1%;
@@ -136,16 +138,8 @@ select:focus{ outline: none;}
   text-align: center;
   padding-bottom: 3%;
   font-size: 20px;
+}
 
-}
-.titlepage2{
-  color: #003617;
-  padding-bottom: 1%;
-  padding-top: 1%;
-  font-weight: 900;
-  font-size: 45px;
-  text-align: center;
-}
 .Services .titlepage h2 {
   color: #003617;
   padding-bottom: 20px;
@@ -166,8 +160,6 @@ select:focus{ outline: none;}
   padding-top: 19px;
 }
 
-
-
 .Services .Services-box h3 {
   padding: 20px 0px 20px 0px;
   font-size: 20px;
@@ -181,7 +173,6 @@ select:focus{ outline: none;}
   text-align: center;
   background-color: #006c6c;
   border-radius: 20px;
-
   padding: 40px;
   transition: ease-in all 0.5s;
   margin-bottom: 30px;
@@ -191,7 +182,6 @@ select:focus{ outline: none;}
   background: #fbffb6;
   transition: ease-in all 0.5s;
   cursor: pointer;
-
 }
 
 .Services .Services-box p {
@@ -199,6 +189,3 @@ select:focus{ outline: none;}
   line-height: 24px;
   color: #003617;
 }
-
-
-

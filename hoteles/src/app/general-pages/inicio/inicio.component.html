@@ -13,13 +13,13 @@
                                 <div class="a-col alternate">
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Fecha de entrada</label>
-                                        <input type="date" class="caja" id="calendario" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31">
+                                        <input type="date" class="caja" id="calendario01" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31">
                                     </div>
                                 </div>
                                 <div class="a-col alternate">
                                     <div class="input-field" id="fechas">
                                         <label for="date-end" id="subtitulos">Fecha de salida</label>
-                                        <input type="date" id="calendario1" class="caja" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31">
+                                        <input type="date" id="calendario02" class="caja" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31">
 
                                     </div>
                                 </div>
@@ -41,13 +41,15 @@
                                                 <option *ngFor="let n on food">{{ n }}}</option>
                                             </select>-->
 
-                                            <select class="cs-select cs-skin-border" id="huespedes" [(ngModel)]="opcionSeleccionado" (change)="capturar()" [ngModelOptions]="{standalone: true}">
+                                            <select class="cs-select cs-skin-border" id="huespedes">
                                                 <option value="0">Selecciona una opción</option>
-                                                <option *ngFor="let dato of datos">
-                                                  {{dato}}
-                                                </option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">+5</option>
+
                                             </select>
-                                            <p [hidden]="opcionSeleccionado == '0'">Haz seleccionado la opción # {{ verSeleccion }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -55,7 +57,7 @@
                             </div>
 
                             <div class="a-col action">
-                                <a href="#" class="boton" type="submit" (ngSubmit)="reservation()" routerLink="../consultar"> Consultar </a>
+                                <a href="#" class="boton" type="submit" (click)="capturar()" routerLink="/consultar" > Consultar </a>
                             </div>
                         </form>
                     </div>

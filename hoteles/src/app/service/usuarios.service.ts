@@ -83,4 +83,8 @@ export class UsuariosService {
   AgregarPublicidad (cuerpo:any){
     return this.http.post(`${this.API_URI}/api/publicidad/`,cuerpo)
   }
+
+  AgregarReserva (cuerpo:any){
+    return this.http.post(`${this.API_URI}/api/check_in/`,cuerpo)
+  }
 }

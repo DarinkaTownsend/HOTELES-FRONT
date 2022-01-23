@@ -11,15 +11,9 @@
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Precio</label>
                                         <div class="caja">
-                                            <!-- <select class="cs-select cs-skin-border" id="precio">
-                                                <option value="barato" disabled selected>Desde lo más barato</option>
-                                                <option value="caro">Desde lo más caro</option>
-                                            </select>-->
-                                            <select class="cs-select cs-skin-border" id="precio" [(ngModel)]="opcionPrecio" (change)="capturar1()" [ngModelOptions]="{standalone: true}">
-                                                <option value="0">Selecciona una opción</option>
-                                                <option *ngFor="let precio of precios">
-                                                  {{precio}}
-                                                </option>
+                                            <select class="cs-select cs-skin-border" id="precio">
+                                                <option value=0 disabled selected>Desde lo más barato</option>
+                                                <option value=1500>Desde lo más caro</option>
                                             </select>
                                         </div>
                                     </div>
@@ -29,18 +23,13 @@
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Camas</label>
                                         <div class="caja">
-                                            <!--<select class="cs-select cs-skin-border" id="cama">
+                                            <select class="cs-select cs-skin-border" id="cama">
                                                 <option value="1" disabled selected>1</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
+                                                <option value="3">4</option>
                                             </select>
-                                        -->
-                                            <select id="cama" class="cs-select cs-skin-border" [(ngModel)]="opcionCama" (change)="capturar()" [ngModelOptions]="{standalone: true}">
-                                            <option value="0">Selecciona una opción</option>
-                                            <option *ngFor="let cama of camas">
-                                              {{cama}}
-                                            </option>
-                                        </select>
+
                                         </div>
                                     </div>
                                 </div>
@@ -49,16 +38,11 @@
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Wifi</label>
                                         <div class="caja">
-                                            <!--<select class="cs-select cs-skin-border" id="wifi">
-                                                <option value="si" disabled selected>Si</option>
-                                                <option value="no">No</option>
-                                            </select>-->
-                                            <select id="wifi" class="cs-select cs-skin-border" [(ngModel)]="opcionWifi" (change)="capturar()" [ngModelOptions]="{standalone: true}">
-                                                <option value="0">Selecciona una opción</option>
-                                                <option *ngFor="let wifi of wifis">
-                                                  {{wifi}}
-                                                </option>
+                                            <select class="cs-select cs-skin-border" id="wifi">
+                                                <option value="true" disabled selected>Si</option>
+                                                <option value="false">No</option>
                                             </select>
+
                                         </div>
                                     </div>
                                 </div>
@@ -67,16 +51,11 @@
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Cocina</label>
                                         <div class="caja">
-                                            <!--<select class="cs-select cs-skin-border" id="cocina">
-                                                <option value="si" disabled selected>Si</option>
-                                                <option value="no">No</option>
-                                            </select>-->
-                                            <select id="cocina" class="cs-select cs-skin-border" [(ngModel)]="opcionCocina" (change)="capturar()" [ngModelOptions]="{standalone: true}">
-                                                <option value="0">Selecciona una opción</option>
-                                                <option *ngFor="let cocina of cocinas">
-                                                  {{cocina}}
-                                                </option>
+                                            <select class="cs-select cs-skin-border" id="cocina">
+                                                <option value="true" disabled selected>Si</option>
+                                                <option value="false">No</option>
                                             </select>
+
                                         </div>
                                     </div>
                                 </div>
@@ -85,16 +64,11 @@
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Desayuno Incluido</label>
                                         <div class="caja">
-                                            <!--<select class="cs-select cs-skin-border" id="desayuno">
-                                                <option value="si" disabled selected>Si</option>
-                                                <option value="no">No</option>
-                                            </select>-->
-                                            <select id="desayuno" class="cs-select cs-skin-border" [(ngModel)]="opcionDesayuno" (change)="capturar()" [ngModelOptions]="{standalone: true}">
-                                                <option value="0">Selecciona una opción</option>
-                                                <option *ngFor="let desayuno of desayunos">
-                                                  {{desayuno}}
-                                                </option>
+                                            <select class="cs-select cs-skin-border" id="desayuno">
+                                                <option value="true" disabled selected>Si</option>
+                                                <option value="false">No</option>
                                             </select>
+
                                         </div>
                                     </div>
                                 </div>
@@ -103,16 +77,11 @@
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Lavandería</label>
                                         <div class="caja">
-                                            <!--<select class="cs-select cs-skin-border" id="lavanderia">
-                                                <option value="si" disabled selected>Si</option>
-                                                <option value="no">No</option>
-                                            </select>-->
-                                            <select id="lavanderia" class="cs-select cs-skin-border" [(ngModel)]="opcionLavanderia" (change)="capturar()" [ngModelOptions]="{standalone: true}">
-                                                <option value="0">Selecciona una opción</option>
-                                                <option *ngFor="let lavanderia of lavanderias">
-                                                  {{lavanderia}}
-                                                </option>
+                                            <select class="cs-select cs-skin-border" id="lavanderia">
+                                                <option value=true disabled selected>Si</option>
+                                                <option value=false>No</option>
                                             </select>
+
                                         </div>
                                     </div>
                                 </div>
@@ -123,18 +92,12 @@
                                     <div class="input-field" id="fechas">
                                         <label for="date-start" id="subtitulos">Huespedes</label>
                                         <div class="caja">
-                                            <!--<select class="cs-select cs-skin-border" id="huespedes">
+                                            <select class="cs-select cs-skin-border" id="huespedes">
                                                 <option value="1" disabled selected>1</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
                                                 <option value="4">4</option>
                                                 <option value="5">+5</option>
-                                            </select>-->
-                                            <select id="huespedes" class="cs-select cs-skin-border" [(ngModel)]="opcionHuespede" (change)="capturar()" [ngModelOptions]="{standalone: true}">
-                                                <option value="0">Selecciona una opción</option>
-                                                <option *ngFor="let huespede of huespedes">
-                                                  {{huespede}}
-                                                </option>
                                             </select>
                                         </div>
                                     </div>
@@ -142,21 +105,15 @@
 
                                 <div class="a-col alternate">
                                     <div class="input-field" id="fechas">
-                                        <label for="date-start" id="subtitulos">Tipo habitación</label>
+                                        <label for="date-start" id="subtitulos">Niños</label>
                                         <div class="caja">
-                                            <!--<select class="cs-select cs-skin-border" id="tipo">
-                                                <option value="individual" disabled selected>individual</option>
-                                                <option value="familiar">pareja</option>
-                                                <option value="pareja">pareja</option>
-                                                <option value="lujo">lujo</option>
-                                                <option value="presidencial">presidencial</option>
-                                            </select>-->
-                                            <select id="tipo" class="cs-select cs-skin-border" [(ngModel)]="opcionTipo" (onchange)="capturar()" [ngModelOptions]="{standalone: true}">
-                                                <option value="0">Selecciona una opción</option>
-                                                <option *ngFor="let tipo  of tipos">
-                                                  {{tipo}}
-                                                </option>
-                                            </select>
+                                          <select class="cs-select cs-skin-border" id="tipo">
+                                            <option value="1" disabled selected>1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="3">4</option>
+                                        </select>
+
                                         </div>
                                     </div>
                                 </div>
@@ -175,65 +132,68 @@
 
 
 
+    <div *ngFor="let habitacion of habitacionesT">
 
-    <!-- Card Start -->
-    <div class="card">
-        <div class="row ">
+                    <div class="card">
+                        <div class="row ">
 
-            <div class="col-md-7 px-3" id="carta">
-                <div class="card-block px-6">
-                    <h4 class="card-title"></h4>
-                    <div class="fila1">
-                        <div class="sec">
-                            <img src="../../../assets/personas.png" width="50px" height="50px">
-                            <p class="card-text te">Huespedes : #2</p>
-                        </div>
+                          <div class="col-md-7 px-3" id="carta">
+                              <div class="card-block px-6">
+                                  <h4 class="card-title">{{habitacion.nombreH}}</h4>
+                                  <div class="fila1">
+                                      <div class="sec">
+                                          <img src="../../../assets/personas.png" width="50px" height="50px">
+                                          <p class="card-text te">Huespedes : {{habitacion.numeroPer}}</p>
+                                      </div>
 
-                        <div class="sec">
-                            <img src="../../../assets/cama.png" width="50px" height="50px">
-                            <p class="card-text te">Camas : #1</p>
-                        </div>
+                                      <div class="sec">
+                                          <img src="../../../assets/cama.png" width="50px" height="50px">
+                                          <p class="card-text te">Camas : {{habitacion.numeroC}}</p>
+                                      </div>
 
-                        <div class="sec">
-                            <img src="../../../assets/desayuno.png" width="50px" height="50px">
-                            <p class="card-text te">Desayuno : true</p>
-                        </div>
+                                      <div class="sec">
+                                          <img src="../../../assets/desayuno.png" width="50px" height="50px">
+                                          <p class="card-text te">Desayuno : {{habitacion.desayuno}}</p>
+                                      </div>
 
-                    </div>
+                                  </div>
 
 
-                    <div class="fila1">
-                        <div class="sec">
-                            <img src="../../../assets/cocina.png" width="50px" height="50px">
-                            <p class="card-text te">Cocina : true</p>
-                        </div>
+                                  <div class="fila1">
+                                      <div class="sec">
+                                          <img src="../../../assets/cocina.png" width="50px" height="50px">
+                                          <p class="card-text te">Cocina : {{habitacion.cocina}}</p>
+                                      </div>
 
-                        <div class="sec te">
-                            <img src="../../../assets/wifi.png" width="50px" height="50px">
-                            <p class="card-text te">Wifi : true</p>
-                        </div>
+                                      <div class="sec te">
+                                          <img src="../../../assets/wifi.png" width="50px" height="50px">
+                                          <p class="card-text te">Wifi : {{habitacion.wifi}}</p>
+                                      </div>
 
-                        <div class="sec te">
-                            <img src="../../../assets/lavanderia.png" width="50px" height="50px">
-                            <label class="card-text te">Lavandería : </label>
-                        </div>
+                                      <div class="sec te">
+                                          <img src="../../../assets/lavanderia.png" width="50px" height="50px">
+                                          <label class="card-text te">Lavandería : {{habitacion.lavadora}}</label>
+                                      </div>
 
-                    </div>
+                                  </div>
 
-                    <div id="reser">
-                        <h4 class="precio">Precio: $100</h4>
-                        <a href="#" class="boton1" routerLink="../reservar">Ver más</a>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item active">
-                <img class="d-block" src="../../../assets/h2.jpg" width="500px" height="400px" alt="">
-            </div>
+                                  <div id="reser">
+                                      <h4 class="precio">Precio: ${{habitacion.precio}}</h4>
+                                      <button routerLink="/reservar" class="boton1" (click)="EnviarInfo(habitacion.nombreH,habitacion.numeroPer,habitacion.numeroC,habitacion.desayuno,habitacion.cocina,habitacion.wifi,habitacion.lavadora,habitacion.precio,habitacion.idHabitacion)">Ver más</button>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="carousel-item active">
+                              <img class="d-block" src="../../../assets/h2.jpg" width="500px" height="400px" alt="">
+                          </div>
 
-            <!-- End of carousel -->
+                          <!-- End of carousel -->
         </div>
     </div>
 
-    <!-- End of card -->
+
+
+
+    </div>
 
 </div>

@@ -8,21 +8,21 @@
 
 
 <div class="card-block px-6">
-    <h4 class="card-title">Habitación </h4>
+    <h4 class="card-title">{{nombreHS}} </h4>
     <div class="fila1">
         <div class="sec">
             <img src="../../../assets/personas.png" width="50px" height="50px">
-            <p class="card-text te">Huespedes : #</p>
+            <p class="card-text te">Huespedes : {{numeroPerS}}</p>
         </div>
 
         <div class="sec">
             <img src="../../../assets/cama.png" width="50px" height="50px">
-            <p class="card-text te">Camas : #</p>
+            <p class="card-text te">Camas : {{numeroCS}}</p>
         </div>
 
         <div class="sec">
             <img src="../../../assets/desayuno.png" width="50px" height="50px">
-            <p class="card-text te">Desayuno : Sí</p>
+            <p class="card-text te">Desayuno : {{desayunoS}}</p>
         </div>
 
     </div>
@@ -31,23 +31,23 @@
     <div class="fila1">
         <div class="sec">
             <img src="../../../assets/cocina.png" width="50px" height="50px">
-            <p class="card-text te">Cocina : </p>
+            <p class="card-text te">Cocina : {{cocinaS}}</p>
         </div>
 
         <div class="sec te">
             <img src="../../../assets/wifi.png" width="50px" height="50px">
-            <p class="card-text te">Wifi :</p>
+            <p class="card-text te">Wifi : {{wifiS}}</p>
         </div>
 
         <div class="sec te">
             <img src="../../../assets/lavanderia.png" width="50px" height="50px">
-            <label class="card-text te">Lavandería : </label>
+            <label class="card-text te">Lavandería : {{lavadoraS}}</label>
         </div>
 
     </div>
 
     <div id="reser">
-        <h4 class="precio">Precio: $100</h4>
+        <h4 class="precio">Precio: {{precioS}}</h4>
         <a href="#" class="boton" routerLink="../confirmar">Reservar</a>
     </div>
 </div>
