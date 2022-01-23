@@ -111,6 +111,8 @@ export class PuntuarComponent implements OnInit {
     }else{
       this.promedio=(servicioCliente+tratoEmpleados+calidadAlimentos+instalaciones+habitacion+limpieza)/6;
       console.log(this.promedio)
+
+
       Swal.fire({
         title:"Puntuación de Hotel Enviada",
         text:"¡Gracias por calificarnos!",
@@ -118,6 +120,7 @@ export class PuntuarComponent implements OnInit {
         confirmButtonColor:"#3085d6",
         confirmButtonText:"Cerrar"
       })
+
 
 
 

@@ -68,7 +68,11 @@ export class UsuariosService {
     return this.http.post(`${this.API_URI}/api/extend_booking/`,cuerpo)
   }
 
-  ExtenderReserva(cuerpo: any){
+  ExtenderReserva (cuerpo: any){
     return this.http.post(`${this.API_URI}/api/extend_booking/`,cuerpo)
+  }
+
+  CancelarReserva (cuerpo:any){
+    return this.http.post(`${this.API_URI}/api/cancel_booking/`,cuerpo)
   }
 }

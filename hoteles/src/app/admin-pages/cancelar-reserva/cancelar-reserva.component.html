@@ -1,1 +1,7 @@
-<p>cancelar-reserva works!</p>
+<h2 class="container">¿Está seguro que desea cancelar la reserva #{{idReserva}}?</h2>
+
+
+<div class="botonEnviar">
+  <button class="btn" (click)="cancelarReserva()" >Cancelar reserva</button>
+  <button class="btn" routerLink="/admin/reservaciones" >Regresar</button>
+</div>
