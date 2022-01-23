@@ -7,8 +7,9 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Fecha de reserva</th>
-                            <th>Habitación</th>
+                            <th>Reserva</th>
+                            <th>Finaliza</th>
+                            <th>Room</th>
                             <th>Estado</th>
                             <th>Cedula</th>
                             <th>Costo</th>
@@ -23,6 +24,7 @@
 
                           <td>{{reserva.id_booking}}</td>
                           <td>{{reserva.begin_at}}</td>
+                          <td>{{reserva.ends_at}}</td>
                           <td>{{reserva.room}}</td>
                           <td>{{reserva.status}}</td>
                           <td>{{reserva.cedula}}</td>

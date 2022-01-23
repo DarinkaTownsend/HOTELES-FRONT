@@ -17,17 +17,20 @@ export class ReservacionesComponent implements OnInit {
         console.log(reservaciones)
         let reser_todo:Reserva
         for(let reserva of reservaciones){
+          if(reserva["status"]=="activa"){
                   reser_todo={
                     id_booking:reserva["id_booking"],
-                    begin_at:reserva["begin_at"],
+                    begin_at:reserva["begin_at"].slice(0,10),
+                    ends_at:reserva["ends_at"].slice(0,10),
                     room:reserva["room"],
                     status:reserva["status"],
                     cedula:reserva["cedula"],
-                    price_room:reserva["price_room"]
+                    price_room:reserva["costo_booking"]
 
                   }
 
                   this.reservacionesT.push(reser_todo)
+                }
 
         }
 

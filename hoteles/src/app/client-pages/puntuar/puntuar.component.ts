@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
+import { UsuariosService } from 'src/app/service/usuarios.service';
+
 
 @Component({
   selector: 'app-puntuar',
@@ -13,6 +16,7 @@ export class PuntuarComponent implements OnInit {
   public apellidosC: string = '';
   public correoC: string = '';
   public usuarioC: any = '';
+  public idC: any = '';
 
   public servicioCliente:Number=0;
   public tratoEmpleados:Number=0;
@@ -23,11 +27,14 @@ export class PuntuarComponent implements OnInit {
 
   public promedio:Number=0;
 
-  constructor() { }
+  constructor(private router:Router, private usuario:UsuariosService) { }
 
   ngOnInit(): void {
     var dat = localStorage.getItem("username")
     this.usuarioC= dat
+    this.idC=localStorage.getItem("idC")
+
+
 
   }
 
@@ -113,13 +120,46 @@ export class PuntuarComponent implements OnInit {
       console.log(this.promedio)
 
 
-      Swal.fire({
-        title:"Puntuación de Hotel Enviada",
-        text:"¡Gracias por calificarnos!",
-        icon:"success",
-        confirmButtonColor:"#3085d6",
-        confirmButtonText:"Cerrar"
-      })
+
+
+
+      let cuerpo=
+        {
+          'hotel': 5,
+          'user': this.idC,
+          'puntu': this.promedio
+      }
+      this.usuario.AgregarPuntuacion(cuerpo).subscribe(
+
+        res  => {
+          Swal.fire({
+            title:"Puntuación de Hotel Enviada",
+            text:"¡Gracias por calificarnos!",
+            icon:"success",
+            confirmButtonColor:"#3085d6",
+            confirmButtonText:"Cerrar"
+          })
+
+          this.router.navigateByUrl("client/inicio");
+        },
+        err  => {
+
+          Swal.fire({
+            title: 'Error!',
+            text: err.error.message,
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+          })
+        }
+
+
+
+
+      )
+
+
+
+
 
 
 

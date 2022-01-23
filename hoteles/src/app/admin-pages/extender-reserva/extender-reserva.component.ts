@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { UsuariosService } from 'src/app/service/usuarios.service';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 
 
@@ -14,7 +15,7 @@ export class ExtenderReservaComponent implements OnInit {
   idReserva:any=""
   fechaR:any=""
   fechaCal:any=""
-  constructor(private usuario:UsuariosService) { }
+  constructor(private usuario:UsuariosService, private router:Router) { }
 
   ngOnInit(): void {
     this.idReserva=localStorage.getItem("idBooking")
@@ -25,9 +26,9 @@ export class ExtenderReservaComponent implements OnInit {
     var e1 = document.getElementById("calendario1")as HTMLInputElement;
     this.fechaCal=e1.value+" 00:00:00";
     console.log(this.fechaCal)
-    var enviar={
-      "booking": this.idReserva,
-      "costo_adicional": this.fechaCal
+    let enviar={
+      "booking": parseInt(this.idReserva),
+      "ends_at":this.fechaCal
     }
 
     this.usuario.ExtenderReserva(enviar).subscribe(
@@ -40,6 +41,7 @@ export class ExtenderReservaComponent implements OnInit {
           confirmButtonColor:"#3085d6",
           confirmButtonText:"Cerrar"
         })
+        this.router.navigateByUrl("admin/reservaciones");
       },
       err  => {
 

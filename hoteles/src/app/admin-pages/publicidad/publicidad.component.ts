@@ -13,7 +13,7 @@ export class PublicidadComponent implements OnInit {
   constructor(private usu:UsuariosService) { }
 
   ngOnInit(): void {
-    fetch("https://sadminhoteles.pythonanywhere.com/api/publicidad/")
+    fetch("https://sadminhoteles.pythonanywhere.com/api/publicidad_hotel/5")
       .then(res => res.json())
       .then(publicidades => {
         console.log(publicidades)
@@ -25,10 +25,13 @@ export class PublicidadComponent implements OnInit {
                 for(let publicidad of publicidades){
                   let row =
                     `<tr>
+                      <td>${publicidad["id_public"]}</td>
+                      <td>${publicidad["publicidad_date"].slice(0,10)}</td>
+                      <td>${publicidad["servicio"]}</td>
+                      <td>${publicidad["detalle"]}</td>
+                      <td>${publicidad["costo_pub"]}</td>
 
-                      <td><button class="boton" type="submit" routerLink="/reservar">Extender</button></td>
-                      <td><button class="boton" type="submit" routerLink="/reservar">Agregar Cargo</button></td>
-                      <td><button class="boton" type="submit" routerLink="/reservar">Cancelar Reserva</button></td>
+
 
 
                     </tr>`

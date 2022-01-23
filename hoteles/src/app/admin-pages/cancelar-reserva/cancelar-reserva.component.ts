@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { UsuariosService } from 'src/app/service/usuarios.service';
 import Swal from 'sweetalert2';
@@ -10,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class CancelarReservaComponent implements OnInit {
   idReserva:any=""
-  constructor(private usuario:UsuariosService) { }
+  constructor(private usuario:UsuariosService, private router:Router) { }
 
   ngOnInit(): void {
     this.idReserva=localStorage.getItem("idBooking")
@@ -30,6 +31,8 @@ export class CancelarReservaComponent implements OnInit {
             confirmButtonColor:"#3085d6",
             confirmButtonText:"Cerrar"
           })
+
+          this.router.navigateByUrl("admin/reservaciones");
         },
         err  => {
 

@@ -32,7 +32,7 @@ export class FacturasComponent implements OnInit {
                     `<tr>
                       <td>${reserva["id_booking"]}</td>
                       <td>${reserva["begin_at"]}</td>
-                      <td>${reserva["room"]}</td>
+                      <td>${reserva["costo_booking"]}</td>
                     </tr>`
                     tbody.innerHTML += row;
 
