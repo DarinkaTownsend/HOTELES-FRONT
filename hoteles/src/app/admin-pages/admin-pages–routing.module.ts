@@ -25,7 +25,7 @@ const routes: Routes = [
     {path:"extender", component:ExtenderReservaComponent},
     {path:"cancelar", component:CancelarReservaComponent},
     {path:"agregar", component:AgregarCargosComponent},
-    {path:"crear-publicidad", component:AgregarCargosComponent}
+    {path:"crear-publicidad", component:CrearPublicidadComponent}
 
 
   ]

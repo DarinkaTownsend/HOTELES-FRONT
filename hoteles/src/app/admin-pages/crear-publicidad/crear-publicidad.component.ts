@@ -26,7 +26,12 @@ export class CrearPublicidadComponent implements OnInit {
     this.detalle=e2.value;
 
     var e3 = document.getElementById("03")as HTMLInputElement;
-    this.detalle=e3.value;
+    this.costo=e3.value;
+
+    var e4 = document.getElementById("04")as HTMLInputElement;
+    this.fecha_creada=e4.value.slice(0,10)+"T00:00:00Z";
+    var e5 = document.getElementById("05")as HTMLInputElement;
+    this.fecha_fin=e5.value.slice(0,10)+"T00:00:00Z";
 
     let cuerpo={
       "hotel": 5,
@@ -38,6 +43,8 @@ export class CrearPublicidadComponent implements OnInit {
       'estado':"Activa"
 
     }
+
+    console.log(cuerpo)
 
     this.usuario.AgregarPublicidad(cuerpo).subscribe(
 
