@@ -10,9 +10,9 @@ export class ConsultaComponent implements OnInit {
   rooms: any = [];
 
   constructor() { }
- 
+
   ngOnInit(): void {
-    
+
     fetch("https://sadminhoteles.pythonanywhere.com/api/check_rooms/4/2")
       .then(data => data.json())
       .then(data => {
@@ -54,7 +54,7 @@ export class ConsultaComponent implements OnInit {
 }
 
 let cargarHabitaciones = () =>{
-  
+
   fetch("https://sadminhoteles.pythonanywhere.com/api/check_rooms/4/2")
   .then(data => data.json())
   .then(data => {
@@ -119,9 +119,9 @@ let cargarHabitaciones = () =>{
       }
 
     }
-      
+
   });
-  
+
 }
 document.addEventListener('DOMContentLoaded', function(){
   cargarHabitaciones();

@@ -11,7 +11,7 @@ export class ReservacionesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    fetch("https://sadminhoteles.pythonanywhere.com/api/bookings_hotel/4")
+    fetch("https://sadminhoteles.pythonanywhere.com/api/bookings_hotel/5")
       .then(res => res.json())
       .then(reservaciones => {
         console.log(reservaciones)

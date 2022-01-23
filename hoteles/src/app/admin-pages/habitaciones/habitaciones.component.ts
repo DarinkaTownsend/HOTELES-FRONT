@@ -11,7 +11,7 @@ export class HabitacionesComponent implements OnInit {
   habitaciones:any=[];
 
   ngOnInit(): void {
-    fetch("https://sadminhoteles.pythonanywhere.com/api/rooms_hotel/4")
+    fetch("https://sadminhoteles.pythonanywhere.com/api/rooms_hotel/5")
       .then(res => res.json())
       .then(hoteles => {
         console.log(hoteles)
