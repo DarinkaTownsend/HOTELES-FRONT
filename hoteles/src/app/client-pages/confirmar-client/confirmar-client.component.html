@@ -38,7 +38,7 @@
           </div>
           <div class="col-md-8 order-md-1">
             <h4 class="mb-3">Dirección de factura</h4>
-            <form class="needs-validation" novalidate>
+            <form >
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="firstName">Nombre</label>
@@ -95,43 +95,43 @@
 
               <div class="d-block my-3">
                 <div class="custom-control custom-radio">
-                  <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                  <label class="custom-control-label" for="credit">Tarjeta de Credito</label>
+                  <input id="credit"  type="radio" class="custom-control-input" checked required>
+                  <label class="custom-control-label" >Tarjeta de Credito</label>
                 </div>
                 <div class="custom-control custom-radio">
-                  <input id="debit" name="paymentMethod" type="radio"  class="custom-control-input" required>
-                  <label class="custom-control-label" for="debit">Tarjeta de Debito</label>
+                  <input id="debit" type="radio"  class="custom-control-input" required>
+                  <label class="custom-control-label" >Tarjeta de Debito</label>
                 </div>
 
               </div>
               <div class="row">
                 <div class="col-md-6 mb-3">
-                  <label for="cc-name">Nombre en la tarjeta</label>
+                  <label >Nombre en la tarjeta</label>
                   <input type="text" class="form-control" id="nombreT" placeholder="" required>
 
 
                 </div>
                 <div class="col-md-6 mb-3">
-                  <label for="cc-number">Número de Tarjeta</label>
+                  <label >Número de Tarjeta</label>
                   <input type="text" class="form-control" id="numeroT" placeholder="" required>
 
                 </div>
               </div>
               <div class="row2">
                 <div class="r1">
-                  <label for="cc-expiration">Fecha de Expiración</label>
+                  <label >Fecha de Expiración</label>
                   <input type="text" class="form-control" id="fExp" placeholder="" required>
 
                 </div>
                 <div class="r1">
-                  <label for="cc-expiration">CVV</label>
+                  <label >CVV</label>
                   <input type="text" class="form-control" id="CVV" placeholder="" required>
 
                 </div>
               </div>
               <hr class="mb-4">
-              <button class="boton2" type="submit" (click)="Finalizar()">Finalizar el pago</button>
-              <button class="boton2" type="submit" routerLink="/reservar">Cancelar</button>
+              <button class="boton2" (click)="Finalizar()">Finalizar el pago</button>
+              <button class="boton2" routerLink="/client/reservarc">Cancelar</button>
             </form>
           </div>
         </div>
@@ -141,4 +141,5 @@
 
 
     </body>
+
 
