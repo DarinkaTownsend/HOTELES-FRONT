@@ -79,6 +79,12 @@ p {
 
   }
 
+  .cost{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-content: center;
+  }
+
   .boton2:hover{
     background: #ff593c;
     color: #fff;

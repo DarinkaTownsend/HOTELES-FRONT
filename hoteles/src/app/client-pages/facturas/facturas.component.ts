@@ -17,7 +17,7 @@ export class FacturasComponent implements OnInit {
     this.idU=localStorage.getItem("idC")
 
 
-  fetch("https://sadminhoteles.pythonanywhere.com/api/bookings_user/4/"+this.idU)
+  fetch("https://sadminhoteles.pythonanywhere.com/api/bookings_user/5/"+this.idU)
       .then(res => res.json())
       .then(reservaciones => {
         console.log(reservaciones)
@@ -32,7 +32,7 @@ export class FacturasComponent implements OnInit {
                     `<tr>
                       <td>${reserva["id_booking"]}</td>
                       <td>${reserva["begin_at"]}</td>
-                      <td>${reserva["room"]}</td>
+                      <td>${reserva["costo_booking"]}</td>
                     </tr>`
                     tbody.innerHTML += row;
 

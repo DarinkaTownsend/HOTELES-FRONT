@@ -21,6 +21,19 @@
 
   }
 
+  .row2{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-content: center;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+  .r1{
+    display: grid;
+    grid-template-rows: auto auto;
+    align-content: center;
+  }
+
   .boton2:hover{
     background: #ff593c;
     color: #fff;

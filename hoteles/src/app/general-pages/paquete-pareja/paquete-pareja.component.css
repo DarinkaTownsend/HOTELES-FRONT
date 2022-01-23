@@ -79,7 +79,11 @@ p {
     background: #ff593c;
     color: #fff;
   }
-
+  .cost{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-content: center;
+  }
   h4{
     color: #fbffb6;
     padding-bottom: 20px;

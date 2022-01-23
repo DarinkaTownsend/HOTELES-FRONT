@@ -63,4 +63,24 @@ export class UsuariosService {
   getPublicidad(){
     return this.http.get(`${this.API_URI}/api/publicidad/`)
   }
+
+  AgregarCargos(cuerpo: any){
+    return this.http.post(`${this.API_URI}/api/booking_cost/`,cuerpo)
+  }
+
+  ExtenderReserva (cuerpo: any){
+    return this.http.post(`${this.API_URI}/api/extend_booking/`,cuerpo)
+  }
+
+  CancelarReserva (cuerpo:any){
+    return this.http.post(`${this.API_URI}/api/cancel_booking/`,cuerpo)
+  }
+
+  AgregarPuntuacion (cuerpo:any){
+    return this.http.post(`${this.API_URI}/api/puntuacion/`,cuerpo)
+  }
+
+  AgregarPublicidad (cuerpo:any){
+    return this.http.post(`${this.API_URI}/api/publicidad/`,cuerpo)
+  }
 }

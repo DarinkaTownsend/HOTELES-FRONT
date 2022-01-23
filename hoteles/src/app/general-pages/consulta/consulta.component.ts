@@ -254,7 +254,7 @@ let cargarHabitaciones = () =>{
    
       
   });
-  
+
 }
 
 let precio;

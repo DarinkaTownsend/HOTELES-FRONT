@@ -7,8 +7,9 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Fecha de reserva</th>
-                            <th>Habitación</th>
+                            <th>Reserva</th>
+                            <th>Finaliza</th>
+                            <th>Room</th>
                             <th>Estado</th>
                             <th>Cedula</th>
                             <th>Costo</th>
@@ -18,6 +19,25 @@
                         </tr>
                     </thead>
                     <tbody id="ordenes_tablas">
+
+                      <tr *ngFor="let reserva of reservacionesT">
+
+                          <td>{{reserva.id_booking}}</td>
+                          <td>{{reserva.begin_at}}</td>
+                          <td>{{reserva.ends_at}}</td>
+                          <td>{{reserva.room}}</td>
+                          <td>{{reserva.status}}</td>
+                          <td>{{reserva.cedula}}</td>
+                          <td>{{reserva.price_room}}</td>
+                          <td><button class="boton" type="submit" (click)="extender(reserva.id_booking,reserva.begin_at)" routerLink="/admin/extender">Extender</button></td>
+                          <td><button class="boton" type="submit" (click)="agregar(reserva.id_booking,reserva.begin_at)" routerLink="/admin/agregar">Agregar Cargo</button></td>
+                          <td><button class="boton" type="submit" (click)="cancelar(reserva.id_booking,reserva.begin_at)" routerLink="/admin/cancelar">Cancelar Reserva</button></td>
+
+
+
+
+
+                      </tr>
 
                     </tbody>
                 </table>

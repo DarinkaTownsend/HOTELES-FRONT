@@ -2,6 +2,13 @@
   box-sizing: border-box !important;
 
 }
+.valores{
+  display: grid;
+  grid-template-columns: auto auto;
+  align-content: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
 
 html {
   scroll-behavior: smooth;
@@ -14,30 +21,6 @@ body {
   line-height: 1.80857;
   font-weight: normal;
 }
-
-.boton{
-  font-size: 12px;
-  background-color: #ffd63f;
-  color: #003617;
-  padding: 5px 0px;
-  width: 100%;
-  max-width: 70%;
-  display: flex;
-  justify-content: center;
-  text-align: justify;
-  margin: 0 auto;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  border:none;
-
-  }
-
-  .boton:hover{
-    background: #ff593c;
-    color: #fff;
-    text-decoration: none;
-  }
 
 
 h1,
@@ -92,5 +75,55 @@ img {
 }
 
 .container{
+  text-align: center;
   padding-top: 10%;
 }
+
+.botonEnviar{
+  display: grid;
+  grid-template-columns: auto;
+  padding-top: 3%;
+  padding-bottom: 5%;
+  align-content: center;
+  padding-left: 30%;
+  padding-right: 30%;
+}
+
+.btn:hover {
+  background: #8308eb;
+  color: #fff;
+}
+
+.btn{
+  font-size: 20px;
+  background-color: #ffd63f;
+  color: #003617;
+  padding: 5px 0px;
+  width: 100%;
+  max-width: 70%;
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border:none;
+}
+
+
+  .btn:hover{
+    background: #ff593c;
+    color: #fff;
+  }
+
+  .ini{
+    padding-top: 3%;
+
+    color: #fff;
+  }
+
+  .ini2{
+    background-color: #003617;
+  }
+

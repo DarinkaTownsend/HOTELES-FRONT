@@ -14,7 +14,7 @@ export class MisReservacionesComponent implements OnInit {
   ngOnInit(): void {
     this.usuarioC=localStorage.getItem("username")
     this.idU=localStorage.getItem("idC")
-    fetch("https://sadminhoteles.pythonanywhere.com/api/bookings_user/4/"+this.idU)
+    fetch("https://sadminhoteles.pythonanywhere.com/api/bookings_user/5/"+this.idU)
       .then(res => res.json())
       .then(reservaciones => {
         console.log(reservaciones)
