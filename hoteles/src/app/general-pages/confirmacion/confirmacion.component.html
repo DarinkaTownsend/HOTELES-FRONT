@@ -8,7 +8,7 @@
       <div class="container">
         <div class="py-5 text-center">
           <img class="d-block mx-auto mb-4" src="https://sadminhoteles.pythonanywhere.com/media/pagoTarjeta.png" alt="" width="72" height="72">
-          <h2>CheckIn</h2>
+          <h2>Check in</h2>
           <p class="lead">Complete el formulario y proceda a realizar la reserva</p>
         </div>
 
@@ -53,12 +53,35 @@
               </div>
 
               <div class="mb-3">
-                <label for="username">Identificación</label>
-                <div class="input-group">
+                <div class="dividir">
+                  <div class="dividir2">
 
-                  <input type="Number" class="form-control" id="cedula" placeholder="Identificación" required>
+                    <div>
+                      <input type="radio" id="contactChoice1"
+                     name="contact" checked>
+                    <label for="contactChoice1">Cédula</label>
+                    </div>
 
+                    <div>
+                      <input type="radio" id="ruc"
+                     name="contact" value="phone">
+                    <label for="contactChoice2">RUC</label>
+
+                    </div>
+
+
+
+                  </div>
+                  <div>
+                    <label for="username">Identificación</label>
+                    <div class="input-group">
+
+                      <input type="Number" class="form-control" id="cedula" placeholder="Identificación" required>
+
+                    </div>
+                  </div>
                 </div>
+
               </div>
 
               <div class="mb-3">
@@ -93,42 +116,15 @@
 
               <h4 class="mb-3">Método de pago</h4>
 
-              <div class="d-block my-3">
-                <div class="custom-control custom-radio">
-                  <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                  <label class="custom-control-label" for="credit">Tarjeta de Credito</label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input id="debit" name="paymentMethod" type="radio"  class="custom-control-input" required>
-                  <label class="custom-control-label" for="debit">Tarjeta de Debito</label>
-                </div>
+              <button class="boton2" type="submit" (click)="cargarMetodo()">Tarjeta de Débito</button>
+              <button class="boton2" type="submit" (click)="cargarMetodo()">Tarjeta de Crédito</button>
+              <button class="boton2" type="submit" (click)="Efectivo()">Efectivo</button>
+
+              <div id="Llenado">
 
               </div>
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="cc-name">Nombre en la tarjeta</label>
-                  <input type="text" class="form-control" id="nombreT" placeholder="" required>
 
 
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="cc-number">Número de Tarjeta</label>
-                  <input type="text" class="form-control" id="numeroT" placeholder="" required>
-
-                </div>
-              </div>
-              <div class="row2">
-                <div class="r1">
-                  <label for="cc-expiration">Fecha de Expiración</label>
-                  <input type="text" class="form-control" id="fExp" placeholder="" required>
-
-                </div>
-                <div class="r1">
-                  <label for="cc-expiration">CVV</label>
-                  <input type="text" class="form-control" id="CVV" placeholder="" required>
-
-                </div>
-              </div>
               <hr class="mb-4">
               <button class="boton2" type="submit" (click)="Finalizar()">Finalizar el pago</button>
               <button class="boton2" type="submit" routerLink="/reservar">Cancelar</button>
@@ -141,4 +137,3 @@
 
 
     </body>
-
