@@ -4,11 +4,12 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-checkout-turismo',
-  templateUrl: './checkout-turismo.component.html',
-  styleUrls: ['./checkout-turismo.component.css']
+  selector: 'app-checkout',
+  templateUrl: './checkout.component.html',
+  styleUrls: ['./checkout.component.css']
 })
-export class CheckoutTurismoComponent implements OnInit {
+export class CheckoutComponent implements OnInit {
+
   precio:any="";
   paquete:any="";
   precioT:any="";
@@ -26,12 +27,17 @@ export class CheckoutTurismoComponent implements OnInit {
   public fExp1:String="";
   public CVV1:String="";
 
+  cargo:any=0;
+  idCuarto:any=""
+
   constructor(private router:Router) { }
 
   ngOnInit(): void {
     this.paquete=localStorage.getItem("turismoPaquete");
     this.precio=localStorage.getItem("CostoPaquete");
     this.personas=localStorage.getItem("Personas");
+    this.cargo=localStorage.getItem("precioCuarto")
+    this.idCuarto=localStorage.getItem("IDCuarto")
 
     this.precioT=parseInt(this.personas)*parseInt(this.precio)
 
@@ -181,7 +187,7 @@ export class CheckoutTurismoComponent implements OnInit {
           confirmButtonText:"Cerrar"
         })
 
-        this.router.navigateByUrl("/inicio");
+        this.router.navigateByUrl("/admin/reservaciones");
 
       }
     }
@@ -253,7 +259,7 @@ export class CheckoutTurismoComponent implements OnInit {
             confirmButtonText:"Cerrar"
           })
 
-          this.router.navigateByUrl("/inicio");
+          this.router.navigateByUrl("/admin/reservaciones");
 
         }else if(this.pagoC!="Correcto"){
           Swal.fire({

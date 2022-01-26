@@ -14,10 +14,12 @@ import { ExtenderReservaComponent } from './extender-reserva/extender-reserva.co
 import { CancelarReservaComponent } from './cancelar-reserva/cancelar-reserva.component';
 import { AgregarCargosComponent } from './agregar-cargos/agregar-cargos.component';
 import { CrearPublicidadComponent } from './crear-publicidad/crear-publicidad.component';
+import { MovimientosComponent } from './movimientos/movimientos.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 //import { HeaderdosComponent } from '../shared/components/headerdos/headerdos.component'
 
 @NgModule({
-  declarations: [AdminPagesComponent, AdministradorComponent, ReservacionesComponent, HabitacionesComponent, PublicidadComponent, ReportesComponent, ExtenderReservaComponent, CancelarReservaComponent, AgregarCargosComponent, CrearPublicidadComponent],
+  declarations: [AdminPagesComponent, AdministradorComponent, ReservacionesComponent, HabitacionesComponent, PublicidadComponent, ReportesComponent, ExtenderReservaComponent, CancelarReservaComponent, AgregarCargosComponent, CrearPublicidadComponent, MovimientosComponent, CheckoutComponent],
   imports: [CommonModule,AdminPagesRoutingModule,SharedModule,NgbModule,]
 })
 export class AdminPagesModule { }

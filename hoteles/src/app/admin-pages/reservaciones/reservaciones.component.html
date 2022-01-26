@@ -14,8 +14,7 @@
                             <th>Cedula</th>
                             <th>Costo</th>
                             <th></th>
-                            <th></th>
-                            <th></th>
+
                         </tr>
                     </thead>
                     <tbody id="ordenes_tablas">
@@ -29,9 +28,16 @@
                           <td>{{reserva.status}}</td>
                           <td>{{reserva.cedula}}</td>
                           <td>{{reserva.price_room}}</td>
-                          <td><button class="boton" type="submit" (click)="extender(reserva.id_booking,reserva.begin_at)" routerLink="/admin/extender">Extender</button></td>
-                          <td><button class="boton" type="submit" (click)="agregar(reserva.id_booking,reserva.begin_at)" routerLink="/admin/agregar">Agregar Cargo</button></td>
-                          <td><button class="boton" type="submit" (click)="cancelar(reserva.id_booking,reserva.begin_at)" routerLink="/admin/cancelar">Cancelar Reserva</button></td>
+                          <td>
+
+
+                            <button class="boton" type="submit" (click)="extender(reserva.id_booking,reserva.begin_at)" routerLink="/admin/extender">Extender</button>
+                            <button class="boton" type="submit" (click)="agregar(reserva.id_booking,reserva.begin_at)" routerLink="/admin/agregar">Agregar Cargo</button>
+                            <button class="boton" type="submit" (click)="detalles(reserva.id_booking,reserva.begin_at,reserva.price_room,reserva.room)" routerLink="/admin/movimientos">Terminar reserva</button>
+                            <button class="boton" type="submit" (click)="cancelar(reserva.id_booking,reserva.begin_at)" routerLink="/admin/cancelar">Cancelar Reserva</button>
+
+                          </td>
+
 
 
 

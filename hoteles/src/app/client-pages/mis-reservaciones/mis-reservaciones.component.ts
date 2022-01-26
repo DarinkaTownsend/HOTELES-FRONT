@@ -33,7 +33,7 @@ export class MisReservacionesComponent implements OnInit {
                     let row =
                     `<tr>
                       <td>${reserva["id_booking"]}</td>
-                      <td>${reserva["begin_at"]}</td>
+                      <td>${reserva["begin_at"].slice(0,10)}</td>
                       <td>${reserva["room"]}</td>
                       <td>${reserva["costo_booking"]}</td>
                       <td><button class="boton" type="submit" routerLink="/reservar">Extender</button></td>
@@ -46,12 +46,12 @@ export class MisReservacionesComponent implements OnInit {
                     let row =
                     `<tr>
                       <td>${reserva["id_booking"]}</td>
-                      <td>${reserva["begin_at"]}</td>
-                      <td>${reserva["ends_at"]}</td>
+                      <td>${reserva["begin_at"].slice(0,10)}</td>
+                      <td>${reserva["ends_at"].slice(0,10)}</td>
                       <td>${reserva["room"]}</td>
-                      <td>${reserva["status"]}</td>
                       <td>${reserva["costo_booking"]}</td>
-                      <td>${reserva["cedula"]}</td>
+                      <td>${reserva["status"]}</td>
+
 
 
                     </tr>`

@@ -1,15 +1,15 @@
 <body class="bg-light">
   <div class="anuncio">
     <p class="tanuncio">
-      IMPORTANTE: Para validar su reservación en el hotel debe presentar su el comprobante de pago
+      IMPORTANTE: Una vez finalizado el pago la reserva cambia a estado terminado
 
     </p>
   </div>
       <div class="container">
         <div class="py-5 text-center">
           <img class="d-block mx-auto mb-4" src="https://sadminhoteles.pythonanywhere.com/media/pagoTarjeta.png" alt="" width="72" height="72">
-          <h2>Compra de paquete</h2>
-          <p class="lead">Complete el formulario y proceda a realizar la compra</p>
+          <h2>Check out</h2>
+          <p class="lead">Complete el formulario y proceda a realizar el check out</p>
         </div>
 
         <div class="row">
@@ -21,16 +21,15 @@
             <ul class="list-group mb-3">
               <li class="list-group-item d-flex justify-content-between lh-condensed">
                 <div>
-                  <h6 class="my-0">Paquete</h6>
-                  <small class="text-muted">{{paquete}}</small>
+                  <h6 class="my-0">Precio Habitación</h6>
+                  <small class="text-muted">Habitación - {{idCuarto}}</small>
                 </div>
-                <span class="text-muted">{{personas}} x {{precio}}</span>
               </li>
 
 
               <li class="list-group-item d-flex justify-content-between">
                 <span>Total (USD)</span>
-                <strong>{{precioT}}</strong>
+                <strong>{{cargo}}</strong>
               </li>
             </ul>
 
@@ -137,4 +136,5 @@
 
 
     </body>
+
 

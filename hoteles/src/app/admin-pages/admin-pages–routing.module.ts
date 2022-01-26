@@ -13,6 +13,8 @@ import { ExtenderReservaComponent } from './extender-reserva/extender-reserva.co
 import { AgregarCargosComponent } from './agregar-cargos/agregar-cargos.component';
 import { CancelarReservaComponent } from './cancelar-reserva/cancelar-reserva.component';
 import { CrearPublicidadComponent } from './crear-publicidad/crear-publicidad.component';
+import { MovimientosComponent } from './movimientos/movimientos.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
   {path:"", component:AdminPagesComponent,
@@ -25,7 +27,10 @@ const routes: Routes = [
     {path:"extender", component:ExtenderReservaComponent},
     {path:"cancelar", component:CancelarReservaComponent},
     {path:"agregar", component:AgregarCargosComponent},
-    {path:"crear-publicidad", component:CrearPublicidadComponent}
+    {path:"crear-publicidad", component:CrearPublicidadComponent},
+    {path:"movimientos", component:MovimientosComponent},
+    {path:"checkout", component:CheckoutComponent}
+
 
 
   ]
