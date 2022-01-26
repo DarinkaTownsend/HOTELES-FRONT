@@ -206,7 +206,8 @@ export class ConfirmacionComponent implements OnInit {
           "user": 0,
           "nombre":this.nombre1,
           "apellido":this.apellido1,
-          "telefono":this.telefono1
+          "telefono":this.telefono1,
+          "email":this.email1
 
         }
 
@@ -309,7 +310,8 @@ export class ConfirmacionComponent implements OnInit {
             "user": 0,
             "nombre":this.nombre1,
             "apellido":this.apellido1,
-            "telefono":this.telefono1
+            "telefono":this.telefono1,
+            "email":this.email1
 
           }
 

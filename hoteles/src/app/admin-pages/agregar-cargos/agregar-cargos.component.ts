@@ -15,12 +15,18 @@ export class AgregarCargosComponent implements OnInit {
   detalle:any=""
   fechaHoy:any=""
 
+  nombreR:any=""
+  apellidoR:any=""
+
   constructor(private usuario:UsuariosService, private router:Router) { }
 
   ngOnInit(): void {
     this.idReserva=localStorage.getItem("idBooking")
 
     this.fechaHoy=new Date().toISOString().slice(0,10)+" 00:00:00"
+
+    this.nombreR=localStorage.getItem("nombreReser")
+    this.apellidoR=localStorage.getItem("apellidoReserva")
   }
   agregarCargos(){
     var e1 = document.getElementById("02")as HTMLInputElement;
