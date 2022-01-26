@@ -20,6 +20,17 @@ export class ExtenderReservaComponent implements OnInit {
   ngOnInit(): void {
     this.idReserva=localStorage.getItem("idBooking")
     this.fechaR=localStorage.getItem("fechaReserva")
+
+    fetch("https://sadminhoteles.pythonanywhere.com/api/bookings_hotel/5")
+      .then(data => data.json())
+      .then(habitaciones => {
+        console.log(habitaciones)
+
+        for(let habitacion of habitaciones){
+        }
+
+
+      });
   }
 
   cambiarFecha(){
