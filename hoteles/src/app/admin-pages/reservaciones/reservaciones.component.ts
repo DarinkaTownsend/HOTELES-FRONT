@@ -1,3 +1,4 @@
+import { getLocaleCurrencyCode } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Reserva } from '../Interfaces_admin/reserva';
 
@@ -25,7 +26,12 @@ export class ReservacionesComponent implements OnInit {
                     room:reserva["room"],
                     status:reserva["status"],
                     cedula:reserva["cedula"],
-                    price_room:reserva["costo_booking"]
+                    price_room:reserva["costo_booking"],
+                    nombre:reserva["nombre"],
+                    apellido:reserva["apellido"],
+                    telefono:reserva["telefono"],
+                    email:reserva["email"]
+
 
                   }
 
@@ -38,32 +44,40 @@ export class ReservacionesComponent implements OnInit {
       })
   }
 
-  detalles(id: string,fe:string,pr:string,ro:string){
+  detalles(id: string,fe:string,pr:string,ro:string,nom:string,ape:string){
 
     localStorage.setItem("idBooking",id)
     localStorage.setItem("fechaReserva",fe.replace("T"," ").substring(0, fe.length - 1))
     localStorage.setItem("precioCuarto",pr)
     localStorage.setItem("IDCuarto",ro)
+    localStorage.setItem("nombreReser",nom)
+    localStorage.setItem("apellidoReserva",ape)
 
   }
-  extender(id: string,fe:string){
+  extender(id: string,fe:string,nom:string,ape:string){
 
     localStorage.setItem("idBooking",id)
     localStorage.setItem("fechaReserva",fe.replace("T"," ").substring(0, fe.length - 1))
+    localStorage.setItem("nombreReser",nom)
+    localStorage.setItem("apellidoReserva",ape)
 
   }
 
-  agregar(id: string,fe:string){
+  agregar(id: string,fe:string,nom:string,ape:string){
 
     localStorage.setItem("idBooking",id)
     localStorage.setItem("fechaReserva",fe.replace("T"," ").substring(0, fe.length - 1))
+    localStorage.setItem("nombreReser",nom)
+    localStorage.setItem("apellidoReserva",ape)
 
   }
 
-  cancelar(id: string,fe:string){
+  cancelar(id: string,fe:string,nom:string,ape:string){
 
     localStorage.setItem("idBooking",id)
     localStorage.setItem("fechaReserva",fe.replace("T"," ").substring(0, fe.length - 1))
+    localStorage.setItem("nombreReser",nom)
+    localStorage.setItem("apellidoReserva",ape)
 
   }
 

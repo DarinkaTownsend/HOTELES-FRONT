@@ -10,9 +10,13 @@
                             <th>Reserva</th>
                             <th>Finaliza</th>
                             <th>Room</th>
-                            <th>Estado</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Telefono</th>
+                            <th>Email</th>
                             <th>Cedula</th>
                             <th>Costo</th>
+                            <th>Estado</th>
                             <th></th>
 
                         </tr>
@@ -25,16 +29,20 @@
                           <td>{{reserva.begin_at}}</td>
                           <td>{{reserva.ends_at}}</td>
                           <td>{{reserva.room}}</td>
-                          <td>{{reserva.status}}</td>
+                          <td>{{reserva.nombre}}</td>
+                          <td>{{reserva.apellido}}</td>
+                          <td>{{reserva.telefono}}</td>
+                          <td>{{reserva.email}}</td>
                           <td>{{reserva.cedula}}</td>
                           <td>{{reserva.price_room}}</td>
+                          <td>{{reserva.status}}</td>
                           <td>
 
 
-                            <button class="boton" type="submit" (click)="extender(reserva.id_booking,reserva.begin_at)" routerLink="/admin/extender">Extender</button>
-                            <button class="boton" type="submit" (click)="agregar(reserva.id_booking,reserva.begin_at)" routerLink="/admin/agregar">Agregar Cargo</button>
-                            <button class="boton" type="submit" (click)="detalles(reserva.id_booking,reserva.begin_at,reserva.price_room,reserva.room)" routerLink="/admin/movimientos">Terminar reserva</button>
-                            <button class="boton" type="submit" (click)="cancelar(reserva.id_booking,reserva.begin_at)" routerLink="/admin/cancelar">Cancelar Reserva</button>
+                            <button class="boton" type="submit" (click)="extender(reserva.id_booking,reserva.begin_at,reserva.nombre,reserva.apellido)" routerLink="/admin/extender">Extender</button>
+                            <button class="boton" type="submit" (click)="agregar(reserva.id_booking,reserva.begin_at,reserva.nombre,reserva.apellido)" routerLink="/admin/agregar">Agregar Cargo</button>
+                            <button class="boton" type="submit" (click)="detalles(reserva.id_booking,reserva.begin_at,reserva.price_room,reserva.room,reserva.nombre,reserva.apellido)" routerLink="/admin/movimientos">Terminar reserva</button>
+                            <button class="boton" type="submit" (click)="cancelar(reserva.id_booking,reserva.begin_at,reserva.nombre,reserva.apellido)" routerLink="/admin/cancelar">Cancelar Reserva</button>
 
                           </td>
 

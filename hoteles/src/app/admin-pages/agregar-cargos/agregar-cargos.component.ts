@@ -43,10 +43,24 @@ export class AgregarCargosComponent implements OnInit {
       "titulo_detalle": this.titulo,
       "detalle": this.detalle,
       "fecha_detalle": this.fechaHoy,
-      "costo": this.cargo
+      "costo_detalle": parseInt(this.cargo)
     }
 
+    if(this.titulo==""||this.detalle==""||this.cargo==""){
+      Swal.fire({
+        title:"Campos Incompletos",
+        text:"¡Por favor llene los campos!",
+        icon:"error",
+        confirmButtonColor:"#3085d6",
+        confirmButtonText:"Cerrar"
+      })
+
+
+    }else{
+
     this.usuario.AgregarCargos(enviar).subscribe(
+
+
 
       res  => {
 
@@ -96,6 +110,7 @@ export class AgregarCargosComponent implements OnInit {
 
 
     )
+    }
 
 
 
