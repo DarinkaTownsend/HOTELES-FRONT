@@ -18,7 +18,10 @@ export class ExtenderReservaComponent implements OnInit {
   nuevaFechaE:any ="";
   nuevaFechaS:any ="";
   nuevoP:any ="";
-
+  fecha: any = "";
+  nuevaNoche: any;
+  anteriorNoche: any;
+  precioA: any;
   constructor(private usuario:UsuariosService, private router:Router) { }
 
   ngOnInit(): void {
@@ -36,11 +39,29 @@ export class ExtenderReservaComponent implements OnInit {
             fechaReserva[0].innerHTML = "Actual fecha de salida: "+habitacion['ends_at'].split("T")[0];
             let precioReserva= document.getElementsByClassName("precioAnterior");
             precioReserva[0].innerHTML = "Precio anterior: $ "+habitacion['costo_booking'];
+            this.precioA = habitacion['costo_booking'];
             var fechaInicio = new Date(habitacion['begin_at'].split("T")[0]).getTime();
             var fechaFin    = new Date(habitacion['ends_at'].split("T")[0]).getTime();
             var diff = (fechaFin - fechaInicio)/(1000*60*60*24);
             let diasReserva= document.getElementsByClassName("diasReserva");
             diasReserva[0].innerHTML = "Noches de Reserva: "+diff;
+            this.anteriorNoche = diff;
+            let nombre= document.getElementsByClassName("container");
+            nombre[0].innerHTML = localStorage.getItem("nombreReser")+" "+ localStorage.getItem("apellidoReserva");
+            let boton= document.getElementById("boton")as HTMLInputElement;
+            var date1 = new Date(habitacion['begin_at'].split("T")[0]);
+            const tiempoTranscurrido = Date.now();
+            var date2 = new Date(tiempoTranscurrido);
+            if(date1 > date2){ 
+              console.log("ffff");
+            }
+            if(date2 > date1){ 
+              console.log(date1);
+              console.log(date2);
+              console.log("gggg");
+              boton.disabled = true
+
+            }
             /*let calendario= document.getElementsByClassName("fechas");
             var e1 = document.getElementById("calendario1")as HTMLInputElement;
             calendario[0].setAttribute("value", habitacion['begin_at'].split("T")[0]);
@@ -58,6 +79,8 @@ export class ExtenderReservaComponent implements OnInit {
     var e2 = document.getElementById("calendario1")as HTMLInputElement;
     let seleccionEntrada= e2.value;
     let seleccionSalida = e1.value;
+    console.log(seleccionEntrada);
+    console.log(seleccionSalida);
     let fechaReserva= document.getElementsByClassName("fechaR");
     fechaReserva[0].innerHTML = "Actual fecha de salida: "+seleccionSalida;
     var fechaInicio = new Date(seleccionEntrada).getTime();
@@ -65,9 +88,13 @@ export class ExtenderReservaComponent implements OnInit {
     var diff = (fechaFin - fechaInicio)/(1000*60*60*24);
     let diasReserva= document.getElementsByClassName("diasNuevos");
     diasReserva[0].innerHTML = "Actualización de noches: "+diff;
+    this.nuevaNoche = diff;
+    this.nuevoPrecio();
   }
   nuevoPrecio(){ 
-    
+    let totalanterior= (this.precioA/this.anteriorNoche)*this.nuevaNoche;
+    let diasReserva= document.getElementsByClassName("precioNuevo");
+    diasReserva[0].innerHTML = "Nuevo precio: $ "+totalanterior;
   }
   cambiarFecha(){
     var e1 = document.getElementById("calendario1")as HTMLInputElement;
