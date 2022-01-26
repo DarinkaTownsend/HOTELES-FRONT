@@ -8,6 +8,9 @@
   align-content: center;
   margin-left: 5%;
   margin-right: 5%;
+  padding-left: 5%;
+  padding-top: 5%;
+  align-content: space-around;
 }
 
 html {
