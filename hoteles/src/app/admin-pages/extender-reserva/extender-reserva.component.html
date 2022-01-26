@@ -10,11 +10,11 @@
 <div class="contenedorIz">
     <div class="valores">
         <h4>Fecha entrada:</h4>
-        <input type="date" class="fecha" id="calendario1" class="caja" name="trip-start" value="2022-07-11" min={{fechaR}} max="2024-12-31">
+        <input type="date" (change)="obtenerT(box2.value)" #box2 class="fecha" id="calendario1" class="caja" name="trip-start" value="2022-07-11" min={{fechaR}} max="2024-12-31">
     </div>
     <div class="valores">
         <h4>Fecha salida:</h4>
-        <input type="date" (change)="nuevaFecha()" class="fecha" id="calendario2" value="2022-07-11" class="caja" name="trip-start" min={{fechaR}} max="2024-12-31">
+        <input type="date" (change)="obtenerF(box.value)" #box id="calendario2" value="2022-07-11" class="caja" name="trip-start" min={{fechaR}} max="2024-12-31">
     </div>
 </div>
 <div class="contenedorDe">

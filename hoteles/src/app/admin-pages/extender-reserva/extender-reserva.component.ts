@@ -74,17 +74,20 @@ export class ExtenderReservaComponent implements OnInit {
 
       });
   }
-  nuevaFecha(){ 
-    var e1 = document.getElementById("calendario1")as HTMLInputElement;
-    var e2 = document.getElementById("calendario1")as HTMLInputElement;
-    let seleccionEntrada= e2.value;
-    let seleccionSalida = e1.value;
-    console.log(seleccionEntrada);
-    console.log(seleccionSalida);
+  obtenerF(valor: string){ 
+    console.log(valor);
+    this.nuevaFechaS=valor;
+    this.nuevaFecha();
+
+  }
+  obtenerT(valor: string){ 
+    this.nuevaFechaE=valor;
+  }
+  nuevaFecha(){
     let fechaReserva= document.getElementsByClassName("fechaR");
-    fechaReserva[0].innerHTML = "Actual fecha de salida: "+seleccionSalida;
-    var fechaInicio = new Date(seleccionEntrada).getTime();
-    var fechaFin    = new Date(seleccionSalida).getTime();
+    fechaReserva[0].innerHTML = "Actual fecha de salida: "+this.nuevaFechaS;
+    var fechaInicio = new Date(this.nuevaFechaE).getTime();
+    var fechaFin    = new Date(this.nuevaFechaS).getTime();
     var diff = (fechaFin - fechaInicio)/(1000*60*60*24);
     let diasReserva= document.getElementsByClassName("diasNuevos");
     diasReserva[0].innerHTML = "Actualización de noches: "+diff;
@@ -94,7 +97,7 @@ export class ExtenderReservaComponent implements OnInit {
   nuevoPrecio(){ 
     let totalanterior= (this.precioA/this.anteriorNoche)*this.nuevaNoche;
     let diasReserva= document.getElementsByClassName("precioNuevo");
-    diasReserva[0].innerHTML = "Nuevo precio: $ "+totalanterior;
+    diasReserva[0].innerHTML = "Nuevo precio: $ "+totalanterior.toFixed(2);
   }
   cambiarFecha(){
     var e1 = document.getElementById("calendario1")as HTMLInputElement;
