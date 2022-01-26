@@ -1,10 +1,48 @@
-<h2 class="container">Cambiar la fecha de la reserva #{{idReserva}}</h2>
+<h2 id="nombre" class="container">Nombre de la persona</h2>
+<!--<h2 class="container">Cambiar la fecha de la reserva #{{idReserva}}</h2>
 <div class="valores">
-  <h3>Escoja la fecha</h3>
-  <input type="date" id="calendario1" class="caja" name="trip-start" value="2022-07-22" min={{fechaR}} max="2024-12-31">
+    <h3>Escoja la fecha</h3>
+    <input type="date" id="calendario1" class="caja" name="trip-start" value="2022-07-22" min={{fechaR}} max="2024-12-31">
+</div>-->
+<div class="nFecha">
+    <h3>Nueva fecha de salida: xx/xx/xxxx</h3>
+</div>
+<div class="contenedorIz">
+    <div class="valores">
+        <h4>Fecha entrada:</h4>
+        <input type="date" id="calendario1" class="caja" name="trip-start" value="2022-07-22" min={{fechaR}} max="2024-12-31">
+    </div>
+    <div class="valores">
+        <h4>Fecha salida:</h4>
+        <input type="date" id="calendario2" class="caja" name="trip-start" value="2022-07-22" min={{fechaR}} max="2024-12-31">
+    </div>
+</div>
+<div class="contenedorDe">
+    <div class="valores">
+        <h4>Noches de Reserva: xx</h4>
+    </div>
+    <div class="valores">
+        <h4>Actualización de noches: xx</h4>
+    </div>
+</div>
+
+<div class="valoresPrecio">
+
+    <h4>Precio anterior: $ xx</h4>
+</div>
+<div class="valoresPrecio">
+
+    <h4>Nuevo precio: $ xx</h4>
+</div>
+
+<div class="valores">
+
+    <h4>Motivo</h4>
+</div>
+<div class="valores">
+    <textarea name="textarea" rows="10" cols="50">Escriba el motivo</textarea>
 </div>
 
 <div class="botonEnviar">
-  <button class="btn" (click)="cambiarFecha()" >Cambiar Fecha</button>
+    <button class="btn" (click)="cambiarFecha()">Cambiar Fecha</button>
 </div>
-
