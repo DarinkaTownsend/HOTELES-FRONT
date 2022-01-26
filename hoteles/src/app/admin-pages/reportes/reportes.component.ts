@@ -8,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class ReportesComponent implements OnInit {
   idU:any=""
   estado:any=""
+  cantidad:any=0
+  suma:any=0
+  promedioC:any=0;
+  nombre:any=""
 
   constructor() { }
 
@@ -23,18 +27,28 @@ export class ReportesComponent implements OnInit {
 
                 for(let punto of puntuaciones){
 
+                  this.cantidad+=1
+                  this.suma+=parseInt(punto["puntu"])
+
+                  if(punto["user"]==4){
+                    this.nombre="jaime20"
+                  }else{
+                    this.nombre="cliente01"
+                  }
 
 
                   let row =
                     `<tr>
                       <td>${punto["id_punt"]}</td>
-                      <td>${punto["user"]}</td>
+                      <td>${this.nombre}</td>
                       <td>${punto["puntu"]}</td>
 
 
                     </tr>`
                   tbody.innerHTML += row;
                 }
+
+                this.promedioC=this.suma/this.cantidad
 
               }
       })
