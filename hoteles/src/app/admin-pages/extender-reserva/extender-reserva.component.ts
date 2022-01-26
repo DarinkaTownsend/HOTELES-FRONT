@@ -47,7 +47,7 @@ export class ExtenderReservaComponent implements OnInit {
             diasReserva[0].innerHTML = "Noches de Reserva: "+diff;
             this.anteriorNoche = diff;
             let nombre= document.getElementsByClassName("container");
-            nombre[0].innerHTML = localStorage.getItem("nombreReser")+" "+ localStorage.getItem("apellidoReserva");
+            nombre[0].innerHTML = "Extender reserva de "+localStorage.getItem("nombreReser")+" "+ localStorage.getItem("apellidoReserva");
             let boton= document.getElementById("boton")as HTMLInputElement;
             var date1 = new Date(habitacion['begin_at'].split("T")[0]);
             const tiempoTranscurrido = Date.now();
