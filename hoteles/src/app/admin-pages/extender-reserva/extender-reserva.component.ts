@@ -19,9 +19,10 @@ export class ExtenderReservaComponent implements OnInit {
   nuevaFechaS:any ="";
   nuevoP:any ="";
   fecha: any = "";
-  nuevaNoche: any;
-  anteriorNoche: any;
-  precioA: any;
+  nuevaNoche: any=0;
+  anteriorNoche: any=0;
+  precioA: any=0;
+  precioFinal:any=0;
   constructor(private usuario:UsuariosService, private router:Router) { }
 
   ngOnInit(): void {
@@ -52,10 +53,10 @@ export class ExtenderReservaComponent implements OnInit {
             var date1 = new Date(habitacion['begin_at'].split("T")[0]);
             const tiempoTranscurrido = Date.now();
             var date2 = new Date(tiempoTranscurrido);
-            if(date1 > date2){ 
+            if(date1 > date2){
               console.log("ffff");
             }
-            if(date2 > date1){ 
+            if(date2 > date1){
               console.log(date1);
               console.log(date2);
               console.log("gggg");
@@ -74,14 +75,20 @@ export class ExtenderReservaComponent implements OnInit {
 
       });
   }
-  obtenerF(valor: string){ 
+  obtenerF(valor: string){
     console.log(valor);
     this.nuevaFechaS=valor;
+
+
+
+    this.obtenerT(this.fechaR);
+    console.log(this.fechaR)
+
     this.nuevaFecha();
 
   }
-  obtenerT(valor: string){ 
-    this.nuevaFechaE=valor;
+  obtenerT(valor: string){
+    this.nuevaFechaE=this.fechaR;
   }
   nuevaFecha(){
     let fechaReserva= document.getElementsByClassName("fechaR");
@@ -94,15 +101,16 @@ export class ExtenderReservaComponent implements OnInit {
     this.nuevaNoche = diff;
     this.nuevoPrecio();
   }
-  nuevoPrecio(){ 
+  nuevoPrecio(){
     let totalanterior= ((this.precioA/this.anteriorNoche)*this.nuevaNoche).toFixed(0);
     let diasReserva= document.getElementsByClassName("precioNuevo");
-    diasReserva[0].innerHTML = "Nuevo precio: $ "+(totalanterior +this.precioA);
+    this.precioFinal=parseInt(this.precioA)+parseInt(totalanterior)
+    diasReserva[0].innerHTML = "Nuevo precio: $ "+this.precioFinal;
   }
   cambiarFecha(){
-    var e1 = document.getElementById("calendario1")as HTMLInputElement;
-    this.fechaCal=e1.value+" 00:00:00";
-    console.log(this.fechaCal)
+
+    this.fechaCal=this.nuevaFechaS+" 00:00:00";
+    console.log(this.fechaCal+"aqui")
     let enviar={
       "booking": parseInt(this.idReserva),
       "ends_at":this.fechaCal
@@ -110,15 +118,48 @@ export class ExtenderReservaComponent implements OnInit {
 
     this.usuario.ExtenderReserva(enviar).subscribe(
 
+
       res  => {
-        Swal.fire({
-          title:"Fecha cambiada",
-          text:"¡Se ha extendido la fecha!",
-          icon:"success",
-          confirmButtonColor:"#3085d6",
-          confirmButtonText:"Cerrar"
-        })
-        this.router.navigateByUrl("admin/reservaciones");
+
+        const enviar={
+          "booking": parseInt(this.idReserva),
+          "costo_adicional": parseInt(this.precioFinal),
+        }
+
+
+        this.usuario.AgregarCargos(enviar).subscribe(
+
+        res  => {
+
+          Swal.fire({
+                        title:"Se ha extendido la reserva",
+                        text:"¡Se ha cambiado el costo de la reserva!",
+                        icon:"success",
+                        confirmButtonColor:"#3085d6",
+                        confirmButtonText:"Cerrar"
+                      })
+
+          this.router.navigateByUrl("admin/reservaciones");
+
+          },
+
+
+
+          err  => {
+
+                  Swal.fire({
+                    title: 'Error!',
+                    text: err.error.message,
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar'
+                  })
+                }
+
+
+
+
+        )
+
       },
       err  => {
 

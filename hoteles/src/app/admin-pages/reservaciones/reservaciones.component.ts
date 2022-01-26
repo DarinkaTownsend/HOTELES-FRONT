@@ -57,7 +57,7 @@ export class ReservacionesComponent implements OnInit {
   extender(id: string,fe:string,nom:string,ape:string){
 
     localStorage.setItem("idBooking",id)
-    localStorage.setItem("fechaReserva",fe.replace("T"," ").substring(0, fe.length - 1))
+    localStorage.setItem("fechaReserva",fe)
     localStorage.setItem("nombreReser",nom)
     localStorage.setItem("apellidoReserva",ape)
 
