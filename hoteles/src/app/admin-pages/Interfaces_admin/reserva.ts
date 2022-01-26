@@ -6,4 +6,8 @@ export interface Reserva{
   status:String
   cedula:String
   price_room:String
+  nombre:String
+  apellido:String
+  email:String
+  telefono:String
 }

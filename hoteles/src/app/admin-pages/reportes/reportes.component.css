@@ -7,6 +7,14 @@ html {
   scroll-behavior: smooth;
 }
 
+.ca{
+  display: grid;
+  grid-template-columns: auto auto;
+  padding-top: 10%;
+  padding-bottom: 3%;
+  align-content: center;
+}
+
 body {
   color: #666666;
   font-size: 14px;
@@ -20,7 +28,7 @@ h1,
 h2 {
   letter-spacing: 0;
   font-weight: normal;
-  padding: 0 0 10px 0;
+
   font-weight: normal;
   line-height: normal;
   color: #111111;
@@ -50,8 +58,7 @@ h2 {
 }
 
 h2 {
-  padding-top: 1%;
-  padding-bottom: 1%;
+
   font-size: 40px;
   color: #0d0f38;
   text-align: center;
@@ -69,5 +76,5 @@ img {
 
 .container{
   text-align: center;
-  padding-top: 10%;
+
 }

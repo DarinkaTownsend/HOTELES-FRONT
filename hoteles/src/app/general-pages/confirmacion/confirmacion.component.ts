@@ -19,23 +19,38 @@ export class ConfirmacionComponent implements OnInit {
   ruc:any="no"
   tipoHabitacion:any=""
 
+
+
+  fechaI:any=""
+  fechaFin:any=""
+  idUsuario:any=""
+  idHabitacion:any=""
+  costoH:any=""
+
+
   public cedula1:String="";
   public nombre1:String="";
   public apellido1: String="";
   public email1:String="";
   public direccion1:String="";
+  public telefono1:String="";
   public nombreT1:String="";
   public numeroT1:String="";
   public fExp1:String="";
   public CVV1:String="";
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private usuario:UsuariosService) { }
 
   ngOnInit(): void {
     this.paquete=localStorage.getItem("turismoPaquete");
     this.personas=localStorage.getItem("Personas");
     this.tipoHabitacion=localStorage.getItem("nombreHS")
     this.precio=localStorage.getItem("precioS")
+
+    this.fechaFin=localStorage.getItem("fechaCerrarS")?.toString().slice(0,10)+" 00:00:00"
+    this.fechaI=localStorage.getItem("fechaReservaS")?.toString().slice(0,10)+" 00:00:00"
+    this.idHabitacion=localStorage.getItem("idHabitacionS")
+    this.costoH=localStorage.getItem("precioS")
 
 
 
@@ -108,11 +123,12 @@ export class ConfirmacionComponent implements OnInit {
   Finalizar(){
 
     var e1 = document.getElementById("cedula")as HTMLInputElement;
-    var e2 = document.getElementById("nombre")as HTMLInputElement;
-    var e3 = document.getElementById("apellido")as HTMLInputElement;
+    var e2 = document.getElementById("nombreC")as HTMLInputElement;
+    var e3 = document.getElementById("apellidoC")as HTMLInputElement;
     var e4 = document.getElementById("direccion")as HTMLInputElement;
-    var e5 = document.getElementById("correo")as HTMLInputElement;
+    var e5 = document.getElementById("correoC")as HTMLInputElement;
     var e10 = document.getElementById("ruc")as HTMLInputElement;
+    var e11 = document.getElementById("telefonoC")as HTMLInputElement;
 
     if(e10.checked){
       this.ruc="si"
@@ -125,6 +141,7 @@ export class ConfirmacionComponent implements OnInit {
     this.email1=e5.value
     this.nombre1=e2.value
     this.direccion1=e4.value
+    this.telefono1=e11.value
 
 
     var e7 = document.getElementById("nombreT")as HTMLInputElement;
@@ -153,7 +170,7 @@ export class ConfirmacionComponent implements OnInit {
 
 
 
-    if(this.nombre1==" "||this.apellido1==" "||this.cedula1==" "||this.direccion1==""||this.email1==""){
+    if(this.nombre1==" "||this.apellido1==" "||this.cedula1==" "||this.direccion1==""||this.email1==""||this.telefono1==""){
       Swal.fire({
         title:"Formulario Incompleto",
         text:"¡Debe llenar todo los campos!",
@@ -176,15 +193,47 @@ export class ConfirmacionComponent implements OnInit {
 
     else if(this.ruc=="si" && this.pagoC=="Correcto"){
       if(this.cedula1.length == 13){
-        Swal.fire({
-          title:"Reserva realizada",
-          text:"¡Gracias por su compra!",
-          icon:"success",
-          confirmButtonColor:"#3085d6",
-          confirmButtonText:"Cerrar"
-        })
 
-        this.router.navigateByUrl("/inicio");
+
+        var cuerpo1={
+          "begin_at": this.fechaI,
+          "cedula":this.cedula1,
+          "costo_booking":parseInt(this.costoH),
+          "ends_at":this.fechaFin,
+          "id_hotel": 5,
+          "room": parseInt(this.idHabitacion),
+          "status": "activa",
+          "user": 0,
+          "nombre":this.nombre1,
+          "apellido":this.apellido1,
+          "telefono":this.telefono1
+
+        }
+
+
+        this.usuario.AgregarReserva(cuerpo1).subscribe(
+
+          res  => {
+            Swal.fire({
+              title:"Reserva realizada",
+              text:"¡Se realizado su reserva!",
+              icon:"success",
+              confirmButtonColor:"#3085d6",
+              confirmButtonText:"Cerrar"
+            })
+            this.router.navigateByUrl("/inicio");
+          },
+          err  => {
+
+            Swal.fire({
+              title: 'Error!',
+              text: err.error.message,
+              icon: 'error',
+              confirmButtonText: 'Aceptar'
+            })
+          }
+        )
+
 
       }
     }
@@ -248,15 +297,47 @@ export class ConfirmacionComponent implements OnInit {
         //Validamos que el digito validador sea igual al de la cedula
         if((digito_validador == ultimo_digito)&& this.pagoC=="Correcto"){
           console.log('la cedula:' + this.cedula1 + ' es correcta');
-          Swal.fire({
-            title:"Reserva realizada",
-            text:"¡Gracias por su compra!",
-            icon:"success",
-            confirmButtonColor:"#3085d6",
-            confirmButtonText:"Cerrar"
-          })
 
-          this.router.navigateByUrl("/inicio");
+          var cuerpo2={
+            "begin_at": this.fechaI,
+            "cedula":this.cedula1,
+            "costo_booking":parseInt(this.costoH),
+            "ends_at":this.fechaFin,
+            "id_hotel": 5,
+            "room": parseInt(this.idHabitacion),
+            "status": "activa",
+            "user": 0,
+            "nombre":this.nombre1,
+            "apellido":this.apellido1,
+            "telefono":this.telefono1
+
+          }
+
+
+          this.usuario.AgregarReserva(cuerpo2).subscribe(
+
+            res  => {
+              Swal.fire({
+                title:"Reserva realizada",
+                text:"¡Se realizado su reserva!",
+                icon:"success",
+                confirmButtonColor:"#3085d6",
+                confirmButtonText:"Cerrar"
+              })
+              this.router.navigateByUrl("/inicio");
+            },
+            err  => {
+
+              Swal.fire({
+                title: 'Error!',
+                text: err.error.message,
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+              })
+            }
+          )
+
+
 
         }else if(this.pagoC!="Correcto"){
           Swal.fire({
