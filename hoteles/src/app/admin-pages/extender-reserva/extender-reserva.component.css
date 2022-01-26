@@ -1,7 +1,9 @@
 * {
     box-sizing: border-box !important;
 }
-
+.alo{
+  margin-left: 5%;
+}
 .valores {
     display: grid;
     grid-template-columns: auto auto;
