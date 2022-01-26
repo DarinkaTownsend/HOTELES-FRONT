@@ -11,66 +11,99 @@ import { Router } from '@angular/router';
 })
 export class ConfirmacionComponent implements OnInit {
 
-  username:any="";
-
-
-
-  public cedula:String="";
-  public nombre:String="";
-  public apellido: String="";
-  public email:String="";
-  public direccion:String="";
-  public nombreT:String="";
-  public numeroT:String="";
-  public fExp:String="";
-  public CVV:String="";
-
-  numeroHS:any="";
-  numeroPS:any="";
-  numeroCS:any="";
-  wifi:any="";
-  breakfast:any="";
-  kitchen:any="";
-  lawdry:any="";
   precio:any="";
-  tipoHabitacion:any="";
+  paquete:any="";
+  precioT:any="";
+  personas:any="";
+  pagoC:any="";
+  ruc:any="no"
+  tipoHabitacion:any=""
 
-  idHabitacion:any="";
-  fechaReservaS:any="";
-  fechaCerrarS:any="";
+  public cedula1:String="";
+  public nombre1:String="";
+  public apellido1: String="";
+  public email1:String="";
+  public direccion1:String="";
+  public nombreT1:String="";
+  public numeroT1:String="";
+  public fExp1:String="";
+  public CVV1:String="";
 
-
-
-
-
-
-  constructor(private usuario:UsuariosService, private router:Router) {
-
-
-  }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
-    this.tipoHabitacion=localStorage.getItem("tipoHabitacion")
-    this.precio=localStorage.getItem("precioH")
-
-    this.username=0
-
+    this.paquete=localStorage.getItem("turismoPaquete");
+    this.personas=localStorage.getItem("Personas");
     this.tipoHabitacion=localStorage.getItem("nombreHS")
-    this.numeroPS=localStorage.getItem("numeroPerS")
-    this.numeroCS=localStorage.getItem("numeroCS")
-    this.breakfast=localStorage.getItem("desayunoS")
-    this.kitchen=localStorage.getItem("cocinaS")
-    this.wifi=localStorage.getItem("wifiS")
-    this.lawdry=localStorage.getItem("lavadoraS")
     this.precio=localStorage.getItem("precioS")
-    this.idHabitacion=localStorage.getItem("idHabitacionS")
-
-    this.fechaReservaS=localStorage.getItem("fechaReservaS")
-    this.fechaCerrarS=localStorage.getItem("fechaCerrarS")
 
 
 
   }
+
+  cargarMetodo(){
+    console.log("aqui")
+    var e2 = document.getElementById("Llenado");
+
+    if(e2){
+      let row =
+                    `
+                    <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="cc-name">Nombre en la tarjeta</label>
+                  <input type="text" class="form-control" id="nombreT" placeholder="" required>
+
+
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="cc-number">Número de Tarjeta</label>
+                  <input type="number" class="form-control" id="numeroT" placeholder="" required>
+
+                </div>
+              </div>
+              <div class="row2">
+                <div class="r1">
+                  <label for="cc-expiration">Fecha de Expiración</label>
+                  <input type="date" class="form-control" id="fExp" placeholder="" required>
+
+                </div>
+                <div class="r1">
+                  <label for="cc-expiration">CVV</label>
+                  <input type="number" class="form-control" id="CVV" placeholder="" required>
+
+                </div>
+              </div>
+
+              `
+                    e2.innerHTML = row;
+
+    }
+
+
+
+
+
+
+  }
+
+  Efectivo(){
+    var e2 = document.getElementById("Llenado");
+
+    if(e2){
+      let row =
+                    `
+                    <hr>
+                    <h4 class="efec">El pago se realiza en el hotel</h4>
+                    <hr>
+
+              `
+                    e2.innerHTML = row;
+
+    }
+
+    this.pagoC="Correcto"
+    }
+
 
   Finalizar(){
 
@@ -79,24 +112,48 @@ export class ConfirmacionComponent implements OnInit {
     var e3 = document.getElementById("apellido")as HTMLInputElement;
     var e4 = document.getElementById("direccion")as HTMLInputElement;
     var e5 = document.getElementById("correo")as HTMLInputElement;
-    var e6 = document.getElementById("nombreT")as HTMLInputElement;
-    var e7 = document.getElementById("numeroT")as HTMLInputElement;
-    var e8 = document.getElementById("fExp")as HTMLInputElement;
+    var e10 = document.getElementById("ruc")as HTMLInputElement;
+
+    if(e10.checked){
+      this.ruc="si"
+
+    }
+
+
+    this.cedula1=e1.value
+    this.apellido1=e3.value
+    this.email1=e5.value
+    this.nombre1=e2.value
+    this.direccion1=e4.value
+
+
+    var e7 = document.getElementById("nombreT")as HTMLInputElement;
+    var e8 = document.getElementById("numeroT")as HTMLInputElement;
     var e9 = document.getElementById("CVV")as HTMLInputElement;
 
-    this.cedula=e1.value
-    this.apellido=e3.value
-    this.email=e5.value
-    this.nombre=e2.value
-    this.direccion=e4.value
-    this.nombreT=e6.value
-    this.numeroT=e7.value
-    this.fExp=e8.value
-    this.CVV=e9.value
+    if(e7 && e8 && e9){
+      var nombreT=e7.value
+      var numero=e8.value
+      var cvv = e9.value
 
-    console.log(this.nombre)
 
-    if(this.nombre==" "||this.apellido==" "||this.cedula==" "||this.direccion==""||this.email==""||this.numeroT==""||this.nombreT==" "||this.fExp==" "||this.CVV==" "){
+      if(nombreT==""||numero.length!=16||cvv.length!=3){
+        this.pagoC="Incorrecto"
+        console.log("nombre")
+      }else{
+        this.pagoC="Correcto"
+        console.log("bien")
+      }
+
+    }
+
+
+
+
+
+
+
+    if(this.nombre1==" "||this.apellido1==" "||this.cedula1==" "||this.direccion1==""||this.email1==""){
       Swal.fire({
         title:"Formulario Incompleto",
         text:"¡Debe llenar todo los campos!",
@@ -106,7 +163,7 @@ export class ConfirmacionComponent implements OnInit {
       })
     }
 
-    else if(!this.email.includes("@")){
+    else if(!this.email1.includes("@") && !this.email1.includes(".com")){
       Swal.fire({
         title:"Email Inválido",
         text:"¡Ingrese su correo correctamente!",
@@ -117,41 +174,56 @@ export class ConfirmacionComponent implements OnInit {
      }
 
 
+    else if(this.ruc=="si" && this.pagoC=="Correcto"){
+      if(this.cedula1.length == 13){
+        Swal.fire({
+          title:"Reserva realizada",
+          text:"¡Gracias por su compra!",
+          icon:"success",
+          confirmButtonColor:"#3085d6",
+          confirmButtonText:"Cerrar"
+        })
+
+        this.router.navigateByUrl("/inicio");
+
+      }
+    }
+
     //Preguntamos si la cedula consta de 10 digitos
-    else if(this.cedula.length == 10){
+    else if(this.cedula1.length == 10){
 
       //Obtenemos el digito de la region que sonlos dos primeros digitos
-      var digito_region1 = this.cedula.substring(0,2);
+      var digito_region1 = this.cedula1.substring(0,2);
       var digito_region=parseInt(digito_region1)
 
       //Pregunto si la region existe ecuador se divide en 24 regiones
       if( digito_region >= 1 && digito_region <=24 ){
 
         // Extraigo el ultimo digito
-        var ultimo_digito   = parseInt(this.cedula.substring(9,10));
+        var ultimo_digito   = parseInt(this.cedula1.substring(9,10));
 
         //Agrupo todos los pares y los sumo
-        var pares = parseInt(this.cedula.substring(1,2)) + parseInt(this.cedula.substring(3,4)) + parseInt(this.cedula.substring(5,6)) + parseInt(this.cedula.substring(7,8));
+        var pares = parseInt(this.cedula1.substring(1,2)) + parseInt(this.cedula1.substring(3,4)) + parseInt(this.cedula1.substring(5,6)) + parseInt(this.cedula1.substring(7,8));
 
         //Agrupo los impares, los multiplico por un factor de 2, si la resultante es > que 9 le restamos el 9 a la resultante
-        var numero1 = parseInt(this.cedula.substring(0,1));
+        var numero1 = parseInt(this.cedula1.substring(0,1));
 
         var numero1 = (numero1 * 2);
         if( numero1 > 9 ){ var numero1 = (numero1 - 9); }
 
-        var numero3 = parseInt(this.cedula.substring(2,3));
+        var numero3 = parseInt(this.cedula1.substring(2,3));
         var numero3 = (numero3 * 2);
         if( numero3 > 9 ){ var numero3 = (numero3 - 9); }
 
-        var numero5 = parseInt(this.cedula.substring(4,5));
+        var numero5 = parseInt(this.cedula1.substring(4,5));
         var numero5 = (numero5 * 2);
         if( numero5 > 9 ){ var numero5 = (numero5 - 9); }
 
-        var numero7 = parseInt(this.cedula.substring(6,7));
+        var numero7 = parseInt(this.cedula1.substring(6,7));
         var numero7 = (numero7 * 2);
         if( numero7 > 9 ){ var numero7 = (numero7 - 9); }
 
-        var numero9 = parseInt(this.cedula.substring(8,9));
+        var numero9 = parseInt(this.cedula1.substring(8,9));
         var numero9 = (numero9 * 2);
         if( numero9 > 9 ){ var numero9 = (numero9 - 9); }
 
@@ -174,45 +246,33 @@ export class ConfirmacionComponent implements OnInit {
           var digito_validador = 0;
 
         //Validamos que el digito validador sea igual al de la cedula
-        if(digito_validador == ultimo_digito){
-          console.log('la cedula:' + this.cedula + ' es correcta');
-          let cuerpo={
-            "id_hotel":5,
-            "room": parseInt(this.idHabitacion),
-            "user": parseInt(this.username),
-            "cedula": this.cedula,
-            "costo_booking": this.precio,
-            "begin_at": this.fechaReservaS,
-            "ends_at" : this.fechaCerrarS
-          }
-          console.log(cuerpo)
-          this.usuario.AgregarReserva(cuerpo).subscribe(
-            res  => {
-              Swal.fire({
-                title:"Reserva realizada",
-                text:"¡Gracias por su compra!",
-                icon:"success",
-                confirmButtonColor:"#3085d6",
-                confirmButtonText:"Cerrar"
-              })
-              this.router.navigateByUrl("/inicio");
-            },
-            err  => {
+        if((digito_validador == ultimo_digito)&& this.pagoC=="Correcto"){
+          console.log('la cedula:' + this.cedula1 + ' es correcta');
+          Swal.fire({
+            title:"Reserva realizada",
+            text:"¡Gracias por su compra!",
+            icon:"success",
+            confirmButtonColor:"#3085d6",
+            confirmButtonText:"Cerrar"
+          })
 
-              Swal.fire({
-                title: 'Error!',
-                text: err.error.message,
-                icon: 'error',
-                confirmButtonText: 'Aceptar'
-              })
-            }
-          )
+          this.router.navigateByUrl("/inicio");
+
+        }else if(this.pagoC!="Correcto"){
+          Swal.fire({
+            title:"Método de pago Incorrecta",
+            text:"¡Ingrese correctamente sus datos!",
+            icon:"error",
+            confirmButtonColor:"#3085d6",
+            confirmButtonText:"Cerrar"
+          })
+
+        }
 
 
 
-
-        }else{
-          console.log('la cedula:' + this.cedula + ' es incorrecta');
+        else{
+          console.log('la cedula:' + this.cedula1 + ' es incorrecta');
           Swal.fire({
             title:"Cedula Incorrecta",
             text:"¡Ingrese su cedula correctamente!",
@@ -235,7 +295,7 @@ export class ConfirmacionComponent implements OnInit {
         })
 
       }
-    }else if(this.cedula.length != 10){
+    }else if(this.cedula1.length != 10){
       //imprimimos en consola si la cedula tiene mas o menos de 10 digitos
       console.log('Esta cedula tiene menos de 10 Digitos');
       Swal.fire({
@@ -251,6 +311,8 @@ export class ConfirmacionComponent implements OnInit {
 
 
   }
+
+
 
 
 

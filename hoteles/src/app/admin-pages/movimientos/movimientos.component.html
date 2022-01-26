@@ -1,11 +1,50 @@
-<h2 class="container">Movimientos de la reserva #{{idReserva}} a nombre de </h2>
+<div class="ca">
+  <div>
+    <h2 class="container">Movimientos de </h2>
+  </div>
+  <div class="botonEnviar">
+    <button class="btn" routerLink="/admin/checkout" (click)="terminar()" >Proceder al pago</button>
+  </div>
+</div>
+
 <hr>
-<div>
+
+
+<div *ngFor="let det of detalleT">
+
+  <div class="card">
+      <div class="row ">
+
+        <div class="col-md-7 px-3" id="carta">
+            <div class="card-block px-6">
+                <h4 class="card-title">{{det.titulo_detalle}}</h4>
+
+                    <div class="sec">
+                        <h4>Valor agregado:</h4>
+                        <p class="card-text te">{{det.costo}}</p>
+                    </div>
+
+                    <div class="sec">
+                      <h4>Fecha del cargo:</h4>
+                      <p class="card-text te">{{det.fecha_detalle}}</p>
+                    </div>
+
+                    <div class="sec">
+                      <h4>Detalles:</h4>
+                      <p class="card-text te">{{det.detalle}}</p>
+                    </div>
+
+            </div>
+
+
+        </div>
+      </div>
+
+    </div>
+
 
 </div>
+
 <hr>
-<div class="botonEnviar">
-  <button class="btn" routerLink="/admin/checkout" (click)="terminar()" >Proceder al pago</button>
-</div>
 
 

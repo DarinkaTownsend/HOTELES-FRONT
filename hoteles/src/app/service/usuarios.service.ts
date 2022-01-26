@@ -87,4 +87,8 @@ export class UsuariosService {
   AgregarReserva (cuerpo:any){
     return this.http.post(`${this.API_URI}/api/check_in/`,cuerpo)
   }
+
+  AgregarDetalleCargo (cuerpo:any){
+    return this.http.post(`${this.API_URI}/api/detalle/`,cuerpo)
+  }
 }

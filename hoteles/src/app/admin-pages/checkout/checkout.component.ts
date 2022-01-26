@@ -252,8 +252,7 @@ export class CheckoutComponent implements OnInit {
         if((digito_validador == ultimo_digito)&& this.pagoC=="Correcto"){
           console.log('la cedula:' + this.cedula1 + ' es correcta');
           Swal.fire({
-            title:"Reserva realizada",
-            text:"¡Gracias por su compra!",
+            title:"Pago realizado",
             icon:"success",
             confirmButtonColor:"#3085d6",
             confirmButtonText:"Cerrar"
