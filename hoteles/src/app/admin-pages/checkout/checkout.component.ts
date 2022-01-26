@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsuariosService } from 'src/app/service/usuarios.service';
 
 import Swal from 'sweetalert2';
 
@@ -30,7 +31,9 @@ export class CheckoutComponent implements OnInit {
   cargo:any=0;
   idCuarto:any=""
 
-  constructor(private router:Router) { }
+  idReserva:any=""
+
+  constructor(private router:Router,private usuario:UsuariosService) { }
 
   ngOnInit(): void {
     this.paquete=localStorage.getItem("turismoPaquete");
@@ -40,6 +43,8 @@ export class CheckoutComponent implements OnInit {
     this.idCuarto=localStorage.getItem("IDCuarto")
 
     this.precioT=parseInt(this.personas)*parseInt(this.precio)
+
+    this.idReserva=localStorage.getItem("idBooking")
 
 
   }
@@ -179,15 +184,53 @@ export class CheckoutComponent implements OnInit {
 
     else if(this.ruc=="si" && this.pagoC=="Correcto"){
       if(this.cedula1.length == 13){
-        Swal.fire({
-          title:"Reserva realizada",
-          text:"¡Gracias por su compra!",
-          icon:"success",
-          confirmButtonColor:"#3085d6",
-          confirmButtonText:"Cerrar"
-        })
 
-        this.router.navigateByUrl("/admin/reservaciones");
+        var enviar={
+          "booking": this.idReserva,
+        }
+        this.usuario.CancelarReserva(enviar).subscribe(
+
+            res  => {
+              Swal.fire({
+                title:"Pago realizado",
+                icon:"success",
+                confirmButtonColor:"#3085d6",
+                confirmButtonText:"Cerrar"
+              })
+
+              this.router.navigateByUrl("/admin/reservaciones");
+            },
+            err  => {
+
+              Swal.fire({
+                title: 'Error!',
+                text: err.error.message,
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+              })
+            }
+
+
+
+
+
+        )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       }
     }
@@ -251,14 +294,59 @@ export class CheckoutComponent implements OnInit {
         //Validamos que el digito validador sea igual al de la cedula
         if((digito_validador == ultimo_digito)&& this.pagoC=="Correcto"){
           console.log('la cedula:' + this.cedula1 + ' es correcta');
-          Swal.fire({
-            title:"Pago realizado",
-            icon:"success",
-            confirmButtonColor:"#3085d6",
-            confirmButtonText:"Cerrar"
-          })
 
-          this.router.navigateByUrl("/admin/reservaciones");
+
+
+          var enviar={
+            "booking": this.idReserva,
+          }
+          this.usuario.CancelarReserva(enviar).subscribe(
+
+              res  => {
+                Swal.fire({
+                  title:"Pago realizado",
+                  icon:"success",
+                  confirmButtonColor:"#3085d6",
+                  confirmButtonText:"Cerrar"
+                })
+
+                this.router.navigateByUrl("/admin/reservaciones");
+              },
+              err  => {
+
+                Swal.fire({
+                  title: 'Error!',
+                  text: err.error.message,
+                  icon: 'error',
+                  confirmButtonText: 'Aceptar'
+                })
+              }
+
+
+
+
+
+          )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         }else if(this.pagoC!="Correcto"){
           Swal.fire({
