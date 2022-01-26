@@ -15,6 +15,10 @@ export class ExtenderReservaComponent implements OnInit {
   idReserva:any=""
   fechaR:any=""
   fechaCal:any=""
+  nuevaFechaE:any ="";
+  nuevaFechaS:any ="";
+  nuevoP:any ="";
+
   constructor(private usuario:UsuariosService, private router:Router) { }
 
   ngOnInit(): void {
@@ -27,12 +31,44 @@ export class ExtenderReservaComponent implements OnInit {
         console.log(habitaciones)
 
         for(let habitacion of habitaciones){
+          if(habitacion['id_booking']==this.idReserva){
+            let fechaReserva= document.getElementsByClassName("fechaR");
+            fechaReserva[0].innerHTML = "Actual fecha de salida: "+habitacion['ends_at'].split("T")[0];
+            let precioReserva= document.getElementsByClassName("precioAnterior");
+            precioReserva[0].innerHTML = "Precio anterior: $ "+habitacion['costo_booking'];
+            var fechaInicio = new Date(habitacion['begin_at'].split("T")[0]).getTime();
+            var fechaFin    = new Date(habitacion['ends_at'].split("T")[0]).getTime();
+            var diff = (fechaFin - fechaInicio)/(1000*60*60*24);
+            let diasReserva= document.getElementsByClassName("diasReserva");
+            diasReserva[0].innerHTML = "Noches de Reserva: "+diff;
+            /*let calendario= document.getElementsByClassName("fechas");
+            var e1 = document.getElementById("calendario1")as HTMLInputElement;
+            calendario[0].setAttribute("value", habitacion['begin_at'].split("T")[0]);
+            calendario[1].setAttribute("value", habitacion['ends_at'].split("T")[0]);
+            e1.value= habitacion['ends_at'].split("T")[0];*/
+
+          }
         }
 
 
       });
   }
-
+  nuevaFecha(){ 
+    var e1 = document.getElementById("calendario1")as HTMLInputElement;
+    var e2 = document.getElementById("calendario1")as HTMLInputElement;
+    let seleccionEntrada= e2.value;
+    let seleccionSalida = e1.value;
+    let fechaReserva= document.getElementsByClassName("fechaR");
+    fechaReserva[0].innerHTML = "Actual fecha de salida: "+seleccionSalida;
+    var fechaInicio = new Date(seleccionEntrada).getTime();
+    var fechaFin    = new Date(seleccionSalida).getTime();
+    var diff = (fechaFin - fechaInicio)/(1000*60*60*24);
+    let diasReserva= document.getElementsByClassName("diasNuevos");
+    diasReserva[0].innerHTML = "Actualización de noches: "+diff;
+  }
+  nuevoPrecio(){ 
+    
+  }
   cambiarFecha(){
     var e1 = document.getElementById("calendario1")as HTMLInputElement;
     this.fechaCal=e1.value+" 00:00:00";
