@@ -133,3 +133,15 @@ img {
     align-content: center;
   }
 
+  .sec{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: justify;
+  }
+
+  .ta{
+    padding-left: 5%;
+    padding-right: 5%;
+  }

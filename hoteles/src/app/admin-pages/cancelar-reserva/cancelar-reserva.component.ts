@@ -11,10 +11,14 @@ import Swal from 'sweetalert2';
 })
 export class CancelarReservaComponent implements OnInit {
   idReserva:any=""
+  nombreR:any=""
+  apellidoR:any=""
   constructor(private usuario:UsuariosService, private router:Router) { }
 
   ngOnInit(): void {
     this.idReserva=localStorage.getItem("idBooking")
+    this.nombreR=localStorage.getItem("nombreReser")
+    this.apellidoR=localStorage.getItem("apellidoReserva")
   }
 
   cancelarReserva(){

@@ -1,6 +1,6 @@
 <div class="ca">
   <div>
-    <h2 class="container">Movimientos de </h2>
+    <h2 class="container">Movimientos de {{nombreR}} {{apellidoR}}</h2>
   </div>
   <div class="botonEnviar">
     <button class="btn" routerLink="/admin/checkout" (click)="terminar()" >Proceder al pago</button>
@@ -9,42 +9,43 @@
 
 <hr>
 
+<div class="ta">
+<table id="reporte" class=" table table-striped table-hover">
+  <thead>
+      <tr>
 
-<div *ngFor="let det of detalleT">
+          <th>Título</th>
+          <th>Fecha</th>
+          <th>Valor</th>
+          <th>Detalle</th>
 
-  <div class="card">
-      <div class="row ">
+      </tr>
+  </thead>
+  <tbody id="ordenes_tablas">
 
-        <div class="col-md-7 px-3" id="carta">
-            <div class="card-block px-6">
-                <h4 class="card-title">{{det.titulo_detalle}}</h4>
+    <tr *ngFor="let det of detalleT">
+      <td>{{det.titulo_detalle}}</td>
 
-                    <div class="sec">
-                        <h4>Valor agregado:</h4>
-                        <p class="card-text te">{{det.costo}}</p>
-                    </div>
-
-                    <div class="sec">
-                      <h4>Fecha del cargo:</h4>
-                      <p class="card-text te">{{det.fecha_detalle}}</p>
-                    </div>
-
-                    <div class="sec">
-                      <h4>Detalles:</h4>
-                      <p class="card-text te">{{det.detalle}}</p>
-                    </div>
-
-            </div>
+      <td>{{det.fecha_detalle}}</td>
+      <td>{{det.costo}}</td>
+      <td>{{det.detalle}}</td>
 
 
-        </div>
-      </div>
 
-    </div>
 
+
+
+
+
+
+    </tr>
+
+  </tbody>
+</table>
 
 </div>
 
-<hr>
+
+
 
 
