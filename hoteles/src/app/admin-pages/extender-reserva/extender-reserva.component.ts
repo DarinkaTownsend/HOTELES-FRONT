@@ -95,9 +95,9 @@ export class ExtenderReservaComponent implements OnInit {
     this.nuevoPrecio();
   }
   nuevoPrecio(){ 
-    let totalanterior= (this.precioA/this.anteriorNoche)*this.nuevaNoche;
+    let totalanterior= ((this.precioA/this.anteriorNoche)*this.nuevaNoche).toFixed(0);
     let diasReserva= document.getElementsByClassName("precioNuevo");
-    diasReserva[0].innerHTML = "Nuevo precio: $ "+totalanterior.toFixed(2);
+    diasReserva[0].innerHTML = "Nuevo precio: $ "+(totalanterior +this.precioA);
   }
   cambiarFecha(){
     var e1 = document.getElementById("calendario1")as HTMLInputElement;
