@@ -23,6 +23,7 @@ export class ExtenderReservaComponent implements OnInit {
   anteriorNoche: any=0;
   precioA: any=0;
   precioFinal:any=0;
+  precioAgregar:any=0;
   constructor(private usuario:UsuariosService, private router:Router) { }
 
   ngOnInit(): void {
@@ -105,6 +106,7 @@ export class ExtenderReservaComponent implements OnInit {
     let totalanterior= ((this.precioA/this.anteriorNoche)*this.nuevaNoche).toFixed(0);
     let diasReserva= document.getElementsByClassName("precioNuevo");
     this.precioFinal=parseInt(this.precioA)+parseInt(totalanterior)
+    this.precioAgregar=parseInt(totalanterior)
     diasReserva[0].innerHTML = "Nuevo precio: $ "+this.precioFinal;
   }
   cambiarFecha(){
@@ -123,7 +125,7 @@ export class ExtenderReservaComponent implements OnInit {
 
         const enviar={
           "booking": parseInt(this.idReserva),
-          "costo_adicional": parseInt(this.precioFinal),
+          "costo_adicional": this.precioAgregar,
         }
 
 
