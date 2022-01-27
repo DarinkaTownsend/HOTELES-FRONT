@@ -142,9 +142,11 @@ export class ConfirmacionComponent implements OnInit {
 
     if(e10.checked){
       this.ruc="si"
+      this.pasaporte="no"
 
     }else if(pasaporte.checked){
       this.pasaporte="si"
+      this.ruc="no"
     }else{
       this.ruc="no"
       this.pasaporte="no"
@@ -163,14 +165,16 @@ export class ConfirmacionComponent implements OnInit {
     var e7 = document.getElementById("nombreT")as HTMLInputElement;
     var e8 = document.getElementById("numeroT")as HTMLInputElement;
     var e9 = document.getElementById("CVV")as HTMLInputElement;
+    var fechaFormu = document.getElementById("fExp")as HTMLInputElement;
 
-    if(e7 && e8 && e9){
+    if(e7 && e8 && e9&& fechaFormu){
       var nombreT=e7.value
       var numero=e8.value
       var cvv = e9.value
+      this.fExp1=fechaFormu.value
 
 
-      if(nombreT==""||numero.length!=16||cvv.length!=3){
+      if(nombreT==""||numero.length!=16||cvv.length!=3||this.fExp1==""){
         this.pagoC="Incorrecto"
         console.log("nombre")
       }else{
