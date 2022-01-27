@@ -96,7 +96,7 @@ export class ExtenderReservaComponent implements OnInit {
 
 
     if(this.nuevaFechaE==""){
-      this.obtenerT(this.nuevaFechaE);
+      this.obtenerT(this.fechaR);
     }else{
     this.obtenerT(this.nuevaFechaE);
   }
