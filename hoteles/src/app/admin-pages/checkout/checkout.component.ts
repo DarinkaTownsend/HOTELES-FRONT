@@ -17,6 +17,8 @@ export class CheckoutComponent implements OnInit {
   personas:any="";
   pagoC:any="";
   ruc:any="no"
+  pasaporte:any="no"
+
 
   public cedula1:String="";
   public nombre1:String="";
@@ -65,19 +67,19 @@ export class CheckoutComponent implements OnInit {
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="cc-number">Número de Tarjeta</label>
-                  <input type="number" class="form-control" id="numeroT" placeholder="" required>
+                  <input type="number" class="form-control" id="numeroT" maxlength="16" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="" required>
 
                 </div>
               </div>
               <div class="row2">
                 <div class="r1">
                   <label for="cc-expiration">Fecha de Expiración</label>
-                  <input type="date" class="form-control" id="fExp" placeholder="" required>
+                  <input type="month" class="form-control" id="fExp" placeholder="" required>
 
                 </div>
                 <div class="r1">
                   <label for="cc-expiration">CVV</label>
-                  <input type="number" class="form-control" id="CVV" placeholder="" required>
+                  <input type="number" class="form-control" id="CVV" maxlength="3" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  placeholder="" required>
 
                 </div>
               </div>
@@ -121,10 +123,13 @@ export class CheckoutComponent implements OnInit {
     var e4 = document.getElementById("direccion")as HTMLInputElement;
     var e5 = document.getElementById("correo")as HTMLInputElement;
     var e10 = document.getElementById("ruc")as HTMLInputElement;
+    var pasaporte = document.getElementById("pasaporte")as HTMLInputElement;
 
     if(e10.checked){
       this.ruc="si"
 
+    }else if(pasaporte.checked){
+      this.pasaporte="si"
     }
 
 
@@ -171,7 +176,7 @@ export class CheckoutComponent implements OnInit {
       })
     }
 
-    else if(!this.email1.includes("@") && !this.email1.includes(".com")){
+    else if(!this.email1.includes("@") || !this.email1.includes(".com")){
       Swal.fire({
         title:"Email Inválido",
         text:"¡Ingrese su correo correctamente!",
@@ -232,11 +237,57 @@ export class CheckoutComponent implements OnInit {
 
 
 
+      }else{
+        Swal.fire({
+          title:"RUC no válido",
+          text:"¡Ingrese correctamente su RUC!",
+          icon:"error",
+          confirmButtonColor:"#3085d6",
+          confirmButtonText:"Cerrar"
+        })
       }
+    }else if(this.pasaporte=="si" && this.pagoC=="Correcto"){
+
+
+      var enviar={
+        "booking": this.idReserva,
+      }
+      this.usuario.CancelarReserva(enviar).subscribe(
+
+          res  => {
+            Swal.fire({
+              title:"Pago realizado",
+              icon:"success",
+              confirmButtonColor:"#3085d6",
+              confirmButtonText:"Cerrar"
+            })
+
+            this.router.navigateByUrl("/admin/reservaciones");
+          },
+          err  => {
+
+            Swal.fire({
+              title: 'Error!',
+              text: err.error.message,
+              icon: 'error',
+              confirmButtonText: 'Aceptar'
+            })
+          }
+
+
+
+
+
+      )
+
+
+
+
+
     }
 
     //Preguntamos si la cedula consta de 10 digitos
-    else if(this.cedula1.length == 10){
+    else if(this.cedula1.length == 10 && this.pagoC=="Correcto"){
 
       //Obtenemos el digito de la region que sonlos dos primeros digitos
       var digito_region1 = this.cedula1.substring(0,2);
@@ -292,7 +343,7 @@ export class CheckoutComponent implements OnInit {
           var digito_validador = 0;
 
         //Validamos que el digito validador sea igual al de la cedula
-        if((digito_validador == ultimo_digito)&& this.pagoC=="Correcto"){
+        if((digito_validador == ultimo_digito)){
           console.log('la cedula:' + this.cedula1 + ' es correcta');
 
 
@@ -348,15 +399,6 @@ export class CheckoutComponent implements OnInit {
 
 
 
-        }else if(this.pagoC!="Correcto"){
-          Swal.fire({
-            title:"Método de pago Incorrecta",
-            text:"¡Ingrese correctamente sus datos!",
-            icon:"error",
-            confirmButtonColor:"#3085d6",
-            confirmButtonText:"Cerrar"
-          })
-
         }
 
 
@@ -396,7 +438,16 @@ export class CheckoutComponent implements OnInit {
         confirmButtonText:"Cerrar"
       })
 
-   }
+   }else if(this.pagoC!="Correcto"){
+    Swal.fire({
+      title:"Método de pago Incorrecto",
+      text:"¡Ingrese correctamente sus datos!",
+      icon:"error",
+      confirmButtonColor:"#3085d6",
+      confirmButtonText:"Cerrar"
+    })
+
+  }
 
 
 
