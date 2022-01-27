@@ -24,12 +24,15 @@ export class ExtenderReservaComponent implements OnInit {
   precioA: any=0;
   precioFinal:any=0;
   precioAgregar:any=0;
+  fechaCalendario1: any=0;
+  fechaCalendario2: any=0;
+  fechaS:any=""
   constructor(private usuario:UsuariosService, private router:Router) { }
 
   ngOnInit(): void {
     this.idReserva=localStorage.getItem("idBooking")
     this.fechaR=localStorage.getItem("fechaReserva")
-
+    
     fetch("https://sadminhoteles.pythonanywhere.com/api/bookings_hotel/5")
       .then(data => data.json())
       .then(habitaciones => {
@@ -37,6 +40,17 @@ export class ExtenderReservaComponent implements OnInit {
 
         for(let habitacion of habitaciones){
           if(habitacion['id_booking']==this.idReserva){
+            this.fechaCalendario1= new Date(habitacion['begin_at'].split("T")[0]).toISOString();
+            this.fechaCalendario2= new Date(habitacion['ends_at'].split("T")[0]).toISOString();
+            this.fechaS= habitacion['ends_at'].split("T")[0];
+            let a= document.getElementById("calendario1");
+            let b= document.getElementById("calendario2");
+            if(a){ 
+              a.setAttribute('min',this.fechaCalendario1);
+            }
+            if(b){ 
+              b.setAttribute('min',this.fechaCalendario2);
+            }
             let fechaReserva= document.getElementsByClassName("fechaR");
             fechaReserva[0].innerHTML = "Actual fecha de salida: "+habitacion['ends_at'].split("T")[0];
             let precioReserva= document.getElementsByClassName("precioAnterior");
@@ -51,7 +65,7 @@ export class ExtenderReservaComponent implements OnInit {
             let nombre= document.getElementsByClassName("container");
             nombre[0].innerHTML = "Extender reserva de "+localStorage.getItem("nombreReser")+" "+ localStorage.getItem("apellidoReserva");
             let boton= document.getElementById("boton")as HTMLInputElement;
-            var date1 = new Date(habitacion['begin_at'].split("T")[0]);
+            var date1 = new Date(habitacion['ends_at'].split("T")[0]);
             const tiempoTranscurrido = Date.now();
             var date2 = new Date(tiempoTranscurrido);
             if(date1 > date2){
@@ -81,15 +95,19 @@ export class ExtenderReservaComponent implements OnInit {
     this.nuevaFechaS=valor;
 
 
-
-    this.obtenerT(this.fechaR);
+    if(this.nuevaFechaE==""){
+      this.obtenerT(this.nuevaFechaE);
+    }else{
+    this.obtenerT(this.nuevaFechaE);
+  }
     console.log(this.fechaR)
 
     this.nuevaFecha();
 
   }
   obtenerT(valor: string){
-    this.nuevaFechaE=this.fechaR;
+    console.log(valor);
+    this.nuevaFechaE=valor;
   }
   nuevaFecha(){
     let fechaReserva= document.getElementsByClassName("fechaR");
