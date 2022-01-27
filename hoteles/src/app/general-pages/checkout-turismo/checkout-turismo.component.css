@@ -13,7 +13,13 @@
 
 .dividir2{
   display: grid;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto auto auto;
+
+}
+
+.dividir3{
+  display: grid;
+  grid-template-rows: auto auto auto;
 
 }
 

@@ -54,7 +54,7 @@
 
               <div class="mb-3">
                 <div class="dividir">
-                  <div class="dividir2">
+                  <div class="dividir3">
 
                     <div>
                       <input type="radio" id="contactChoice1"
@@ -64,8 +64,15 @@
 
                     <div>
                       <input type="radio" id="ruc"
-                     name="contact" value="phone">
+                     name="contact" >
                     <label for="contactChoice2">RUC</label>
+
+                    </div>
+
+                    <div>
+                      <input type="radio" id="pasaporte"
+                     name="contact" >
+                    <label for="contactChoice2">Pasaporte</label>
 
                     </div>
 
@@ -116,8 +123,8 @@
 
               <h4 class="mb-3">Método de pago</h4>
 
-              <button class="boton2" type="submit" (click)="cargarMetodo()">Tarjeta de Débito</button>
-              <button class="boton2" type="submit" (click)="cargarMetodo()">Tarjeta de Crédito</button>
+
+              <button class="boton2" type="submit" (click)="cargarMetodo()">Tarjeta de Crédito/Débito</button>
               <button class="boton2" type="submit" (click)="Efectivo()">Efectivo</button>
 
               <div id="Llenado">

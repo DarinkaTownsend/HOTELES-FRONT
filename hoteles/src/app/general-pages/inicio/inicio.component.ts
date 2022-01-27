@@ -12,6 +12,8 @@ export class InicioComponent implements OnInit {
   fechaReservaS:any="";
   fechaCerrarS:any="";
 
+  fechaActual:any=""
+
   opcionSeleccionado: string  = '0';
   verSeleccion: string        = '';
   constructor() {
@@ -19,7 +21,19 @@ export class InicioComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.fechaActual=new Date().toISOString().slice(0,10)
 
+    let a=document.getElementById("calendario01")
+
+    if(a){
+      a.setAttribute('min',this.fechaActual)
+    }
+
+    let b=document.getElementById("calendario02")
+
+    if(b){
+      b.setAttribute('min',this.fechaActual)
+    }
   }
 
 
