@@ -144,10 +144,10 @@ export class ConfirmacionComponent implements OnInit {
       this.ruc="si"
 
     }else if(pasaporte.checked){
-      this.ruc="si"
+      this.pasaporte="si"
     }else{
       this.ruc="no"
-      this.ruc="no"
+      this.pasaporte="no"
     }
 
 

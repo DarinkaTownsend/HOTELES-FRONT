@@ -118,6 +118,9 @@ export class CheckoutTurismoComponent implements OnInit {
 
     }else if(pasaporte.checked){
       this.pasaporte="si"
+    }else{
+      this.ruc="no"
+      this.pasaporte="no"
     }
 
 
