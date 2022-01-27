@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuariosService } from 'src/app/service/usuarios.service';
 import { Detalle } from '../Interfaces_admin/detalle';
 
 @Component({
@@ -13,14 +14,21 @@ export class MovimientosComponent implements OnInit {
   nombreR:any=""
   apellidoR:any=""
   fe:any=""
-
-  constructor() { }
+  idCuartoD:any=""
+  fechaReserva:any=""
+  costoHabitacion:any=""
+  fechaR:any=""
+  precioCuarto:any=0
+  constructor(private usuario:UsuariosService) { }
 
   ngOnInit(): void {
     this.idReserva=localStorage.getItem("idBooking")
     this.cargo=localStorage.getItem("precioCuarto")
     this.nombreR=localStorage.getItem("nombreReser")
     this.apellidoR=localStorage.getItem("apellidoReserva")
+    this.idCuartoD=localStorage.getItem("idCuartoD")
+    this.fechaR=localStorage.getItem("fechaReserva")
+    this.precioCuarto=localStorage.getItem("precioCuarto")
 
     fetch("https://sadminhoteles.pythonanywhere.com/api/detalle_reserva/"+this.idReserva)
       .then(res => res.json())
@@ -46,6 +54,16 @@ export class MovimientosComponent implements OnInit {
 
         }
       })
+
+
+
+      fetch("https://sadminhoteles.pythonanywhere.com/api/get_room/"+this.idCuartoD)
+      .then(res => res.json())
+      .then(cuartos => {
+        this.costoHabitacion=cuartos[0]["seats_base"]
+    })
+
+
   }
   terminar(){
 

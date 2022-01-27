@@ -1,9 +1,10 @@
 <div class="ca">
-  <div>
+  <div class="div">
     <h2 class="container">Movimientos de {{nombreR}} {{apellidoR}}</h2>
+    <h2 class="container">Precio Total: ${{precioCuarto}}</h2>
   </div>
   <div class="botonEnviar">
-    <button class="btn" routerLink="/admin/checkout" (click)="terminar()" >Proceder al pago</button>
+    <button class="btn" routerLink="/admin/checkout" (click)="terminar()" >Check out</button>
   </div>
 </div>
 
@@ -23,20 +24,20 @@
   </thead>
   <tbody id="ordenes_tablas">
 
+    <tr>
+      <td>Reserva Base</td>
+      <td>{{fechaR}}</td>
+      <td>{{costoHabitacion}}</td>
+      <td>Precio base de la habitación</td>
+    </tr>
+
     <tr *ngFor="let det of detalleT">
+
       <td>{{det.titulo_detalle}}</td>
 
       <td>{{det.fecha_detalle}}</td>
       <td>{{det.costo}}</td>
       <td>{{det.detalle}}</td>
-
-
-
-
-
-
-
-
 
     </tr>
 

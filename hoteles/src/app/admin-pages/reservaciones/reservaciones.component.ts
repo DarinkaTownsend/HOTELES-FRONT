@@ -44,14 +44,15 @@ export class ReservacionesComponent implements OnInit {
       })
   }
 
-  detalles(id: string,fe:string,pr:string,ro:string,nom:string,ape:string){
+  detalles(id: string,fe:string,pr:string,ro:string,nom:string,ape:string,re:string){
 
     localStorage.setItem("idBooking",id)
-    localStorage.setItem("fechaReserva",fe.replace("T"," ").substring(0, fe.length - 1))
+    localStorage.setItem("fechaReserva",fe)
     localStorage.setItem("precioCuarto",pr)
     localStorage.setItem("IDCuarto",ro)
     localStorage.setItem("nombreReser",nom)
     localStorage.setItem("apellidoReserva",ape)
+    localStorage.setItem("idCuartoD",re)
 
   }
   extender(id: string,fe:string,nom:string,ape:string){

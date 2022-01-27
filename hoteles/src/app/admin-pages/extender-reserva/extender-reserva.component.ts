@@ -27,12 +27,21 @@ export class ExtenderReservaComponent implements OnInit {
   fechaCalendario1: any=0;
   fechaCalendario2: any=0;
   fechaS:any=""
+  fechaActual:any=""
   constructor(private usuario:UsuariosService, private router:Router) { }
 
   ngOnInit(): void {
     this.idReserva=localStorage.getItem("idBooking")
     this.fechaR=localStorage.getItem("fechaReserva")
-    
+    this.fechaActual=new Date().toISOString().slice(0,10)
+    let a=document.getElementById("calendario02")
+
+    if(a){
+      a.setAttribute('min',this.fechaActual)
+      console.log(this.fechaR)
+    }
+
+
     fetch("https://sadminhoteles.pythonanywhere.com/api/bookings_hotel/5")
       .then(data => data.json())
       .then(habitaciones => {
@@ -45,10 +54,10 @@ export class ExtenderReservaComponent implements OnInit {
             this.fechaS= habitacion['ends_at'].split("T")[0];
             let a= document.getElementById("calendario1");
             let b= document.getElementById("calendario2");
-            if(a){ 
+            if(a){
               a.setAttribute('min',this.fechaCalendario1);
             }
-            if(b){ 
+            if(b){
               b.setAttribute('min',this.fechaCalendario2);
             }
             let fechaReserva= document.getElementsByClassName("fechaR");
@@ -123,7 +132,7 @@ export class ExtenderReservaComponent implements OnInit {
   nuevoPrecio(){
     let totalanterior= ((this.precioA/this.anteriorNoche)*this.nuevaNoche).toFixed(0);
     let diasReserva= document.getElementsByClassName("precioNuevo");
-    this.precioFinal=parseInt(this.precioA)+parseInt(totalanterior)
+    this.precioFinal=parseInt(totalanterior)
     this.precioAgregar=parseInt(totalanterior)
     diasReserva[0].innerHTML = "Nuevo precio: $ "+this.precioFinal;
   }

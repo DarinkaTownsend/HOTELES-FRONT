@@ -63,6 +63,9 @@ export class UsuariosService {
   getPublicidad(){
     return this.http.get(`${this.API_URI}/api/publicidad/`)
   }
+  getCuarto(idCuarto:any){
+    return this.http.get(`${this.API_URI}/api/get_room/`,idCuarto)
+  }
 
   AgregarCargos(cuerpo: any){
     return this.http.post(`${this.API_URI}/api/booking_cost/`,cuerpo)
