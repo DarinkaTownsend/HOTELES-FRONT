@@ -39,6 +39,7 @@ export class ConfirmacionComponent implements OnInit {
   public numeroT1:String="";
   public fExp1:String="";
   public CVV1:String="";
+  fechaActual:any=""
 
   constructor(private router:Router, private usuario:UsuariosService) { }
 
@@ -52,6 +53,10 @@ export class ConfirmacionComponent implements OnInit {
     this.fechaI=localStorage.getItem("fechaReservaS")?.toString().slice(0,10)+" 00:00:00"
     this.idHabitacion=localStorage.getItem("idHabitacionS")
     this.costoH=localStorage.getItem("precioS")
+
+
+
+
 
 
 
@@ -80,7 +85,7 @@ export class ConfirmacionComponent implements OnInit {
               <div class="row2">
                 <div class="r1">
                   <label for="cc-expiration">Fecha de Expiración</label>
-                  <input type="date" class="form-control" id="fExp" placeholder="" required>
+                  <input type="month" class="form-control" id="fExp" placeholder="" min="2022-01" required>
 
                 </div>
                 <div class="r1">
@@ -94,6 +99,8 @@ export class ConfirmacionComponent implements OnInit {
                     e2.innerHTML = row;
 
     }
+
+
 
 
 
@@ -123,6 +130,7 @@ export class ConfirmacionComponent implements OnInit {
 
   Finalizar(){
 
+
     var e1 = document.getElementById("cedula")as HTMLInputElement;
     var e2 = document.getElementById("nombreC")as HTMLInputElement;
     var e3 = document.getElementById("apellidoC")as HTMLInputElement;
@@ -136,7 +144,10 @@ export class ConfirmacionComponent implements OnInit {
       this.ruc="si"
 
     }else if(pasaporte.checked){
-      this.pasaporte="si"
+      this.ruc="si"
+    }else{
+      this.ruc="no"
+      this.ruc="no"
     }
 
 

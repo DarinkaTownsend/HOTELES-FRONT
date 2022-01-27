@@ -74,7 +74,7 @@ export class CheckoutComponent implements OnInit {
               <div class="row2">
                 <div class="r1">
                   <label for="cc-expiration">Fecha de Expiración</label>
-                  <input type="month" class="form-control" id="fExp" placeholder="" required>
+                  <input type="month" class="form-control" id="fExp" min="2022-01" placeholder="" required>
 
                 </div>
                 <div class="r1">
