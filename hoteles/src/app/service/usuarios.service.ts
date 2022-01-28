@@ -71,6 +71,10 @@ export class UsuariosService {
     return this.http.post(`${this.API_URI}/api/booking_cost/`,cuerpo)
   }
 
+  CambiarCargos(cuerpo: any){
+    return this.http.post(`${this.API_URI}/api/booking_setcosts/`,cuerpo)
+  }
+
   ExtenderReserva (cuerpo: any){
     return this.http.post(`${this.API_URI}/api/extend_booking/`,cuerpo)
   }

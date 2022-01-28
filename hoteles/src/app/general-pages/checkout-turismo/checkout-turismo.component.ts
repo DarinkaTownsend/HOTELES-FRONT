@@ -149,10 +149,10 @@ export class CheckoutTurismoComponent implements OnInit {
       var cvv = e9.value
       this.fExp1=fechaFormu.value
 
-
-      if(nombreT==""||numero.length!=16||cvv.length!=3||this.fExp1==""){
+      console.log(this.fExp1)
+      if(nombreT==""||numero.length!=16||cvv.length!=3||this.fExp1.length!=7 ||parseInt(this.fExp1.slice(0,4))<2022){
         this.pagoC="Incorrecto"
-        console.log("mal metodo")
+        console.log("mal metodo"+this.fExp1.slice(0,3))
       }else{
         this.pagoC="Correcto"
         console.log("bien")

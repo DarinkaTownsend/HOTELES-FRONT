@@ -49,6 +49,7 @@ export class ReportesComponent implements OnInit {
                 }
 
                 this.promedioC=this.suma/this.cantidad
+                this.promedioC=(this.promedioC).toFixed(2)
 
               }
       })

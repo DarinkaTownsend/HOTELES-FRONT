@@ -156,7 +156,7 @@ export class ExtenderReservaComponent implements OnInit {
         }
 
 
-        this.usuario.AgregarCargos(enviar).subscribe(
+        this.usuario.CambiarCargos(enviar).subscribe(
 
         res  => {
 

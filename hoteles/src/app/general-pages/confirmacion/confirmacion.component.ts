@@ -174,7 +174,7 @@ export class ConfirmacionComponent implements OnInit {
       this.fExp1=fechaFormu.value
 
 
-      if(nombreT==""||numero.length!=16||cvv.length!=3||this.fExp1==""){
+      if(nombreT==""||numero.length!=16||cvv.length!=3||this.fExp1.length!=7 ||parseInt(this.fExp1.slice(0,4))<2022){
         this.pagoC="Incorrecto"
         console.log("nombre")
       }else{
